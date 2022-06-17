@@ -1,17 +1,15 @@
 <template>
-  <HeaderBlock/>
-
-    
+  <Home/>
 </template>
 
 <script>
-import HeaderBlock from './components/HeaderBlock.vue'
+import Home from './views/Home.vue'
 
 
 export default {
   name: 'App',
   components: {
-    HeaderBlock
+    Home
   }
 
 }

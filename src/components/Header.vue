@@ -1,16 +1,16 @@
 <template>
   <nav>
     <ol>
-      <li><a href="#">Nav 1</a></li>
-      <li><a href="#">Nav 2</a></li>
-      <li><a href="#">Nav 3</a></li>
+      <li><router-link to="/">Nav 1</router-link></li>
+      <li><router-link to="/">Nav 2</router-link></li>
+      <li><router-link to="/">Nav 3</router-link></li>
     </ol>
   </nav>
 </template>
 
 <script>
 export default {
-  name: 'HeaderBlock'
+  name: 'Header'
 }
 </script>
 
