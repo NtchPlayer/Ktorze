@@ -16,12 +16,12 @@ html {
 
 .btn-primary {
     padding: 9px 24px;
-    width: max-content;
+    display: inline-block;
     border-radius: 20px;
     background-color: var(--orange-color);
-    color: white;
-    font-size: 0.75rem;
-    transition: 0.4s;
+    color: #fff;
+    font-size: .75rem;
+    transition-duration: var(--transition-duration);
     &:hover {
         background-color: var(--orange-color);
     }
