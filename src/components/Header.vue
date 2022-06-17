@@ -1,9 +1,9 @@
 <template>
   <nav>
     <ol>
-      <li><router-link to="/">Nav 1</router-link></li>
-      <li><router-link to="/">Nav 2</router-link></li>
-      <li><router-link :to="{name: 'home'}">Nav 3</router-link></li>
+      <li><router-link to="/">L'équipe</router-link></li>
+      <li><router-link to="/">Notre projet</router-link></li>
+      <li><router-link :to="{name: 'home'}">Les fonctionnalités</router-link></li>
     </ol>
   </nav>
 </template>
@@ -14,19 +14,30 @@ export default {
 }
 </script>
 
-<style>
-  nav ol{
-    display: flex;
-    justify-content: center;
-    gap: 50px;
-    align-items: center;
-    height: 100%;
-  }
-  nav ol li{
-    list-style: none;
-  }
+<style lang="scss">
+#app{
   nav{
-    background: grey;
     height: 80px;
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+    margin-top: 50px;
+    ol{
+      display: flex;
+      justify-content: center;
+      gap: 100px;
+      align-items: center;
+      height: 100%;
+      li{
+        list-style: none;
+        a{
+          font-size: 1.8rem;
+          color:#00704e;
+          font-weight: 600;
+          
+        }
+      }
+    }
   }
+}
 </style>

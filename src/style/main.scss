@@ -5,10 +5,24 @@ html {
     font-size: 16px;
     padding: 0;
     margin: 0;
+    font-family: 'roboto';
 }
 
 .section-title{
     font-size: 2rem;
     text-align: center;
     color: var(--green-color);
+}
+
+.btn-primary {
+    padding: 9px 24px;
+    width: max-content;
+    border-radius: 20px;
+    background-color: #c2814c;
+    color: white;
+    font-size: 0.75rem;
+    transition: 0.4s;
+    &:hover {
+        background-color: #af7544;
+    }
 }
