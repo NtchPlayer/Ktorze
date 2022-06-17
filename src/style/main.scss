@@ -1,6 +1,14 @@
+@charset "utf-8";
+@import 'theme-colors.scss';
+
 html {
     font-size: 16px;
     padding: 0;
     margin: 0;
+}
+
+.section-title{
+    font-size: 2rem;
     text-align: center;
+    color: var(--green-color);
 }
