@@ -1,7 +1,6 @@
 <template>
     <Fotorama/>
     <SectionHome/>
-    <SectionHome/>
     <SectionBottom/>
 </template>
 
