@@ -17,14 +17,5 @@ export default {
 }
 </script>
 
-<style>
-  *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    text-decoration: none;
-  }
-  body{
-    
-  }
-</style>
+<style src="./style/reset.css"></style>
+<style lang="scss" src="./style/main.scss"></style>
