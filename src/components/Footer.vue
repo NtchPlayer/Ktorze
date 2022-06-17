@@ -15,7 +15,7 @@ export default {
 </script>
 
     
-<style>
+<style lang="scss">
 
 
 .footer{
@@ -24,10 +24,11 @@ export default {
     justify-content: center;
     align-items: center;
     background-color: green;
+
+    h1{
+        font-size: 3rem;
+    }
 }
 
-.footer h1{
-    font-size: 3rem;
-}
 
 </style>
