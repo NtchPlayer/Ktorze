@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import CardHome from "./card/CardHome";
+import CardHome from './card/CardHome'
 
 export default {
   name: 'SectionHome',
