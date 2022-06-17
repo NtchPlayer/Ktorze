@@ -28,16 +28,16 @@ export default {
   h1{
     font-size: 2.2rem;
     font-weight: 600;
-    color:#00704e;
+    color:var(--green-color);
     position: absolute;
-    top: 35%;
+    top: 37.25%;
     left: 30%;
     &~p{
       text-align: left;
       position: absolute;
-      top: 42%;
+      top: 44%;
       left: 30%;
-      color:#00704e;
+      color:var(--green-color);
     }
   }
   figure{
