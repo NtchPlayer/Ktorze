@@ -1,40 +1,68 @@
 <template>
 <section class="section-home">
-  <h2>Lorem ipsum</h2>
-  <div class="card">
-    <article><img src="" alt=""></article>
-    <article><img src="" alt=""></article>
-    <article><img src="" alt=""></article>
+  <h2 class="section-title">Les fonctionnalités qui vous manquaient</h2>
+  <div class="container-card">
+    <CardHome
+      v-for="(card, i) of cards"
+      :key="i"
+      :title="card.title"
+      :description="card.description"
+      :icon="card.icon"
+    />
   </div>
 </section>
 
 </template>
 
 <script>
+import CardHome from "./card/CardHome";
+
 export default {
-    name: 'SectionHome'
+  name: 'SectionHome',
+  components: {
+    CardHome
+  },
+  data () {
+    return {
+      cards: [
+        {
+          title: 'Des cartes hors ligne avec de la géolocalisation',
+          description: 'Redécouvrez les joies du parcours au grand air sans risque de vous perdre ou de dévier de votre parcours car vous aurez toujours votre carte disponible sur votre téléphone.',
+          icon: {
+            src: 'map',
+            alt: 'Carte'
+          }
+        }, {
+          title: 'L’histoire de la faune et de la flore en direct',
+          description: 'Il est important d’être un randonneur averti pour sa patrie et bien connaître l’histoire du lieu pour en profiter pleinement.',
+          icon: {
+            src: 'bee',
+            alt: 'Abeille'
+          }
+        }, {
+          title: 'Des conseils de rando spécifiques à vous',
+          description: 'Perdu sur quelques points ou juste débutant ? Laissez-vous guider par nos astuces. Plus vous utilisez l’application, plus notre précision vous concernant augmente !',
+          icon: {
+            src: 'idea',
+            alt: 'Ampoule'
+          }
+        }
+      ]
+    }
+  }
 }
 </script>
 
 <style lang="scss">
-    .section-home{
-        h2{
-            margin: 70px 0 40px 0;
-        }
-        .card{
-            display: flex;
-            justify-content: center;
-            gap: 50px;
-            article{
-                img{
-                    height: 450px;
-                    width: 340px;
-    
-                }
-            }
-        }
-        &~&{
-            margin-bottom: 80px;
-        }
-    }
+.section-home{
+  margin: 100px auto;
+  max-width: 1124px;
+}
+
+.container-card{
+  margin-top: 100px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 200px;
+}
 </style>
