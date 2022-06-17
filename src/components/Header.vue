@@ -3,7 +3,7 @@
     <ol>
       <li><router-link to="/">Nav 1</router-link></li>
       <li><router-link to="/">Nav 2</router-link></li>
-      <li><router-link to="/">Nav 3</router-link></li>
+      <li><router-link :to="{name: 'home'}">Nav 3</router-link></li>
     </ol>
   </nav>
 </template>
