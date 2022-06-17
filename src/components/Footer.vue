@@ -1,9 +1,9 @@
 <template>
-    <section class="footer">
+    <footer>
 
         <h1>Foot Foot Footer</h1>
 
-    </section>
+    </footer>
   
 </template>
 
@@ -18,7 +18,7 @@ export default {
 <style lang="scss">
 
 
-.footer{
+footer{
     height: 400px;
     display: flex;
     justify-content: center;
