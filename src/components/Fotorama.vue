@@ -1,10 +1,9 @@
 <template>
-<div id="fotorama">
-  <h1>Lorem ipsum</h1>
-  <img src="" alt="">
-  <router-link :to="{name: 'home'}">CTA</router-link>
-</div>
-
+  <section class="fotorama">
+    <h1>Lorem ipsum</h1>
+    <img src="" alt="">
+    <router-link :to="{name: 'home'}">CTA</router-link>
+  </section>
 </template>
 
 <script>
@@ -14,14 +13,15 @@ export default {
 </script>
 
 <style lang="scss">
- #fotorama{
+ .fotorama{
   min-height: 600px;
   background-color: #D9D9D9;
   position: relative;
   img{
     position: absolute;
     min-height: 600px;
-    widows: 100%;
+    width: 100%;
+    top: 0;
   }
  }
 </style>
