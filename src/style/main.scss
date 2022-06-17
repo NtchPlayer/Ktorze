@@ -3,4 +3,18 @@ html {
     padding: 0;
     margin: 0;
     text-align: center;
+    font-family: 'roboto';
+}
+
+.btn-primary {
+    padding: 9px 24px;
+    width: max-content;
+    border-radius: 20px;
+    background-color: #c2814c;
+    color: white;
+    font-size: 0.75rem;
+    transition: 0.4s;
+    &:hover {
+        background-color: #af7544;
+    }
 }
