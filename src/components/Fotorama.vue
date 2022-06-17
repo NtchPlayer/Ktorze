@@ -20,6 +20,8 @@ export default {
   position: relative;
   img{
     position: absolute;
+    min-height: 600px;
+    widows: 100%;
   }
  }
 </style>
