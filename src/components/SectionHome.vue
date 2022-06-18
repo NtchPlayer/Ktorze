@@ -64,5 +64,9 @@ export default {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 200px;
+  .card-description{
+    margin-bottom: 15px;
+    min-height: 100px;
+  }
 }
 </style>
