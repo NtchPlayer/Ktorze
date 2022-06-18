@@ -1,8 +1,8 @@
 <template>
   <nav>
     <ol>
-      <li><router-link to="/">L'équipe</router-link></li>
-      <li><router-link to="/">Notre projet</router-link></li>
+      <li><router-link :to="{name: 'home'}">L'équipe</router-link></li>
+      <li><router-link :to="{name: 'home'}">Notre projet</router-link></li>
       <li><router-link :to="{name: 'home'}">Les fonctionnalités</router-link></li>
     </ol>
   </nav>
@@ -40,7 +40,7 @@ export default {
             top: -4px;
             left: -80px;
             content: url("data:image/svg+xml,%3Csvg width='65' height='10' viewBox='0 0 65 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cline y1='4.5' x2='65' y2='4.5' stroke='%2300704E'/%3E%3Ccircle cx='60' cy='5' r='5' fill='%2300704E'/%3E%3C/svg%3E%0A");
-  
+
           }
         }
         &:first-child{
