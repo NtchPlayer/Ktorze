@@ -12,10 +12,10 @@
       <router-link class="btn-primary" :to="{name: 'home'}">Découvrir l’application</router-link>
     </div>
     <div class="bottomMiddle">
-      <figure>  
+      <figure>
         <img src="@/assets/cover-bottom.png" alt="">
       </figure>
-      <p>grands !</p>
+<!--      <p>grands !</p>-->
     </div>
 
   </div>
