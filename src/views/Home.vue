@@ -18,6 +18,11 @@ export default {
     SectionHome,
     SectionBottom,
     SectionRecommendation
+  },
+  mounted () {
+    console.log('test')
+    console.log(this.$gtm.debugEnabled())
+    console.log(this.$gtm.enabled())
   }
 }
 </script>
