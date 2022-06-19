@@ -1,6 +1,5 @@
 <template>
   <section class="fotorama">
-    <router-link class="btn-primary btn-primary-fotorama" :to="{name: 'home'}">Télécharger l'application</router-link>
     <figure>
       <img alt="Vue logo" src="@/assets/coverfotorama.png">
     </figure>
@@ -18,7 +17,7 @@ export default {
 
 <style lang="scss">
  .fotorama{
-  height: 860px;
+  height: 100vh;
   position: relative;
   overflow: hidden;
   display: flex;
