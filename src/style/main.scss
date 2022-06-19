@@ -6,6 +6,7 @@ html {
     padding: 0;
     margin: 0;
     font-family: 'Roboto', sans-serif;
+    background-color: var(--background-color);
 }
 
 .section-title {
@@ -24,5 +25,60 @@ html {
     transition-duration: var(--transition-duration);
     &:hover {
         background-color: var(--orange-color);
+    }
+}
+
+.btn-secondary{
+    padding: 9px 24px;
+    display: inline-block;
+    border-radius: 20px;
+    border: 1px solid var(--orange-color);
+    color: var(--orange-color);
+    font-size: .75rem;
+    transition-duration: var(--transition-duration);
+}
+
+// modal css
+.modal-container{
+    position: fixed;
+    background-color: rgba(0, 0, 0, .7);
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.modal{
+    background-color: var(--background-color);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    min-width: 700px;
+    &-header{
+        padding: 15px;
+        background-color: var(--green-color);
+        color: #fff;
+        font-weight: 500;
+        display: flex;
+        justify-content: space-between;
+        .fas{
+            margin-right: 10px;
+        }
+    }
+    &-body{
+        padding: 15px;
+        &-title{
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+        &-controller{
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
     }
 }
