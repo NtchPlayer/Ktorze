@@ -1,19 +1,21 @@
 <template>
   <Header/>
   <router-view />
+  <NotificationsCookie />
   <Footer/>
 </template>
 
 <script>
 import Header from '@/components/Header.vue'
 import Footer from '@/components/Footer.vue'
-
+import NotificationsCookie from '@/components/notifications/NotificationsCookie'
 
 export default {
   name: 'App',
   components: {
     Header,
-    Footer
+    Footer,
+    NotificationsCookie
   }
 }
 </script>
