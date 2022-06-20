@@ -51,6 +51,17 @@ export default {
   position: absolute;
   width: 100%;
   z-index: 1;
+  .container-buttons{
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    button{
+      margin-right: 10px;
+    }
+  }
 }
 
 .nav-list{
@@ -58,6 +69,7 @@ export default {
   justify-content: center;
   align-items: center;
   height: 100%;
+  margin-top: 30px;
   &-item{
     margin-left: 20px;
     position: relative;
@@ -98,7 +110,7 @@ export default {
       position: absolute;
       display: inline-block;
       width: 1px;
-      height: 40px;
+      height: 70px;
       background-color: var(--green-color);
       left: 0;
       bottom: 50%;
@@ -106,10 +118,4 @@ export default {
   }
 }
 
-.container-buttons{
-  position: absolute;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-}
 </style>

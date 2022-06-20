@@ -1,35 +1,39 @@
 <template>
     <footer>
         <div class="footerMain">
-            <figure class="ftLogo">
-                <p>Site crée par l'agence</p>
-                <img src="@/assets/footerLogo.png" alt="">
-            </figure>
-            
             <figure class="ftOutdoor">
 
-                <h4 class="ftTitle">Outdoor</h4>
+                <h4 class="ftTitle">A propos</h4>
 
-                <p>L'équipe</p>
-                <p> Notre projet</p>
-                <p>Les fonctionnalités</p>
+                <p><strong>Outdoor</strong> est une application pour les randonneurs.</p>
+                <p>Voyez par vous même en créant votre <router-link class="link" :to="{name: 'home'}">compte gratuit</router-link> pour constater les résultats.</p>
 
             </figure>
             
             <figure class="ftAdress">
 
-                <h4 class="ftTitle">Notre adresse</h4>
+                <h4 class="ftTitle">Nos locaux</h4>
 
-                <p>3 Rte d'Opme</p>
-                <p>63450 Chanonat</p>
-                <p>France</p>
+                <p>2905 Place Louis R Renaud<br>Laval QC H7V 0A3 </p>
+                <p>+1 (866) 661-1331</p>
 
             </figure>
             
             <figure class="ftSocialM">
-                <img src="@/assets/fb.png" alt="">
-                <img src="@/assets/insta.png" alt="">
-                <img src="@/assets/you.png" alt="">
+
+                <h4 class="ftTitle">Réseaux Sociaux</h4>
+                <p>
+                    <router-link class="link" :to="{name: 'home'}">Twitter</router-link>
+                </p>
+                <p>
+                    <router-link class="link" :to="{name: 'home'}">Facebook</router-link>
+                </p>
+                <p>
+                    <router-link class="link" :to="{name: 'home'}">Youtube</router-link>
+                </p>
+                <p>
+                    <router-link class="link" :to="{name: 'home'}">Linkedin</router-link>
+                </p>
 
                 <h4></h4>
 
@@ -38,7 +42,7 @@
         </div>
         
         <div class="footerCopyright">
-            <h4>©2022 GrounDesk. All right reserved</h4>
+            <h4>Copyright @ Outdoor 2022. Tous droits réservés.</h4>
         </div>
 
     </footer>
@@ -69,29 +73,30 @@ footer{
         height: 314px;
         display: flex;
         justify-content: space-around;
-        align-items: center;
+        padding-top: 60px;
         background-color: #F9F9F9;
 
         .ftTitle{
             font-weight: bold;
+            height: 40px;
         }
 
         .ftLogo{
-            width: 190px;
+            max-width: 240px;
             height: 170px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: space-between ;
         }
 
         .ftOutdoor, .ftAdress{
-            width: 150px;
-            height: 168px;
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            flex-direction: column;
+            max-width: 240px;
+            p{
+                line-height: 29px;
+            }
+            p~p{
+                margin-top: 30px;
+            }
+        }
+        .ftSocialM{
+            line-height: 29px;
         }
 
     }

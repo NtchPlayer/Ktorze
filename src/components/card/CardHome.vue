@@ -24,18 +24,31 @@ export default {
 
 <style lang="scss">
 .card{
+  width: 275px;
   &-icon{
     margin-bottom: 30px;
     min-height: 125px;
+    img{
+      margin-left: 10px;
+    }
   }
   &-title{
-    font-size: 1.3rem;
+    font-size: 1.4rem;
+    font-weight: 500;
     color: var(--green-color);
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     line-height: 1.3rem;
   }
   &-link{
-    text-align: right;
+    text-align: left;
   }
+  &-description{
+    margin-bottom: 15px;
+    min-height: 122px;
+    font-size: .875rem;
+    line-height: 17px;
+    white-space: break-spaces;
+  }
+
 }
 </style>

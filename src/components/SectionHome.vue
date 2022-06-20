@@ -61,12 +61,8 @@ export default {
 
 .container-card{
   margin-top: 100px;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 200px;
-  .card-description{
-    margin-bottom: 15px;
-    min-height: 100px;
-  }
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10px;
 }
 </style>

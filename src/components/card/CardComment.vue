@@ -26,18 +26,27 @@ export default {
 <style lang="scss">
 .card-comment{
   display: flex;
+  max-width: 560px;
   &-img{
-    margin-right: 20px;
+    margin-right: 30px;
   }
   &-name{
-    font-size: 1.5rem;
+    font-size: 1.75rem;
+    font-weight: 600;
     color: var(--orange-color);
  }
   &-work{
-    font-size: 1.2rem;
+    font-size: 1.125rem;
     line-height: 1.5rem;
     color: var(--green-color);
-    margin: 20px 0;
+    margin: 10px 0 20px;
+    font-weight: 500;
+    min-height: 48px
+  }
+  &-comment{
+    font-size: 0.875rem;
+    line-height: 17px;
+    font-weight: 400;
   }
 }
 </style>

@@ -49,13 +49,12 @@ export default {
 <style>
 .section-recommendation{
   margin: 100px auto;
-  max-width: 1124px;
+  max-width: 1220px;
 }
 
 .container-comments{
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 100px;
+  display: flex;
   margin: 100px 0;
+  justify-content: space-between;
 }
 </style>

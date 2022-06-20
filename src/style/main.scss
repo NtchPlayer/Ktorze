@@ -13,18 +13,20 @@ html {
     font-size: 2rem;
     text-align: center;
     color: var(--green-color);
+    font-weight: 500;
 }
 
 .btn-primary {
-    padding: 9px 24px;
+    padding: 10px 30px;
     display: inline-block;
     border-radius: 20px;
     background-color: var(--orange-color);
     color: #fff;
-    font-size: .75rem;
+    font-size: 1rem;
     transition-duration: var(--transition-duration);
+    font-weight: 500;
     &:hover {
-        background-color: var(--orange-color);
+        background-color: var(--orange-hover);
     }
 }
 
@@ -81,4 +83,12 @@ html {
             margin-bottom: 20px;
         }
     }
+}
+
+.link{
+    color: var(--orange-color);
+}
+
+strong{
+    font-weight: 500;
 }

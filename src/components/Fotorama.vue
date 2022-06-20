@@ -17,7 +17,7 @@ export default {
 
 <style lang="scss">
  .fotorama{
-  height: 100vh;
+  height: 860px;
   position: relative;
   overflow: hidden;
   display: flex;
@@ -29,12 +29,12 @@ export default {
     font-weight: 600;
     color:var(--green-color);
     position: absolute;
-    top: 37.25%;
+    top: 30.25%;
     left: 30%;
     &~p{
       text-align: left;
       position: absolute;
-      top: 44%;
+      top: 37%;
       left: 30%;
       color:var(--green-color);
     }
@@ -47,6 +47,8 @@ export default {
       z-index: -1;
       img{
         width: 100%;
+        height: 100%;
+        object-fit: cover;
       }
   }
   .btn-primary-fotorama{
@@ -55,7 +57,7 @@ export default {
     right: 20px;
     &-center{
       position: absolute;
-      top: 60%;
+      top: 53%;
       left: 50%;
       transform: translate(-50%, -50%);
     }
