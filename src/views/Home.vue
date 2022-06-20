@@ -3,6 +3,7 @@
   <SectionHome/>
   <SectionBottom/>
   <SectionRecommendation />
+  <FormHome />
 </template>
 
 <script>
@@ -10,6 +11,8 @@ import Fotorama from '@/components/Fotorama.vue'
 import SectionHome from '@/components/SectionHome.vue'
 import SectionBottom from '@/components/SectionBottom.vue'
 import SectionRecommendation from '@/components/SectionRecommendation'
+import FormHome from '@/components/FormHome'
+
 
 export default {
   name: 'Home',
@@ -17,7 +20,8 @@ export default {
     Fotorama,
     SectionHome,
     SectionBottom,
-    SectionRecommendation
+    SectionRecommendation,
+    FormHome
   }
 }
 </script>
