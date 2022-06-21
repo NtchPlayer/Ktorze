@@ -57,9 +57,8 @@
 
   </form>
 
-  <div v-if='openModal'>
-      <p>ouvert</p>
-      <button @click.self="closeModal"> WWWWWWWWWWWWWWWWWWWWWWWW</button>
+  <div v-if='openModal' class="form-modal">
+      <button @click.self="closeModal">Votre mail a bien été envoyé !</button>
   </div>
 
 </template>
@@ -139,7 +138,41 @@ export default {
           width: 100%;
         }
     }
+    &-modal{
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #ffffffd1;
+      transition: 1s;
+      animation-duration: .5s;
+      animation-name: form-modal;
+      button{
+        width: 100%;
+        height: 100%;
+        color: var(--green-color);
+        font-size: 2.5rem;
+        font-weight: 500;
+      }
+    }
   }
+
+@keyframes form-modal{
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
 
 
 </style>

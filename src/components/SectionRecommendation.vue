@@ -56,5 +56,6 @@ export default {
   display: flex;
   margin: 100px 0;
   justify-content: space-between;
+  padding: 0 10px;
 }
 </style>

@@ -54,7 +54,7 @@ export default {
   .container-buttons{
     position: absolute;
     right: 15px;
-    top: 50%;
+    top: 40%;
     transform: translateY(-50%);
     display: flex;
     align-items: center;
