@@ -1,4 +1,5 @@
 <template>
+  <Menu/>
   <Header/>
   <router-view />
   <NotificationsCookie />
@@ -9,14 +10,16 @@
 import Header from '@/components/Header.vue'
 import Footer from '@/components/Footer.vue'
 import NotificationsCookie from '@/components/notifications/NotificationsCookie'
+import Menu from '@/components/Menu.vue'
 
 export default {
   name: 'App',
   components: {
     Header,
     Footer,
-    NotificationsCookie
-  }
+    NotificationsCookie,
+    Menu
+}
 }
 </script>
 
