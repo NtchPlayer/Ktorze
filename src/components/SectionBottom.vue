@@ -87,4 +87,37 @@ export default {
   }
 }
 
+ @media (min-width: 0px) and (max-width: 768px) {
+  .sectionBottom{
+    height: unset;
+    flex-direction: column-reverse;
+    h2{
+      text-align: center;
+    }
+    img{
+      height: 300px;
+    }
+    .bottomMiddle{
+      width: 100%;
+      &:last-child{
+        margin-bottom: 30px;
+      }
+      &:first-child{
+        width: unset;
+        margin: auto;
+      }
+      &--center{
+        float: unset;
+        margin-right: 0;
+        a{
+          margin: auto;
+          display: block;
+          width: max-content;
+        }
+      }
+    }
+  }
+ }
+
+
 </style>

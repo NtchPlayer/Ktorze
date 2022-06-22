@@ -19,7 +19,7 @@ html {
 .btn-primary {
     padding: 10px 30px;
     display: inline-block;
-    border-radius: 20px;
+    border-radius: 40px;
     background-color: var(--orange-color);
     color: #fff;
     font-size: 1rem;
@@ -31,12 +31,13 @@ html {
 }
 
 .btn-secondary {
-    padding: 9px 24px;
+    padding: 10px 30px;
     display: inline-block;
-    border-radius: 20px;
+    border-radius: 40px;
     border: 1px solid var(--orange-color);
     color: var(--orange-color);
-    font-size: .75rem;
+    background: var(--background-color);
+    font-size: 1rem;
     transition-duration: var(--transition-duration);
 }
 

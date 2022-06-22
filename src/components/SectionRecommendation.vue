@@ -46,7 +46,7 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
 .section-recommendation{
   margin: 100px auto;
   max-width: 1220px;
@@ -58,4 +58,22 @@ export default {
   justify-content: space-between;
   padding: 0 10px;
 }
+
+ @media (min-width: 0px) and (max-width: 768px) {
+  .container-comments{
+    flex-direction: column;
+    align-items: center;
+    .card-comment{
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      &-img{
+        margin: 0 0 15px 0;
+      }
+      &-work{
+        min-height: unset;
+      }
+    }
+  }
+ }
 </style>
