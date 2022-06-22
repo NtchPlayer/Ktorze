@@ -38,7 +38,7 @@ export default {
   &-work{
     font-size: 1.125rem;
     line-height: 1.5rem;
-    color: var(--green-color);
+    color: var(--blue-color);
     margin: 10px 0 20px;
     font-weight: 500;
     min-height: 48px

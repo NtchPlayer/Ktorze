@@ -27,7 +27,7 @@ export default {
   h1{
     font-size: 2.2rem;
     font-weight: 600;
-    color:var(--green-color);
+    color:var(--blue-color);
     position: absolute;
     top: 30.25%;
     left: 30%;
@@ -36,7 +36,7 @@ export default {
       position: absolute;
       top: 37%;
       left: 30%;
-      color:var(--green-color);
+      color:var(--blue-color);
       display: flex;
       flex-direction: column;
     }

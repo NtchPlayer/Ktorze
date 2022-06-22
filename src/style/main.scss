@@ -12,7 +12,7 @@ html {
 .section-title {
     font-size: 2rem;
     text-align: center;
-    color: var(--green-color);
+    color: var(--blue-color);
     font-weight: 500;
 }
 
@@ -62,7 +62,7 @@ html {
     min-width: 700px;
     &-header {
         padding: 15px;
-        background-color: var(--green-color);
+        background-color: var(--blue-color);
         color: #fff;
         font-weight: 500;
         display: flex;
@@ -92,6 +92,27 @@ html {
 
 strong {
     font-weight: 500;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+    -webkit-text-fill-color: var(--orange-color);
+    -webkit-box-shadow: 0 0 0px 1000px #F5FEFF9E inset;
+    transition: background-color 5000s ease-in-out 0s;
+    background: var(--input);
+    border: 1px solid var(--input-border);
+    padding: 10px 14px;
+}
+
+input:focus-visible {
+    outline-color: var(--orange-color);
 }
 
 @media (min-width: 0px) and (max-width: 768px) {

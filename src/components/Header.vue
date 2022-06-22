@@ -75,7 +75,7 @@ export default {
     position: relative;
     a{
       font-size: 1.8rem;
-      color:var(--green-color);
+      color:var(--blue-color);
       font-weight: 600;
     }
     &-decoration{
@@ -88,7 +88,7 @@ export default {
       &::after{
         content: '';
         display: inline-block;
-        background-color: var(--green-color);
+        background-color: var(--blue-color);
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
@@ -111,7 +111,7 @@ export default {
       display: inline-block;
       width: 1px;
       height: 70px;
-      background-color: var(--green-color);
+      background-color: var(--blue-color);
       left: 0;
       bottom: 50%;
     }

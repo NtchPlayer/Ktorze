@@ -35,7 +35,7 @@ export default {
   &-title{
     font-size: 1.4rem;
     font-weight: 500;
-    color: var(--green-color);
+    color: var(--blue-color);
     margin-bottom: 20px;
     line-height: 1.3rem;
   }

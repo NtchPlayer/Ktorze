@@ -47,13 +47,13 @@ export default {
   h2{
     font-size: 3rem;
     font-weight: 600;
-    color: var(--green-color);
+    color: var(--blue-color);
     line-height: 4rem;
   }
   h3{
     font-size: 2.1875rem;
     font-weight: 200;
-    color: var(--green-color);
+    color: var(--blue-color);
   }
   .bottomMiddle{
     width: 50%;
@@ -67,7 +67,7 @@ export default {
         line-height: 50px;
         font-size: 1.375rem;
         &::before{
-          content: url("data:image/svg+xml,%3Csvg width='24' height='18' viewBox='0 0 24 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2 9L9.5 16.5L22 1.5' stroke='%2300704E' stroke-width='2.33333' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+          content: url("data:image/svg+xml,%3Csvg width='24' height='18' viewBox='0 0 24 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2 9L9.5 16.5L22 1.5' stroke='%23FE7433' stroke-width='2.33333' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
           margin-right:20px;
         }
       }
@@ -92,7 +92,11 @@ export default {
     height: unset;
     flex-direction: column-reverse;
     h2{
+      margin-bottom: 10px;
+    }
+    h2, h3{
       text-align: center;
+      line-height: unset;
     }
     img{
       height: 300px;
@@ -105,6 +109,7 @@ export default {
       &:first-child{
         width: unset;
         margin: auto;
+        padding: 0 25px;
       }
       &--center{
         float: unset;

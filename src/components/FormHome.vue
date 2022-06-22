@@ -103,7 +103,7 @@ export default {
         max-width: 600px;
       }
       h2{
-        color: var(--green-color);
+        color: var(--blue-color);
         font-size: 2.5rem;
         font-weight: 500;
       }
@@ -128,6 +128,13 @@ export default {
             background: var(--input);
             border: 1px solid var(--input-border);
             padding: 10px 14px;
+            &:focus{
+              color: var(--orange-color);
+            }
+            &:-webkit-autofill, &:-webkit-autofill-focus, &:-webkit-autofill-hover{
+              color: var(--orange-color);
+
+            }
           }
         }
         input.btn-primary{
@@ -155,7 +162,7 @@ export default {
       button{
         width: 100%;
         height: 100%;
-        color: var(--green-color);
+        color: var(--blue-color);
         font-size: 2.5rem;
         font-weight: 500;
       }

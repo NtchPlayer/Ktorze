@@ -91,7 +91,7 @@ export default {
       margin-bottom: 80px;
       &>span{
         font-size: 1.875rem;
-        color: var(--green-color);
+        color: var(--blue-color);
         font-weight: 500;
         margin-right: 20px;
       }
