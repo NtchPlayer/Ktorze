@@ -35,8 +35,6 @@
                     <router-link class="link" :to="{name: 'home'}">Linkedin</router-link>
                 </p>
 
-                <h4></h4>
-
             </figure>
 
         </div>
@@ -62,12 +60,13 @@ export default {
 <style lang="scss">
 
 
-footer{
-    height: 382px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #F9F9F9;
+    footer{
+        height: 382px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #F9F9F9;
+    }
 
     .footerMain{
         height: 314px;
@@ -81,24 +80,22 @@ footer{
             height: 40px;
         }
 
-        .ftLogo{
-            max-width: 240px;
-            height: 170px;
-        }
-
-        .ftOutdoor, .ftAdress{
-            max-width: 240px;
-            p{
-                line-height: 29px;
-            }
-            p~p{
+    }
+    
+    .ftOutdoor, .ftAdress{
+        max-width: 240px;
+        
+        p{
+            line-height: 29px;
+        } 
+    
+        p~p{
                 margin-top: 30px;
             }
-        }
-        .ftSocialM{
-            line-height: 29px;
-        }
+    }
 
+    .ftSocialM{
+        line-height: 29px;
     }
 
     .footerCopyright{
@@ -107,7 +104,38 @@ footer{
         justify-content: center;
         align-items: center;
     }
-}
+
+    @media (min-width: 0px) and (max-width: 768px){
+
+        footer{
+            height: 900px;
+        }
+        
+        .footerMain{
+            height: 771px;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .ftOutdoor,.ftAdress, .ftSocialM{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .ftTitle{
+                font-size: 21px;
+
+            }
+
+            p{
+                text-align: center;
+            }
+
+        }
+    }
+
+
+
 
 
 </style>
