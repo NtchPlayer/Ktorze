@@ -67,7 +67,8 @@ export default {
 }
  @media (min-width: 0px) and (max-width: 768px) {
   .section-home{
-    margin-bottom: 25px;
+    margin-bottom: 100px;
+    padding: 0 25px;
   }
   .container-card{
     flex-direction: column;
