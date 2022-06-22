@@ -30,7 +30,7 @@ html {
     }
 }
 
-.btn-secondary{
+.btn-secondary {
     padding: 9px 24px;
     display: inline-block;
     border-radius: 20px;
@@ -41,7 +41,7 @@ html {
 }
 
 // modal css
-.modal-container{
+.modal-container {
     position: fixed;
     background-color: rgba(0, 0, 0, .7);
     width: 100vw;
@@ -54,30 +54,30 @@ html {
     z-index: 10;
 }
 
-.modal{
+.modal {
     background-color: var(--background-color);
     border-radius: var(--border-radius);
     overflow: hidden;
     min-width: 700px;
-    &-header{
+    &-header {
         padding: 15px;
         background-color: var(--green-color);
         color: #fff;
         font-weight: 500;
         display: flex;
         justify-content: space-between;
-        .fas{
+        .fas {
             margin-right: 10px;
         }
     }
-    &-body{
+    &-body {
         padding: 15px;
-        &-title{
+        &-title {
             font-size: 1.2rem;
             font-weight: 500;
             margin-bottom: 15px;
         }
-        &-controller{
+        &-controller {
             display: flex;
             justify-content: space-between;
             margin-bottom: 20px;
@@ -85,27 +85,28 @@ html {
     }
 }
 
-.link{
+.link {
     color: var(--orange-color);
 }
 
-strong{
+strong {
     font-weight: 500;
 }
 
-@media (min-width: 0px) and (max-width: 780px) {
-    .burger-menu{
+@media (min-width: 0px) and (max-width: 768px) {
+    .burger-menu {
         display: block;
     }
-    .main-nav{
+    .main-nav {
         display: none;
     }
 }
-@media (min-width: 781px){
-    .burger-menu{
+
+@media (min-width: 769px) {
+    .burger-menu {
         display: none;
     }
-    .main-nav{
+    .main-nav {
         display: block;
     }
 }

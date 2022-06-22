@@ -65,4 +65,14 @@ export default {
   justify-content: space-between;
   padding: 0 10px;
 }
+ @media (min-width: 0px) and (max-width: 768px) {
+  .section-home{
+    margin-bottom: 25px;
+  }
+  .container-card{
+    flex-direction: column;
+    align-items: center;
+  }
+ }
+
 </style>

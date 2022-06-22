@@ -57,7 +57,7 @@
 
   </form>
 
-  <div v-if='openModal' class="form-modal">
+  <div v-show='openModal' class="form-modal">
       <button @click.self="closeModal">Votre mail a bien été envoyé !</button>
   </div>
 

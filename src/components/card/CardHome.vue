@@ -49,6 +49,29 @@ export default {
     line-height: 17px;
     white-space: break-spaces;
   }
-
 }
+
+ @media (min-width: 0px) and (max-width: 768px) {
+  .card{
+    margin-bottom: 125px;
+    &:last-child{
+      margin-bottom: 0px;
+    }
+    &-description{
+      min-height: unset;
+    }
+    &-icon {
+      img{
+        margin: auto;
+      }
+    }
+    &-link{
+      text-align: center;
+      a{
+        width: 100%;
+      }
+    }
+  }
+ }
+
 </style>
