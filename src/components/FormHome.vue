@@ -1,7 +1,7 @@
 <template>
   <div class="form-intro">
     <h2>Nous contacter</h2>
-    <p>Appelez-nous <a href="tel:(+1) 866-661-1331" class="link">(+1) 866-661-1331</a></p>
+    <p>Appelez-nous <a href="tel:(+1) 866-661-1331" class="link"><strong>(+1) 866-661-1331</strong></a></p>
     <p>Ou remplissez le formulaire ci-dessous et nous vous donnerons des nouvelles rapidement.</p>
   </div>
     <form @submit.prevent='handleSubmit' class="form-home">
@@ -41,13 +41,13 @@
 
       <div>
         <label for="message">Votre message</label>
-        <input
+        <textarea
           id="message"
           v-model="message"
           type="text"
           name="message"
           required
-          placeholder="Mon super message...">
+          placeholder="Mon super message..."/>
       </div>
       
         <input
@@ -123,17 +123,24 @@ export default {
           label{
             margin: 15px 0px 5px 0px;
             font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--blue-color);
           }
-          input{
+          input, textarea{
             background: var(--input);
             border: 1px solid var(--input-border);
             padding: 10px 14px;
+            transition: .8s;
+            outline-color: #ffffff00;
+            font-size: .875rem;
+            &::placeholder{
+              color: var(--grey-color);
+            }
             &:focus{
               color: var(--orange-color);
             }
             &:-webkit-autofill, &:-webkit-autofill-focus, &:-webkit-autofill-hover{
               color: var(--orange-color);
-
             }
           }
         }

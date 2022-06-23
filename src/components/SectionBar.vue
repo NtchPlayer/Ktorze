@@ -1,6 +1,6 @@
 <template>
   <div class="section-bar">
-    <p><span>Testez</span> l'application dès aujourd'hui</p>
+    <p><strong>Rejoindre l'aventure</strong>  dès aujourd'hui</p>
     <router-link class="btn-secondary" :to="{name: 'home'}">Commencer</router-link>
 
   </div>
@@ -15,7 +15,8 @@ export default {
 <style lang="scss">
     .section-bar{
         display: flex;
-        justify-content: space-between;
+        gap: 75px;
+        justify-content: center;
         align-items: center;
         width: 100%;
         background: var(--orange-color);

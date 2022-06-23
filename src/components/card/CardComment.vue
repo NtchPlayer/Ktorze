@@ -3,7 +3,7 @@
     <figure class="card-comment-img">
       <img :src="require(`@/assets/comments/${img.src}.png`)" :alt="img.src" />
     </figure>
-    <div>
+    <div class="card-comment-content">
       <h1 class="card-comment-name" v-text="name" />
       <h2 class="card-comment-work" v-text="work" />
       <p class="card-comment-comment" v-text="comment" />
@@ -26,7 +26,8 @@ export default {
 <style lang="scss">
 .card-comment{
   display: flex;
-  max-width: 560px;
+  max-width: 900px;
+
   &-img{
     margin-right: 30px;
   }
@@ -41,7 +42,8 @@ export default {
     color: var(--blue-color);
     margin: 10px 0 20px;
     font-weight: 500;
-    min-height: 48px
+    min-height: 48px;
+    max-width: 280px;
   }
   &-comment{
     font-size: 0.875rem;

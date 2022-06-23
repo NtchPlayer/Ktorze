@@ -5,9 +5,6 @@
     </figure>
     <h1 class="card-title" v-text="title" />
     <p class="card-description" v-text="description" />
-    <p class="card-link">
-      <router-link class="btn-primary" :to="{name: 'home'}">Lire la suite</router-link>
-    </p>
   </article>
 </template>
 
@@ -24,7 +21,7 @@ export default {
 
 <style lang="scss">
 .card{
-  width: 275px;
+  max-width: 275px;
   &-icon{
     margin-bottom: 30px;
     min-height: 125px;
@@ -38,6 +35,8 @@ export default {
     color: var(--blue-color);
     margin-bottom: 20px;
     line-height: 1.3rem;
+    min-height: 42px;
+
   }
   &-link{
     text-align: left;

@@ -5,10 +5,10 @@
         <h2>L’âme de la randonnée,</h2>
         <h3>ce n’est pas que pour les grands !</h3>
         <ul>
-          <li>Faire des jeux de pistes</li>
-          <li>Suivre le parcours</li>
-          <li>Gagner des points avec niveaux...</li>
-          <li>...leur permettant de débloquer des items !</li>
+          <li>Se renseigner sur votre parcours</li>
+          <li>Redécouvrir la France sous un autre angle</li>
+          <li>Participer à la préservation de notre patrimoine</li>
+          <li>...Et se lancer dans votre PROPRE aventure !</li>
         </ul>
         <router-link class="btn-primary" :to="{name: 'home'}">Découvrir l’application</router-link>
       </p>
@@ -34,12 +34,13 @@ export default {
 .sectionBottom{
   margin-bottom: 50px;
   width: 100%;
-  height: 800px;
+  max-height: 550px;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 0 50px;
   img{
-      height: 800px;
+      height: 550px;
       width: 100%;
       object-fit: cover;
       z-index:-1;

@@ -5,8 +5,8 @@
 
                 <h4 class="ftTitle">A propos</h4>
 
-                <p><strong>Outdoor</strong> est une application pour les randonneurs.</p>
-                <p>Voyez par vous même en créant votre <router-link class="link" :to="{name: 'home'}">compte gratuit</router-link> pour constater les résultats.</p>
+                <p><strong>Balise 360</strong> est un concept pour les randonneurs engagés pour l’environnement.</p>
+                <p>Aidez dès maintenant à contribuer au patrimoine français en créant votre <router-link class="link" :to="{name: 'home'}">compte gratuit.</router-link></p>
 
             </figure>
             
@@ -16,6 +16,11 @@
 
                 <p>2905 Place Louis R Renaud<br>Laval QC H7V 0A3 </p>
                 <p>+1 (866) 661-1331</p>
+                <p>
+                    <strong>
+                        <router-link class="link" :to="{name: 'home'}">info@balise360.info</router-link>
+                    </strong>
+                </p>
 
             </figure>
             
@@ -23,16 +28,24 @@
 
                 <h4 class="ftTitle">Réseaux Sociaux</h4>
                 <p>
-                    <router-link class="link" :to="{name: 'home'}">Twitter</router-link>
+                    <strong>
+                        <router-link class="link" :to="{name: 'home'}">Twitter</router-link>
+                    </strong>
                 </p>
                 <p>
-                    <router-link class="link" :to="{name: 'home'}">Facebook</router-link>
+                    <strong>
+                        <router-link class="link" :to="{name: 'home'}">Facebook</router-link>
+                    </strong>
                 </p>
                 <p>
-                    <router-link class="link" :to="{name: 'home'}">Youtube</router-link>
+                    <strong>
+                        <router-link class="link" :to="{name: 'home'}">Youtube</router-link>
+                    </strong>
                 </p>
                 <p>
-                    <router-link class="link" :to="{name: 'home'}">Linkedin</router-link>
+                    <strong>
+                        <router-link class="link" :to="{name: 'home'}">Linkedin</router-link>
+                    </strong>
                 </p>
 
             </figure>
@@ -40,7 +53,7 @@
         </div>
         
         <div class="footerCopyright">
-            <h4>Copyright @ Outdoor 2022. Tous droits réservés.</h4>
+            <h4>Copyright @ K-Torze 2022. Tous droits réservés.</h4>
         </div>
 
     </footer>
@@ -78,6 +91,9 @@ export default {
         .ftTitle{
             font-weight: bold;
             height: 40px;
+            color: var(--blue-color);
+            font-size: 1.3125rem;
+
         }
 
     }

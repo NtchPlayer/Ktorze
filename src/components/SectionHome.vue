@@ -1,6 +1,6 @@
 <template>
 <section class="section-home">
-  <h2 class="section-title">Les fonctionnalités qui vous manquaient</h2>
+  <h2 class="section-title">Balise 360, c’est</h2>
   <div class="container-card">
     <CardHome
       v-for="(card, i) of cards"
@@ -26,24 +26,24 @@ export default {
     return {
       cards: [
         {
-          title: 'Des cartes hors ligne avec de la géolocalisation',
+          title: 'Une carte et son itinéraire',
           description: 'Redécouvrez les joies du parcours au grand air sans risque de vous perdre ou de dévier de votre parcours car vous aurez toujours votre carte disponible sur votre téléphone.',
           icon: {
             src: 'map',
             alt: 'Carte'
           }
         }, {
-          title: 'L’histoire de la faune et de la flore en direct',
-          description: 'Il est important d’être un randonneur averti pour sa patrie et bien connaître l’histoire du lieu pour en profiter pleinement.',
+          title: 'S\'engager pour préserver',
+          description: 'Devenez un acteur du changement en contribuant à la conservation du patrimoine français. Rien de plus simple, il suffira de nous partager vos observations sur votre environnement.',
           icon: {
             src: 'bee',
             alt: 'Abeille'
           }
         }, {
-          title: 'Des conseils de rando spécifiques à vous',
-          description: 'Perdu sur quelques points ou juste débutant ? Laissez-vous guider par nos astuces. Plus vous utilisez l’application, plus notre précision vous concernant augmente !',
+          title: 'Une communauté active et passionnée',
+          description: 'Perdu sur quelques points ou juste débutant ? Laissez-vous guider par les retours de la communauté. Plus vous utilisez Balise 360, plus notre précision vous concernant augmente !',
           icon: {
-            src: 'idea',
+            src: 'community',
             alt: 'Ampoule'
           }
         }
@@ -61,9 +61,10 @@ export default {
 
 .container-card{
   margin-top: 100px;
+  gap: 25px;
   display: flex;
   justify-content: space-between;
-  padding: 0 10px;
+  padding: 0 30px;
 }
  @media (min-width: 0px) and (max-width: 768px) {
   .section-home{

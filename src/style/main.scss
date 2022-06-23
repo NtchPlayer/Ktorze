@@ -7,6 +7,7 @@ html {
     margin: 0;
     font-family: 'Roboto', sans-serif;
     background-color: var(--background-color);
+    color: var(--purple-color);
 }
 
 .section-title {
@@ -91,7 +92,7 @@ html {
 }
 
 strong {
-    font-weight: 500;
+    font-weight: 600;
 }
 
 input:-webkit-autofill,
@@ -111,8 +112,13 @@ select:-webkit-autofill:focus {
     padding: 10px 14px;
 }
 
-input:focus-visible {
+#app input:focus-visible,
+#app textarea:focus-visible {
     outline-color: var(--orange-color);
+}
+
+textarea {
+    resize: none;
 }
 
 @media (min-width: 0px) and (max-width: 768px) {

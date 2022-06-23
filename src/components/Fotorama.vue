@@ -3,9 +3,9 @@
     <figure>
       <img alt="Vue logo" src="@/assets/coverfotorama.png">
     </figure>
-    <h1><span>En avant la marche </span><span>avec Outdoor</span></h1>
-    <p><span>La première application mobile pour les randonneurs </span><span>qui saura combler votre coeur d’aventurier en toute sérénité !</span></p>
-    <router-link class="btn-primary btn-primary-fotorama-center" :to="{name: 'home'}">Découvrir l'application</router-link>
+    <h1><span>En avant la marche </span><span>avec Balise 360</span></h1>
+    <p><span>Le couteau suisse de tous les randonneurs qui saura </span><span>combler votre coeur d’aventurier en toute sérénité !</span></p>
+    <router-link class="btn-primary btn-primary-fotorama-center" :to="{name: 'home'}">Découvrir le site</router-link>
   </section>
 </template>
 
@@ -17,7 +17,7 @@ export default {
 
 <style lang="scss">
  .fotorama{
-  height: 860px;
+  height: 100vh;
   position: relative;
   overflow: hidden;
   display: flex;
@@ -25,11 +25,13 @@ export default {
   justify-content: center;
   z-index: 0;
   h1{
+    display: flex;
+    flex-direction: column;
     font-size: 2.2rem;
     font-weight: 600;
     color:var(--blue-color);
     position: absolute;
-    top: 30.25%;
+    top: 26.25%;
     left: 30%;
     &~p{
       text-align: left;
@@ -43,7 +45,7 @@ export default {
   }
   figure{
       position: absolute;
-      height: 860px;
+      height: 100vh;
       width: 100%;
       top: 0;
       z-index: -1;
@@ -69,7 +71,7 @@ export default {
 
  @media (min-width: 0px) and (max-width: 768px) {
   .fotorama{
-    height: 580px;
+    height: 100vh;
     align-items: center;
     justify-content: center;
     padding: 0 25px;
