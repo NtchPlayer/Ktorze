@@ -211,6 +211,7 @@ export default {
         }
         this.axios.post("https://api.sendinblue.com/v3/contacts", body, { headers })
             .then(() => {
+              this.$gtm.dataLayer().push({event: 'InscriptionNewsletter'})
               this.axios.post(
                   'https://api.sendinblue.com/v3/smtp/email',
                   {
