@@ -65,6 +65,11 @@ button {
 textarea {
   font-family : inherit;
   font-size   : 100%;
+  resize: none;
+}
+
+input{
+  border: none;
 }
 
 a{
