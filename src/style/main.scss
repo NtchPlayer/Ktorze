@@ -26,8 +26,19 @@ html {
     font-size: 1rem;
     transition-duration: var(--transition-duration);
     font-weight: 500;
+    cursor: pointer;
     &:hover {
         background-color: var(--orange-hover);
+    }
+}
+
+input.btn-primary{
+    margin-top: 25px;
+    font-weight: 600;
+    width: 100%;
+    &:disabled{
+        cursor: not-allowed;
+        background-color: var(--grey-color);
     }
 }
 
@@ -95,6 +106,8 @@ strong {
     font-weight: 600;
 }
 
+// Input css
+
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
@@ -112,14 +125,50 @@ select:-webkit-autofill:focus {
     padding: 10px 14px;
 }
 
-#app input:focus-visible,
-#app textarea:focus-visible {
-    outline-color: var(--orange-color);
+.container-input{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    label{
+        margin: 15px 0px 5px 0px;
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: var(--blue-color);
+    }
 }
 
-textarea {
-    resize: none;
+.input,
+.select{
+    background: var(--input);
+    border: 1px solid var(--input-border);
+    padding: 10px 14px;
+    transition: var(--transition-duration);
+    outline: transparent solid 2px;
+    border-radius: var(--border-radius);
+    font-size: .875rem;
+    &::placeholder{
+        color: var(--grey-color);
+    }
+    &:focus{
+        color: var(--orange-color);
+    }
+    &.input-invalid{
+        border: 1px solid red;
+    }
+    &:-webkit-autofill, &:-webkit-autofill-focus, &:-webkit-autofill-hover{
+        color: var(--orange-color);
+    }
+    &:focus,
+    &:focus-visible{
+        outline-color: var(--orange-color);
+    }
 }
+
+.input-error{
+    padding: 10px 0;
+}
+
+// Responsive
 
 @media (min-width: 0px) and (max-width: 768px) {
     .burger-menu {
