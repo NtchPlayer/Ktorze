@@ -13,6 +13,13 @@ export default {
   components: {
     Footer,
     NotificationsCookie
+  },
+  methods: {
+    getList() {
+      this.axios.get(api).then((response) => {
+        console.log(response.data)
+      })
+    }
   }
 }
 </script>

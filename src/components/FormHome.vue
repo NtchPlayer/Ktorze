@@ -1,10 +1,12 @@
 <template>
+<div>
   <div class="form-intro">
     <h2>Nous contacter</h2>
     <p>Appelez-nous <a href="tel:(+1) 866-661-1331" class="link"><strong>(+1) 866-661-1331</strong></a></p>
     <p>Ou remplissez le formulaire ci-dessous et nous vous donnerons des nouvelles rapidement.</p>
   </div>
-    <form @submit.prevent='handleSubmit' class="form-home">
+
+  <form @submit.prevent='sendingEmail' class="form-home">
       <div>
         <label for="name">Votre nom</label>
         <input
@@ -50,6 +52,8 @@
           placeholder="Mon super message..."/>
       </div>
       
+      <p v-show="errorMessage">{{ errorMessage }}</p>
+
         <input
           type="submit"
           value="Envoyer"
@@ -60,6 +64,7 @@
   <div v-show='openModal' class="form-modal">
       <button @click.self="closeModal">Votre mail a bien été envoyé !</button>
   </div>
+</div>
 
 </template>
 
@@ -74,7 +79,8 @@ export default {
             mail: '',
             topic: '',
             message: '',
-            openModal: false
+            openModal: false,
+            errorMessage: undefined
         }
     },
     methods: {
@@ -83,15 +89,32 @@ export default {
         },
         closeModal(){
             this.openModal=false
+        },
+        
+        sendingEmail() {
+          this.errorMessage = undefined
+          const body = { 
+              email: this.mail,
+              listIds: [6]
+          }
+          const headers = { 
+            'api-key': "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"
+          }
+          this.axios.post("https://api.sendinblue.com/v3/contacts", body, { headers })
+            .then((response) => {
+              console.log(response)
+              this.openModal=true
+            })
+            .catch((e) => {
+              this.errorMessage = e.response.data.message
+              setTimeout(() => {
+                this.errorMessage = undefined;
+              }, 5000)
+            })
         }
     }
-  
 } 
-
-
-
 </script>
-
     
 <style lang="scss">
   .form{
