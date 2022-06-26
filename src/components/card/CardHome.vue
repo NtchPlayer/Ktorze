@@ -27,6 +27,7 @@ export default {
     min-height: 125px;
     img{
       margin-left: 10px;
+      height: 110px;
     }
   }
   &-title{

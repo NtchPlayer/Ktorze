@@ -5,7 +5,7 @@
     </figure>
     <h1><span>En avant la marche </span><span>avec Balise 360</span></h1>
     <p><span>Le couteau suisse de tous les randonneurs qui saura </span><span>combler votre coeur d’aventurier en toute sérénité !</span></p>
-    <router-link class="btn-primary btn-primary-fotorama-center" :to="{name: 'home'}">Découvrir le site</router-link>
+    <router-link class="btn-primary" :to="{name: 'home'}">Découvrir le site</router-link>
   </section>
 </template>
 
@@ -23,6 +23,7 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   z-index: 0;
   h1{
     display: flex;
@@ -30,42 +31,32 @@ export default {
     font-size: 2.2rem;
     font-weight: 600;
     color:var(--blue-color);
-    position: absolute;
-    top: 26.25%;
-    left: 30%;
+    margin-bottom: 30px;
     &~p{
       text-align: left;
-      position: absolute;
-      top: 37%;
-      left: 30%;
       color:var(--blue-color);
       display: flex;
       flex-direction: column;
+      margin-bottom: 25px;
+      text-align: center;
     }
   }
   figure{
-      position: absolute;
-      height: 100vh;
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    top: 0;
+    z-index: -1;
+    img{
       width: 100%;
-      top: 0;
-      z-index: -1;
-      img{
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
+      height: 100%;
+      object-fit: cover;
+    }
   }
   .btn-primary-fotorama{
     position: absolute;
     top: 20px;
     right: 20px;
-    &-center{
-      position: absolute;
-      top: 53%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-    }
-
   }
  }
 
