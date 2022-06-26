@@ -33,15 +33,15 @@
     </div>
 
     <div class="container-input">
-      <label for="mail">Email</label>
+      <label for="email">Email</label>
       <input
-        id="mail"
+        id="email"
         class="input"
         :class="{ 'input-invalid': !isEmailValid }"
-        v-model="mail"
+        v-model="email"
         type="email"
         pattern=".+@.+."
-        name="mail"
+        name="email"
         required
         placeholder="EMAIL"
       >
@@ -99,7 +99,7 @@
         </p>
       </div>
 
-    <p v-show="error">
+    <p class="input-error" v-show="error">
       Nous n'avons pas pu confirmer votre inscription.
     </p>
 
@@ -123,11 +123,11 @@
 
 export default {
   name: 'FormHome',
-  data(){
-    return{
+  data: function () {
+    return {
       firstname: '',
       lastname: '',
-      mail: '',
+      email: '',
       phone: '',
       date: '',
       prefixNumber: '+33',
@@ -137,36 +137,55 @@ export default {
         {
           id: 'FR',
           code: '+33',
-          regex: /^(0)[1-9](\d{2}){4}$/g
+          regex: /^(\+33)[1-9](\d{2}){4}$/g
         }, {
           id: 'USA',
-          code: '+303',
-          regex: /^[0-9]+$/
-        }
-      ]
+          code: '+1'
+        }, {
+          id: 'UK',
+          code: '+44'
+        }, {
+          id: 'CH',
+          code: '+41'
+        }, {
+          id: 'NL',
+          code: '+39'
+        }, {
+          id: 'ES',
+          code: '+34'
+        }, {
+          id: 'DE',
+          code: '+49'
+        }, {
+          id: 'BE',
+          code: '+32'
+      }]
     }
   },
   computed: {
+    phoneNumber() {
+      const tempPhone = this.phone[0] === '0' ? this.phone.substring(1) : this.phone
+      return `${this.prefixNumber}${tempPhone}`
+    },
     isEmailValid () {
-      return this.mail === '' || /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(this.mail)
+      return this.email === '' || /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(this.email)
     },
     isPhoneValid () {
-      const regex = this.phonePrefix.find(prefix => prefix.code === this.prefixNumber)
-      return this.phone === '' || regex.regex.test(this.phone)
+      // const regexChoose = this.phonePrefix.find(prefix => prefix.code === this.prefixNumber)
+      // const regex = regexChoose.regex || /^[0-9]+$/
+      return this.phone === '' || /^(\+33)[1-9](\d{2}){4}$/g.test(this.phoneNumber)
     },
     isDateValid () {
       return this.date === '' || /^\d{4}\-(0[1-9]|1[0-2])\-(0[1-9]|[12][0-9]|3[01])$/.test(this.date)
     },
     isFormValid () {
+      // const regexChoose = this.phonePrefix.find(prefix => prefix.code === this.prefixNumber)
+      // const regex = regexChoose.regex || /^[0-9]+$/
       return this.firstname !== ''
         && this.lastname !== ''
-        && /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(this.mail)
-        && /^[0-9]+$/.test(this.phone)
+        && /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(this.email)
+        && /^(\+33)[1-9](\d{2}){4}$/g.test(this.phoneNumber)
         && /^\d{4}\-(0[1-9]|1[0-2])\-(0[1-9]|[12][0-9]|3[01])$/.test(this.date)
-    },
-    phoneNumber() {
-      const tempPhone = this.phone[0] === '0' ? this.phone.substring(1) : this.phone
-      return `${this.prefixNumber}${tempPhone}`
     }
   },
   methods: {
@@ -175,25 +194,47 @@ export default {
     },
 
     sendingEmail() {
-      this.errorMessage = undefined
-      const body = {
-          email: this.mail,
-          listIds: [6]
+      if (this.isEmailValid) {
+        this.error = false
+        const body = {
+          email: this.email,
+          listIds: [7],
+          attributes: {
+            PRENOM: this.firstname,
+            NOM: this.lastname,
+            DATE_DE_NAISSANCE: this.date,
+            SMS: this.phoneNumber
+          }
+        }
+        const headers = {
+          'api-key': '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'
+        }
+        this.axios.post("https://api.sendinblue.com/v3/contacts", body, { headers })
+            .then(() => {
+              this.$gtm.dataLayer().push({event: 'InscriptionNewsletter'})
+              this.axios.post(
+                  'https://api.sendinblue.com/v3/smtp/email',
+                  {
+                    to: [{
+                      email: this.email,
+                      name: this.firstname
+                    }],
+                    templateId: 3
+                  },
+                  { headers }
+              )
+              .catch((e) => {
+                console.log(e)
+              })
+              this.openModal=true
+            })
+            .catch((e) => {
+              this.e = e.response.data.message
+              setTimeout(() => {
+                this.error = true;
+              }, 5000)
+            })
       }
-      const headers = {
-        'api-key': "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"
-      }
-      this.axios.post("https://api.sendinblue.com/v3/contacts", body, { headers })
-        .then((response) => {
-          console.log(response)
-          this.openModal=true
-        })
-        .catch((e) => {
-          this.errorMessage = e.response.data.message
-          setTimeout(() => {
-            this.errorMessage = undefined;
-          }, 5000)
-        })
     }
   }
 }

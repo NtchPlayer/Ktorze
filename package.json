@@ -1,6 +1,7 @@
 {
-    "name": "ktorze",
+    "name": "balise360",
     "version": "0.1.0",
+    "author": "K-Torze DevTeam",
     "private": true,
     "scripts": {
         "start": "vue-cli-service serve",
@@ -13,8 +14,8 @@
         "core-js": "^3.8.3",
         "vue": "^3.2.13",
         "vue-axios": "^3.4.1",
-        "vue-router": "^4.0.16",
-        "vue-meta": "^3.0.0-alpha.7"
+        "vue-meta": "^3.0.0-alpha.8",
+        "vue-router": "^4.0.16"
     },
     "devDependencies": {
         "@babel/core": "^7.12.16",

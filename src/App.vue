@@ -1,4 +1,7 @@
 <template>
+  <metainfo>
+    <template v-slot:title="{ content }" />
+  </metainfo>
   <router-view />
   <NotificationsCookie />
   <Footer/>
@@ -19,6 +22,59 @@ export default {
       this.axios.get(api).then((response) => {
         console.log(response.data)
       })
+    }
+  },
+  metaInfo () {
+    return {
+      title: 'Balise 360, la solution de tous les randonneurs engagés',
+      description: 'Balise 360, la solution qui permet à tous les randonneurs passionnés et engagés de préparer ses itinéraires de randonnées, de se repérer avec ses cartes numériques et son GPS intégré.',
+      htmlAttrs: {
+        lang: 'fr',
+      },
+      meta: [
+        {
+          name: 'keywords',
+          content: 'Randonnée, rando pédestre, itinéraires randonnées pédestres, site randonnée, circuit de randonnée, carte randonnée, GPS randonnée'
+        }, {
+          name: 'author',
+          content: 'K-Torze DevTeam'
+        }, {
+          name: 'theme-color',
+          content: '#FE7433'
+        }, {
+          name: 'mobile-web-app-capable"',
+          content: 'yes'
+        }, {
+          name: 'apple-mobile-web-app-status-bar-style',
+          content: 'black-translucent'
+        }, {
+          name: 'apple-mobile-web-app-title',
+          content: 'A Double Sens'
+        }
+      ],
+      og: {
+        title: 'Balise 360, la solution de tous les randonneurs engagés',
+        description: 'Balise 360, la solution qui permet à tous les randonneurs passionnés et engagés de préparer ses itinéraires de randonnées, de se repérer avec ses cartes numériques et son GPS intégré.',
+        url: 'https://balise360.fr/',
+        type: 'website',
+        site_name: 'Balise360',
+        local: 'fr_FR'
+        // image: '',
+        // 'image:secure_url': '',
+        // 'image:type': 'image/jpg',
+        // 'image:width': '1200',
+        // 'image:height': '630',
+        // 'image:alt': 'Logo Balise 360'
+      },
+      twitter: {
+        title: 'Balise 360, la solution de tous les randonneurs engagés',
+        description: 'Balise 360, la solution qui permet à tous les randonneurs passionnés et engagés de préparer ses itinéraires de randonnées, de se repérer avec ses cartes numériques et son GPS intégré.',
+        url: 'https://balise360.fr/',
+        site: '@balise360.fr',
+        creator: '@Balise360 DevTeam'
+        // image: '',
+        // card: 'summary_large_image'
+      }
     }
   }
 }
