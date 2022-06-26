@@ -3,9 +3,11 @@
     <figure>
       <img alt="Vue logo" src="@/assets/coverfotorama.png">
     </figure>
-    <h1><span>En avant la marche </span><span>avec Balise 360</span></h1>
-    <p><span>Le couteau suisse de tous les randonneurs qui saura </span><span>combler votre coeur d’aventurier en toute sérénité !</span></p>
-    <router-link class="btn-primary" :to="{name: 'home'}">Découvrir le site</router-link>
+    <div class="fotorama-content">
+      <h1>La rando c’est le pied !</h1>
+      <p><span>Rejoignez la plateforme qui regroupe les endroits les  </span><span>plus spectaculaires du patrimoine naturel français.</span></p>
+      <router-link class="btn-primary" :to="{name: 'home'}">Commencez l'aventure !</router-link>
+    </div>
   </section>
 </template>
 
@@ -17,28 +19,36 @@ export default {
 
 <style lang="scss">
  .fotorama{
-  height: 100vh;
+  height: calc(100vh - 92px) ;
   position: relative;
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
   z-index: 0;
+  &-content{
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    text-align: left;
+    padding: 10% 10%;
+  }
   h1{
     display: flex;
     flex-direction: column;
-    font-size: 2.2rem;
+    font-size: 3.3125rem;
     font-weight: 600;
-    color:var(--blue-color);
+    color:var(--orange-color);
     margin-bottom: 30px;
     &~p{
       text-align: left;
-      color:var(--blue-color);
+      color:var(--pale-color);
       display: flex;
       flex-direction: column;
       margin-bottom: 25px;
-      text-align: center;
+      font-size: 1.5rem;
+      line-height: 1.8rem;
     }
   }
   figure{

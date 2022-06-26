@@ -34,12 +34,12 @@ export default {
   &-name{
     font-size: 1.75rem;
     font-weight: 600;
-    color: var(--orange-color);
+    color: var(--green-color);
  }
   &-work{
     font-size: 1.125rem;
     line-height: 1.5rem;
-    color: var(--blue-color);
+    color: var(--green-color);
     margin: 10px 0 20px;
     font-weight: 500;
     min-height: 48px;

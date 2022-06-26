@@ -6,21 +6,15 @@
                 <h4 class="ftTitle">A propos</h4>
 
                 <p><strong>Balise 360</strong> est un concept pour les randonneurs engagés pour l’environnement.</p>
-                <p>Aidez dès maintenant à contribuer au patrimoine français en créant votre <router-link class="link" :to="{name: 'home'}">compte gratuit.</router-link></p>
+                <p>Aidez dès maintenant à contribuer au patrimoine français en créant votre compte.</p>
 
             </figure>
             
             <figure class="ftAdress">
 
-                <h4 class="ftTitle">Nos locaux</h4>
+                <h4 class="ftTitle">Nous contacter</h4>
 
-                <p>2905 Place Louis R Renaud<br>Laval QC H7V 0A3 </p>
-                <p>+1 (866) 661-1331</p>
-                <p>
-                    <strong>
-                        <router-link class="link" :to="{name: 'home'}">info@balise360.info</router-link>
-                    </strong>
-                </p>
+                <p>Notre service après ventes :<br>+33 00 00 00 00 00</p>
 
             </figure>
             
@@ -28,33 +22,25 @@
 
                 <h4 class="ftTitle">Réseaux Sociaux</h4>
                 <p>
-                    <strong>
-                        <router-link class="link" :to="{name: 'home'}">Twitter</router-link>
-                    </strong>
+                    <router-link class="link" :to="{name: 'home'}">Facebook</router-link>
                 </p>
                 <p>
-                    <strong>
-                        <router-link class="link" :to="{name: 'home'}">Facebook</router-link>
-                    </strong>
+                    <router-link class="link" :to="{name: 'home'}">Instagram</router-link>
                 </p>
                 <p>
-                    <strong>
-                        <router-link class="link" :to="{name: 'home'}">Youtube</router-link>
-                    </strong>
+                    <router-link class="link" :to="{name: 'home'}">Pinterest</router-link>
                 </p>
                 <p>
-                    <strong>
-                        <router-link class="link" :to="{name: 'home'}">Linkedin</router-link>
-                    </strong>
+                    <router-link class="link" :to="{name: 'home'}">Spotify</router-link>
                 </p>
 
             </figure>
 
         </div>
         
-        <div class="footerCopyright">
+        <!-- <div class="footerCopyright">
             <h4>Copyright @ K-Torze 2022. Tous droits réservés.</h4>
-        </div>
+        </div> -->
 
     </footer>
   
@@ -78,7 +64,7 @@ export default {
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: #F9F9F9;
+        background-color: var(--green-color);
     }
 
     .footerMain{
@@ -86,20 +72,20 @@ export default {
         display: flex;
         justify-content: space-around;
         padding-top: 60px;
-        background-color: #F9F9F9;
-
         .ftTitle{
             font-weight: bold;
+            font-size: 1.5rem;
             height: 40px;
-            color: var(--blue-color);
+            color: var(--pale-color);
             font-size: 1.3125rem;
+            text-transform: uppercase;
 
         }
 
     }
     
     .ftOutdoor, .ftAdress{
-        max-width: 240px;
+        max-width: 250px;
         
         p{
             line-height: 29px;
@@ -112,6 +98,9 @@ export default {
 
     .ftSocialM{
         line-height: 29px;
+        p{
+            line-height: 2.5rem;
+        }
     }
 
     .footerCopyright{

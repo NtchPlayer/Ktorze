@@ -21,19 +21,19 @@ export default {
 
 <style lang="scss">
 .card{
-  max-width: 275px;
+  max-width: 325px;
   &-icon{
     margin-bottom: 30px;
-    min-height: 125px;
+    min-height: 55px;
     img{
       margin-left: 10px;
-      height: 110px;
+      height: 54px;
     }
   }
   &-title{
-    font-size: 1.4rem;
-    font-weight: 500;
-    color: var(--blue-color);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--green-color);
     margin-bottom: 20px;
     line-height: 1.3rem;
     min-height: 42px;
@@ -45,9 +45,10 @@ export default {
   &-description{
     margin-bottom: 15px;
     min-height: 122px;
-    font-size: .875rem;
+    font-size: 1rem;
     line-height: 17px;
     white-space: break-spaces;
+    color: var(--green-color);
   }
 }
 

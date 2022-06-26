@@ -19,7 +19,7 @@ export default {
         justify-content: center;
         align-items: center;
         width: 100%;
-        background: var(--orange-color);
+        background: var(--green-color);
         padding: 80px;
         margin-bottom: 80px;
         p{

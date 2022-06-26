@@ -250,7 +250,7 @@ export default {
       max-width: 600px;
     }
     h2{
-      color: var(--blue-color);
+      color: var(--green-color);
       font-size: 2.5rem;
       font-weight: 500;
     }
@@ -281,7 +281,7 @@ export default {
     button{
       width: 100%;
       height: 100%;
-      color: var(--blue-color);
+      color: var(--green-color);
       font-size: 2.5rem;
       font-weight: 500;
     }

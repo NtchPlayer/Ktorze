@@ -1,6 +1,6 @@
 <template>
 <section class="section-home">
-  <h2 class="section-title">Balise 360, c’est</h2>
+  <h2 class="section-title"><img class="section-title-img" alt="deco citation" src="@/assets/green-loop.svg">La nature vous appelle !</h2>
   <div class="container-card">
     <CardHome
       v-for="(card, i) of cards"
@@ -10,6 +10,9 @@
       :icon="card.icon"
     />
   </div>
+  <router-link class="btn-primary" :to="{name: 'home'}">Télécharger l'application</router-link>
+  <img class="section-home-img" alt="deco citation" src="@/assets/topo-left.png">
+  <img class="section-home-img-second" alt="deco citation" src="@/assets/topo-right.png">
 </section>
 
 </template>
@@ -26,25 +29,25 @@ export default {
     return {
       cards: [
         {
-          title: 'Une carte et son itinéraire',
-          description: 'Redécouvrez les joies du parcours au grand air sans risque de vous perdre ou de dévier de votre parcours car vous aurez toujours votre carte disponible sur votre téléphone.',
+          title: 'Des parcours personnalisés',
+          description: 'Trouvez des parcours de randonnée adaptés à vos envies. Indiquez différents critères sur votre profil comme le niveau, la durée et le type de parcours.',
           icon: {
             src: 'map',
             alt: 'Carte'
           }
         }, {
-          title: 'S\'engager pour préserver',
-          description: 'Devenez un acteur du changement en contribuant à la conservation du patrimoine français. Rien de plus simple, il suffira de nous partager vos observations sur votre environnement.',
+          title: 'Protégez l’environnement',
+          description: 'Ressourcez vous dans la nature mais ressourcez la également au travers de vos parcours. Randonnez tout en apprenant à observer, analyser et préserver la nature.',
           icon: {
-            src: 'bee',
-            alt: 'Abeille'
+            src: 'leaf',
+            alt: 'Feuille'
           }
         }, {
-          title: 'Une communauté active et passionnée',
-          description: 'Perdu sur quelques points ou juste débutant ? Laissez-vous guider par les retours de la communauté. Plus vous utilisez Balise 360, plus notre précision vous concernant augmente !',
+          title: 'Rejoignez la communauté',
+          description: 'Parcourez les sentiers mais aussi les avis de tous les randonneurs sur notre plateforme. Partagez vos expériences et encouragez celles des autres !',
           icon: {
-            src: 'community',
-            alt: 'Ampoule'
+            src: 'heart',
+            alt: 'Coeur'
           }
         }
       ]
@@ -57,6 +60,33 @@ export default {
 .section-home{
   margin: 100px auto;
   max-width: 1124px;
+  position: relative;
+  &-img{
+    position: absolute;
+    top: -245px;
+    left: -460px;
+    z-index: -1;
+    &-second{
+      position: absolute;
+      bottom: -225px;
+      right: -460px;
+      z-index: -1;
+    }
+  }
+  .btn-primary{
+    text-align: center;
+    margin: auto;
+    max-width: max-content;
+    display: block;  
+  }
+  .section-title{
+    position: relative;
+    &-img{
+      position: absolute;
+      top: -35px;
+      left: -55px;
+    }
+  }
 }
 
 .container-card{
