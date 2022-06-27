@@ -11,7 +11,7 @@
 
       <div class="bottomMiddle">
         <div class="bottomMiddle--center">
-          <h2>Une expérience personnalisée pour chaque utilisateur</h2>
+          <h2>Une <span>expérience personnalisée</span> pour chaque utilisateur</h2>
           <p>
             Vous pouvez avec  notre application vous renseignez sur tous les parcours de randonnée, redécouvrir la France et sa biodiversité sous un autre angle mais aussi préserver notre patrimoine !
           </p>
@@ -58,12 +58,9 @@ export default {
   width: 100%;
   max-height: 550px;
   display: flex;
-  justify-content: center;
-  align-items: center;
   padding: 0 50px;
   max-width: 1440px;
   margin: auto auto 130px auto;
-  gap: 50px;
   img{
       height: 420px;
       width: 100%;
@@ -76,6 +73,9 @@ export default {
     color: var(--green-color);
     line-height: 1.5rem;
     margin-bottom: 20px;
+    & span{
+      color: var(--orange-color);
+    }
   }
   h3{
     font-size: 2.1875rem;
@@ -84,10 +84,22 @@ export default {
   }
   .bottomMiddle{
     width: 50%;
+    height: 420px;
+    background: linear-gradient(180deg, #ffffff80 0%, #cec9b540 48.23%, #ffffff80 98.75%);
+    &:last-child{
+      padding-left: 20px;
+    }
     &--center{
-      margin-right: 30px;
       font-size: 1rem;
       max-width: 440px;
+      height: 420px;
+      display: flex;
+      flex-direction: column;
+      margin: auto;
+      justify-content: center;
+      p{
+        color: var(--green-color);
+      }
     }
     p{
       margin-bottom: 20px;
