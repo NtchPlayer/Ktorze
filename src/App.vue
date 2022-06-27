@@ -40,7 +40,7 @@ export default {
           content: 'K-Torze DevTeam'
         }, {
           name: 'theme-color',
-          content: '#FE7433'
+          content: '#658672'
         }, {
           name: 'mobile-web-app-capable"',
           content: 'yes'
@@ -55,25 +55,25 @@ export default {
       og: {
         title: 'Balise 360, la solution de tous les randonneurs engagés',
         description: 'Balise 360, la solution qui permet à tous les randonneurs passionnés et engagés de préparer ses itinéraires de randonnées, de se repérer avec ses cartes numériques et son GPS intégré.',
-        url: 'https://balise360.fr/',
+        url: process.env.VUE_APP_BASE_SITE,
         type: 'website',
         site_name: 'Balise360',
-        local: 'fr_FR'
-        // image: '',
-        // 'image:secure_url': '',
-        // 'image:type': 'image/jpg',
-        // 'image:width': '1200',
-        // 'image:height': '630',
-        // 'image:alt': 'Logo Balise 360'
+        local: 'fr_FR',
+        image: `${process.env.VUE_APP_BASE_SITE}/open_graph_card.jpg`,
+        'image:secure_url': '',
+        'image:type': 'image/jpg',
+        'image:width': '1200',
+        'image:height': '630',
+        'image:alt': 'Logo Balise 360'
       },
       twitter: {
         title: 'Balise 360, la solution de tous les randonneurs engagés',
         description: 'Balise 360, la solution qui permet à tous les randonneurs passionnés et engagés de préparer ses itinéraires de randonnées, de se repérer avec ses cartes numériques et son GPS intégré.',
-        url: 'https://balise360.fr/',
+        url: process.env.VUE_APP_BASE_SITE,
         site: '@balise360.fr',
-        creator: '@Balise360 DevTeam'
-        // image: '',
-        // card: 'summary_large_image'
+        creator: '@Balise360 DevTeam',
+        image: `${process.env.VUE_APP_BASE_SITE}/twitter_card.png`,
+        card: 'summary_large_image'
       }
     }
   }
