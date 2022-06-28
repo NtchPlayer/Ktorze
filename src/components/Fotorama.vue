@@ -29,6 +29,8 @@ export default {
   justify-content: flex-end;
   align-items: center;
   z-index: 0;
+  font-family: 'Gotham';
+
   &-content{
     width: 100%;
     max-width: 1440px;
@@ -43,6 +45,8 @@ export default {
     font-weight: 600;
     color:var(--orange-color);
     margin-bottom: 30px;
+    font-family: 'Gotham-bold';
+
     &~p{
       text-align: left;
       color:var(--pale-color);

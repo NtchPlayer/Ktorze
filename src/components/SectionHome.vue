@@ -83,6 +83,7 @@ export default {
 .section{
   &-title{
     position: relative;
+    font-family: 'Gotham-bold';
     &.mobile{
       text-align: left;
       max-width: 325px;

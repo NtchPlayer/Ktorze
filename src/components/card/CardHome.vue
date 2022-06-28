@@ -22,6 +22,7 @@ export default {
 <style lang="scss">
 .card{
   max-width: 325px;
+  font-family: 'Apfel';
   &-icon{
     margin-bottom: 30px;
     min-height: 55px;
@@ -37,7 +38,7 @@ export default {
     margin-bottom: 20px;
     line-height: 1.3rem;
     min-height: 42px;
-
+    font-family: 'Apfel-bold';
   }
   &-link{
     text-align: left;

@@ -116,6 +116,8 @@ export default {
   max-width: 1440px;
   margin: auto auto 250px auto;
   padding: 75px 0 0 0;
+  font-family: 'Apfel';
+
   figure{
     width: 100%;
     img{
@@ -126,6 +128,8 @@ export default {
     position: relative;
     h2{
       margin-bottom: 90px;
+      font-family: 'Apfel-bold';
+
     }
     h3{
       color: var(--green-color);

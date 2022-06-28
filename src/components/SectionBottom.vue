@@ -87,6 +87,7 @@ export default {
     width: 50%;
     height: 420px;
     background: linear-gradient(180deg, #ffffff80 0%, #cec9b540 48.23%, #ffffff80 98.75%);
+    font-family: 'Apfel';
     &:last-child{
       padding-left: 20px;
     }
@@ -98,6 +99,9 @@ export default {
       flex-direction: column;
       margin: auto;
       justify-content: center;
+      h2{
+        font-family: 'Apfel-bold';
+      }
       p{
         color: var(--green-color);
       }

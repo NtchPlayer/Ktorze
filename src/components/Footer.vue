@@ -20,7 +20,7 @@
             
             <figure class="ftSocialM">
 
-                <h4 class="ftTitle">Réseaux Sociaux</h4>
+                <h4 class="ftTitle">Nos réseaux</h4>
                 <p>
                     <router-link class="link" :to="{name: 'home'}">Facebook</router-link>
                 </p>
@@ -72,6 +72,8 @@ export default {
         display: flex;
         justify-content: space-around;
         padding-top: 60px;
+        font-family: 'Apfel';
+
         .ftTitle{
             font-weight: bold;
             font-size: 1.5rem;
@@ -79,6 +81,7 @@ export default {
             color: var(--pale-color);
             font-size: 1.3125rem;
             text-transform: uppercase;
+            font-family: 'Apfel-bold';
 
         }
 
