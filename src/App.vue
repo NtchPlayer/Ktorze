@@ -66,10 +66,10 @@ export default {
           content: 'fr_FR'
         }, {
           property: 'og:image',
-          content: `http://www.balise360.fr//icons/open_graph.jpg`
+          content: `http://www.balise360.fr/open-graph.jpg`
         }, {
           property: 'og:image:secure_url',
-          content: `${process.env.VUE_APP_BASE_SITE}/icons/open_graph.jpg`
+          content: `${process.env.VUE_APP_BASE_SITE}/open-graph.jpg`
         }, {
           property: 'og:image:type',
           content: 'image/jpg'
@@ -99,7 +99,7 @@ export default {
           content: '@Balise360 DevTeam'
         }, {
           name: 'twitter:image',
-          content: `${process.env.VUE_APP_BASE_SITE}/icons/twitter_card.png`
+          content: `${process.env.VUE_APP_BASE_SITE}/twitter_card.png`
         }, {
           name: 'twitter:card',
           content: 'summary_large_image'
