@@ -1,6 +1,12 @@
 <template>
   <metainfo>
-    <template v-slot:title="{ content }" />
+    <template
+      v-slot:title="{ content }"
+      v-slot:meta="{ content }"
+      v-slot:og="{ content }"
+      v-slot:twitter="{ content }"
+      v-slot:link="{ content }"
+    />
   </metainfo>
   <router-view />
   <NotificationsCookie />
