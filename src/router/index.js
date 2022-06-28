@@ -1,8 +1,7 @@
-import { createWebHistory, createRouter, RouterView } from 'vue-router'
+import { createWebHistory, createRouter } from 'vue-router'
 
 // Import components
-const Home = () =>
-    import ( /* webpackChunkName: "home" */ '@/views/Home.vue')
+const Home = () => import ( /* webpackChunkName: "home" */ '@/views/Home.vue')
 
 const routes = [{
     path: '/',
