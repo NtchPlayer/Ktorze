@@ -82,3 +82,25 @@ export default {
 
 <style src="./style/reset.css"></style>
 <style lang="scss" src="./style/main.scss"></style>
+<style>
+@font-face {
+  font-family: "Gotham";
+  src: local("Gotham"),
+   url(@/assets/fonts/Gotham/GothamBook.ttf) format("truetype");
+}
+@font-face {
+  font-family: "Gotham-bold";
+  src: local("Gotham-bold"),
+   url(@/assets/fonts/Gotham/GothamBold.ttf) format("truetype");
+}
+@font-face {
+  font-family: "Apfel";
+  src: local("Apfel"),
+   url(@/assets/fonts/ApfelGrotezk/ApfelGrotezk-Regular.ttf) format("truetype");
+}
+@font-face {
+  font-family: "Apfel-bold";
+  src: local("Apfel-bold"),
+   url(@/assets/fonts/ApfelGrotezk/ApfelGrotezk-Fett.ttf) format("truetype");
+}
+</style>

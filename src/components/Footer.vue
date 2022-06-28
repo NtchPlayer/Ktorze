@@ -1,7 +1,7 @@
 <template>
     <footer>
         <div class="footerMain">
-            <figure class="ftOutdoor">
+            <figure class="ftOutdoor desktop">
 
                 <h4 class="ftTitle">A propos</h4>
 
@@ -20,7 +20,7 @@
             
             <figure class="ftSocialM">
 
-                <h4 class="ftTitle">Réseaux Sociaux</h4>
+                <h4 class="ftTitle">Nos réseaux</h4>
                 <p>
                     <router-link class="link" :to="{name: 'home'}">Facebook</router-link>
                 </p>
@@ -72,6 +72,8 @@ export default {
         display: flex;
         justify-content: space-around;
         padding-top: 60px;
+        font-family: 'Apfel';
+
         .ftTitle{
             font-weight: bold;
             font-size: 1.5rem;
@@ -79,6 +81,7 @@ export default {
             color: var(--pale-color);
             font-size: 1.3125rem;
             text-transform: uppercase;
+            font-family: 'Apfel-bold';
 
         }
 
@@ -113,27 +116,26 @@ export default {
     @media (min-width: 0px) and (max-width: 768px){
 
         footer{
-            height: 900px;
+            height: 450px;
         }
         
         .footerMain{
-            height: 771px;
-            align-items: center;
+            height: 450px;
             flex-direction: column;
+            padding: 50px 70px;
         }
 
         .ftOutdoor,.ftAdress, .ftSocialM{
             display: flex;
             flex-direction: column;
-            align-items: center;
-
+            justify-content: center;
             .ftTitle{
                 font-size: 21px;
-
+                font-size: 1.5rem;
             }
 
             p{
-                text-align: center;
+                text-align: left;
             }
 
         }

@@ -36,6 +36,7 @@ body {
     font-size: 1rem;
     transition-duration: var(--transition-duration);
     font-weight: 500;
+    max-width: max-content;
     cursor: pointer;
     &:hover {
         background-color: var(--green-hover);
@@ -178,12 +179,19 @@ select:-webkit-autofill:focus {
     padding: 10px 0;
 }
 
+
 // Responsive
 @media (min-width: 0px) and (max-width: 768px) {
     .burger-menu {
         display: block;
     }
     .main-nav {
+        display: none;
+    }
+    .mobile{
+        display: block;
+    }
+    .desktop{
         display: none;
     }
 }
@@ -193,6 +201,12 @@ select:-webkit-autofill:focus {
         display: none;
     }
     .main-nav {
+        display: block;
+    }
+    .mobile{
+        display: none;
+    }
+    .desktop{
         display: block;
     }
 }

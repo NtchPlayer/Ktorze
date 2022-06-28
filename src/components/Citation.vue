@@ -1,5 +1,5 @@
 <template>
-    <section class="citation">
+    <section class="citation desktop">
         <div class="citation-content">
             <img class="citation-content-deco--first" alt="deco citation" src="@/assets/DecoCitation.svg">
             <p>Tous les héros ne portent pas de cape…</p>

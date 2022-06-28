@@ -2,8 +2,9 @@
   <nav class="main-nav">
     <figure>
       <router-link :to="{name: 'home'}">
-        <img class="main-nav--logo" alt="Balise360 logo" src="@/assets/balise360.svg">
-      </router-link>
+        <img class="main-nav--logo desktop" alt="Balise360 logo" src="@/assets/balise360.svg">
+        <img class="main-nav--logo mobile" alt="Balise360 logo" src="@/assets/balise360-mobile.svg">
+</router-link>
     </figure>
   </nav>
 </template>
@@ -35,6 +36,16 @@ export default {
     width: 138px;
     margin-left: 35px;
 
+  }
+}
+
+@media (min-width: 0px) and (max-width: 768px) {
+  .main-nav{
+    position: absolute;
+    z-index: 5;
+    &::before{
+      content: none;
+    }
   }
 }
 

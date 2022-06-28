@@ -2,8 +2,9 @@
 <div class="form">
   <div>
     <div class="form-intro">
-      <h2><img class="section-title-img" alt="deco citation" src="@/assets/orange-loop.svg">Traçons notre chemin</h2>
-      <h3>Notre superbe newsletter</h3>
+      <h2 class="desktop"><img class="section-title-img" alt="deco citation" src="@/assets/orange-loop.svg">Traçons notre chemin</h2>
+      <h2 class="mobile"><span>Traçons</span> notre chemin !</h2>
+      <h3 class="desktop">Notre superbe newsletter</h3>
       <p>Renseignez votre adresse mail afin de vous inscrire à la newsletter</p>
     </div>
 
@@ -28,7 +29,13 @@
       <input
         type="submit"
         value="S’inscrire à la newsletter"
-        class="btn-primary"
+        class="btn-primary desktop"
+        :disabled="!isFormValid"
+      >
+      <input
+        type="submit"
+        value="S’inscrire"
+        class="btn-primary mobile"
         :disabled="!isFormValid"
       >
     </form>
@@ -38,18 +45,19 @@
     </div>
   </div>
   
-  <div>
+  <div class="desktop">
     <figure>
       <img class="form-img" alt="deco citation" src="@/assets/FormImg.png">
     </figure>
   </div>
 
-  <img class="form-deco" alt="deco citation" src="@/assets/DecoForm.svg">
+  <img class="form-deco desktop" alt="deco citation" src="@/assets/DecoForm.svg">
 </div>
 
 </template>
 
 <script>
+import { NewsletterService } from '@/common/api.service';
 
 
 export default {
@@ -78,37 +86,20 @@ export default {
     sendingEmail() {
       if (this.isEmailValid) {
         this.error = false
-        const body = {
+        return NewsletterService.createContact({
           email: this.email,
           listIds: [7],
-        }
-        const headers = {
-          'api-key': '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'
-        }
-        this.axios.post("https://api.sendinblue.com/v3/contacts", body, { headers })
-            .then(() => {
-              this.$gtm.dataLayer().push({event: 'InscriptionNewsletter'})
-              this.axios.post(
-                  'https://api.sendinblue.com/v3/smtp/email',
-                  {
-                    to: [{
-                      email: this.email,
-                    }],
-                    templateId: 3
-                  },
-                  { headers }
-              )
-              .catch((e) => {
-                console.log(e)
-              })
-              this.openModal=true
-            })
-            .catch((e) => {
-              this.e = e.response.data.message
-              setTimeout(() => {
-                this.error = true;
-              }, 5000)
-            })
+        })
+          .then(({ data }) => {
+            this.$gtm.dataLayer().push({event: 'InscriptionNewsletter'})
+            this.openModal = true
+          })
+          .catch(() => {
+            this.error = true
+            setTimeout(() => {
+              this.error = true;
+            }, 5000)
+          })
       }
     }
   }
@@ -124,7 +115,9 @@ export default {
   position: relative;
   max-width: 1440px;
   margin: auto auto 250px auto;
-  padding: 75px 0 0 0;
+  padding: 75px 15px 0 15px;
+  font-family: 'Apfel';
+
   figure{
     width: 100%;
     img{
@@ -135,6 +128,8 @@ export default {
     position: relative;
     h2{
       margin-bottom: 90px;
+      font-family: 'Apfel-bold';
+
     }
     h3{
       color: var(--green-color);
@@ -144,7 +139,7 @@ export default {
     .section-title-img{
       position: absolute;
       top: -35px;
-      left: -60px;
+      left: -65px;
     }
     p{
       font-size: 1rem;
@@ -244,6 +239,26 @@ export default {
         opacity: 1;
     }
 }
+
+
+ @media (min-width: 0px) and (max-width: 768px) {
+  .form{
+    padding: 0 50px;
+    margin: auto auto 150px auto;
+    &-intro{
+      h2{
+        margin-bottom: 20px;
+        font-size: 1.5rem;
+        span{
+          color: var(--orange-color);
+        }
+      }
+      p{
+        line-height: 1.25rem;
+      }
+    }
+  }
+ }
 
 
 </style>
