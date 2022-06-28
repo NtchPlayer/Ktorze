@@ -96,10 +96,6 @@ export default {
       top: -35px;
       left: -55px;
       & svg path{
-         --initialStroke: 238.761;
-          --transitionDuration: 900ms;
-          stroke-dashoffset: 214.2996;
-          stroke: #AA00FF;
 
       }
     }
