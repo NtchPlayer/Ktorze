@@ -59,7 +59,7 @@ export default {
         type: 'website',
         site_name: 'Balise360',
         local: 'fr_FR',
-        image: `${process.env.VUE_APP_BASE_SITE}/open_graph_card.jpg`,
+        image: `${process.env.VUE_APP_BASE_SITE}/open_graph.jpg`,
         'image:secure_url': '',
         'image:type': 'image/jpg',
         'image:width': '1200',
