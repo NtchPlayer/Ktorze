@@ -2,8 +2,9 @@
 <div class="form">
   <div>
     <div class="form-intro">
-      <h2><img class="section-title-img" alt="deco citation" src="@/assets/orange-loop.svg">Traçons notre chemin</h2>
-      <h3>Notre superbe newsletter</h3>
+      <h2 class="desktop"><img class="section-title-img" alt="deco citation" src="@/assets/orange-loop.svg">Traçons notre chemin</h2>
+      <h2 class="mobile"><span>Traçons</span> notre chemin !</h2>
+      <h3 class="desktop">Notre superbe newsletter</h3>
       <p>Renseignez votre adresse mail afin de vous inscrire à la newsletter</p>
     </div>
 
@@ -28,7 +29,13 @@
       <input
         type="submit"
         value="S’inscrire à la newsletter"
-        class="btn-primary"
+        class="btn-primary desktop"
+        :disabled="!isFormValid"
+      >
+      <input
+        type="submit"
+        value="S’inscrire"
+        class="btn-primary mobile"
         :disabled="!isFormValid"
       >
     </form>
@@ -38,13 +45,13 @@
     </div>
   </div>
   
-  <div>
+  <div class="desktop">
     <figure>
       <img class="form-img" alt="deco citation" src="@/assets/FormImg.png">
     </figure>
   </div>
 
-  <img class="form-deco" alt="deco citation" src="@/assets/DecoForm.svg">
+  <img class="form-deco desktop" alt="deco citation" src="@/assets/DecoForm.svg">
 </div>
 
 </template>
@@ -228,6 +235,26 @@ export default {
         opacity: 1;
     }
 }
+
+
+ @media (min-width: 0px) and (max-width: 768px) {
+  .form{
+    padding: 0 50px;
+    margin: auto auto 150px auto;
+    &-intro{
+      h2{
+        margin-bottom: 20px;
+        font-size: 1.5rem;
+        span{
+          color: var(--orange-color);
+        }
+      }
+      p{
+        line-height: 1.25rem;
+      }
+    }
+  }
+ }
 
 
 </style>

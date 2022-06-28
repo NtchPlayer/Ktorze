@@ -1,9 +1,9 @@
 <template>
 <section>
-    <h2 class="main-title">Pourquoi utiliser Balise 360 ?</h2>
+    <h2 class="main-title desktop">Pourquoi utiliser Balise 360 ?</h2>
     <div class="sectionBottom">
 
-      <div class="bottomMiddle">
+      <div class="bottomMiddle desktop">
         <figure>
           <img src="@/assets/cover-bottom.png" alt="">
         </figure>
@@ -11,7 +11,8 @@
 
       <div class="bottomMiddle">
         <div class="bottomMiddle--center">
-          <h2>Une <span>expérience personnalisée</span> pour chaque utilisateur</h2>
+          <h2 class="desktop">Une <span>expérience personnalisée</span> pour chaque utilisateur</h2>
+          <h2 class="mobile">Une expérience <span>personnalisée</span></h2>
           <p>
             Vous pouvez avec  notre application vous renseignez sur tous les parcours de randonnée, redécouvrir la France et sa biodiversité sous un autre angle mais aussi préserver notre patrimoine !
           </p>
@@ -123,18 +124,21 @@ export default {
   .sectionBottom{
     height: unset;
     flex-direction: column-reverse;
+    padding: 0;
     h2{
       margin-bottom: 10px;
     }
     h2, h3{
-      text-align: center;
-      line-height: unset;
+      text-align: left;
+      line-height: 2.5rem;
+      font-size: 1.5rem;
     }
     img{
       height: 300px;
     }
     .bottomMiddle{
       width: 100%;
+      padding: 0 20px;
       &:last-child{
         margin-bottom: 30px;
       }
@@ -145,7 +149,6 @@ export default {
       }
       &--center{
         float: unset;
-        margin-right: 0;
         a{
           margin: auto;
           display: block;

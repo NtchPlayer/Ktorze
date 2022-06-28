@@ -61,19 +61,11 @@ export default {
     &-description{
       min-height: unset;
     }
-    &-icon {
-      img{
-        margin: auto;
-      }
-    }
     &-link{
       text-align: center;
       a{
         width: 100%;
       }
-    }
-    &-title{
-      text-align: center;
     }
   }
  }

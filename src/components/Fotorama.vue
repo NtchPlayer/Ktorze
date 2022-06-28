@@ -4,9 +4,11 @@
       <img alt="Vue logo" src="@/assets/coverfotorama.png">
     </figure>
     <div class="fotorama-content">
-      <h1>La rando c’est le pied !</h1>
+      <h1>La rando c’est le pied&nbsp;!</h1>
       <p><span>Rejoignez la plateforme qui regroupe les endroits les  </span><span>plus spectaculaires du patrimoine naturel français.</span></p>
-      <router-link class="btn-primary" :to="{name: 'home'}">Commencez l'aventure !</router-link>
+      <router-link class="btn-primary desktop" :to="{name: 'home'}">Commencez l'aventure&nbsp;!</router-link>
+      <router-link class="btn-primary mobile" :to="{name: 'home'}">Allons y !</router-link>
+
     </div>
   </section>
 </template>
@@ -74,15 +76,20 @@ export default {
   .fotorama{
     height: 100vh;
     align-items: center;
-    justify-content: center;
     padding: 0 25px;
+    &-content{
+      .mobile{
+        max-width: max-content;
+      }
+    }
     h1{
       position: unset;
       display: flex;
       flex-direction: column;
-      width: 220px;
+      max-width: 320px;
       line-height: 35px;
       margin-bottom: 15px;
+      font-size: 2rem;
       span{
         font-size: 1.375rem;
         &~span {
@@ -93,11 +100,10 @@ export default {
       &~p{
         position: unset;
         display: block;
-        width: 220px;
-        text-align: right;
-        font-size: 0.8125rem;
+        max-width: 320px;
+        font-size: 1rem;
         margin-bottom: 25px;
-        line-height: 1rem;
+        line-height: 1.2rem;
       }
     }
       .btn-primary-fotorama-center{
