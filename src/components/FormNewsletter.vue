@@ -50,6 +50,7 @@
 </template>
 
 <script>
+import { NewsletterService } from '@/common/api.service';
 
 
 export default {
@@ -78,37 +79,20 @@ export default {
     sendingEmail() {
       if (this.isEmailValid) {
         this.error = false
-        const body = {
+        return NewsletterService.createContact({
           email: this.email,
           listIds: [7],
-        }
-        const headers = {
-          'api-key': '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'
-        }
-        this.axios.post("https://api.sendinblue.com/v3/contacts", body, { headers })
-            .then(() => {
-              this.$gtm.dataLayer().push({event: 'InscriptionNewsletter'})
-              this.axios.post(
-                  'https://api.sendinblue.com/v3/smtp/email',
-                  {
-                    to: [{
-                      email: this.email,
-                    }],
-                    templateId: 3
-                  },
-                  { headers }
-              )
-              .catch((e) => {
-                console.log(e)
-              })
-              this.openModal=true
-            })
-            .catch((e) => {
-              this.e = e.response.data.message
-              setTimeout(() => {
-                this.error = true;
-              }, 5000)
-            })
+        })
+          .then(({ data }) => {
+            this.$gtm.dataLayer().push({event: 'InscriptionNewsletter'})
+            this.openModal = true
+          })
+          .catch(() => {
+            this.error = true
+            setTimeout(() => {
+              this.error = true;
+            }, 5000)
+          })
       }
     }
   }
