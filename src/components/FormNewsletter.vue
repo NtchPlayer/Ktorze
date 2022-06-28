@@ -139,7 +139,7 @@ export default {
     .section-title-img{
       position: absolute;
       top: -35px;
-      left: -60px;
+      left: -65px;
     }
     p{
       font-size: 1rem;

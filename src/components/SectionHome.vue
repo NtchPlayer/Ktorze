@@ -93,8 +93,8 @@ export default {
     }
     &-img{
       position: absolute;
-      top: -35px;
-      left: -55px;
+      top: -38px;
+      left: -32px;
       & svg path{
 
       }
