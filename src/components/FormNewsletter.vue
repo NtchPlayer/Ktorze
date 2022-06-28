@@ -115,7 +115,7 @@ export default {
   position: relative;
   max-width: 1440px;
   margin: auto auto 250px auto;
-  padding: 75px 0 0 0;
+  padding: 75px 15px 0 15px;
   font-family: 'Apfel';
 
   figure{
