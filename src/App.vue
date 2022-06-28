@@ -47,40 +47,40 @@ export default {
           name: 'apple-mobile-web-app-title',
           content: 'Balise360'
         }, {
-          name: 'og:title',
+          property: 'og:title',
           content: 'Balise 360, la solution de tous les randonneurs engagés'
         }, {
-          name: 'og:description',
+          property: 'og:description',
           content: 'Balise 360, la solution qui permet à tous les randonneurs passionnés et engagés de préparer ses itinéraires de randonnées, de se repérer avec ses cartes numériques et son GPS intégré.'
         }, {
-          name: 'og:url',
+          property: 'og:url',
           content: process.env.VUE_APP_BASE_SITE
         }, {
-          name: 'og:type',
+          property: 'og:type',
           content: 'website'
         }, {
-          name: 'og:site_name',
+          property: 'og:site_name',
           content: 'Balise360'
         }, {
-          name: 'og:local',
+          property: 'og:local',
           content: 'fr_FR'
         }, {
-          name: 'og:image',
+          property: 'og:image',
           content: `http://www.balise360.fr/open_graph.jpg`
         }, {
-          name: 'og:image:secure_url',
+          property: 'og:image:secure_url',
           content: `${process.env.VUE_APP_BASE_SITE}/open_graph.jpg`
         }, {
-          name: 'og:image:type',
+          property: 'og:image:type',
           content: 'image/jpg'
         }, {
-          name: 'og:image:width',
+          property: 'og:image:width',
           content: '1200'
         }, {
-          name: 'og:image:height',
+          property: 'og:image:height',
           content: '630'
         }, {
-          name: 'og:image:alt',
+          property: 'og:image:alt',
           content: 'Logo Balise 360'
         }, {
           name: 'twitter:title',
@@ -103,13 +103,7 @@ export default {
         }, {
           name: 'twitter:card',
           content: 'summary_large_image'
-        }, {
-          name: 'twitter:title',
-          content: ''
-        }, {
-          name: 'twitter:title',
-          content: ''
-        },
+        }
       ],
       link: [
         { rel: 'favicon', href: './favicon.ico' },
