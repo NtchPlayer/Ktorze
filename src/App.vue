@@ -49,7 +49,7 @@ export default {
           content: 'black-translucent'
         }, {
           name: 'apple-mobile-web-app-title',
-          content: 'A Double Sens'
+          content: 'Balise360'
         }
       ],
       og: {
@@ -74,7 +74,15 @@ export default {
         creator: '@Balise360 DevTeam',
         image: `${process.env.VUE_APP_BASE_SITE}/twitter_card.png`,
         card: 'summary_large_image'
-      }
+      },
+      link: [
+        { rel: 'favicon', href: './favicon.ico' },
+        { rel: 'icon', type: 'image/png', href: './icons/icon.png' },
+        { rel: 'apple-touch-icon', type: 'image/png', sizes: '152x152', href: './icons/touch-icon-ipad.png' },
+        { rel: 'apple-touch-icon', type: 'image/png', sizes: '180x180', href: './icons/touch-icon-iphone-retina.png' },
+        { rel: 'apple-touch-icon', type: 'image/png', sizes: '167x167', href: './icons/touch-icon-ipad-retina.png' },
+        { rel: 'apple-touch-icon', type: 'image/png', sizes: '512x512', href: './icons/apple-touch-icon.png' }
+      ]
     }
   }
 }
