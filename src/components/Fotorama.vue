@@ -81,11 +81,6 @@ export default {
     height: 100vh;
     align-items: center;
     padding: 0 25px;
-    &-content{
-      .mobile{
-        max-width: max-content;
-      }
-    }
     h1{
       position: unset;
       display: flex;

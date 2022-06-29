@@ -73,15 +73,15 @@ export default {
         justify-content: space-around;
         padding-top: 60px;
         font-family: 'Apfel';
+        color: var(--blue-color);
 
         .ftTitle{
             font-weight: bold;
             font-size: 1.5rem;
-            height: 40px;
             color: var(--pale-color);
-            font-size: 1.3125rem;
             text-transform: uppercase;
             font-family: 'Apfel-bold';
+            margin-bottom: 10px;
 
         }
 
@@ -102,7 +102,7 @@ export default {
     .ftSocialM{
         line-height: 29px;
         p{
-            line-height: 2.5rem;
+            margin-bottom: 15px;
         }
     }
 
