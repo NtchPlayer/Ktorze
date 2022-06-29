@@ -46,6 +46,8 @@ export default {
   font-weight: 600;
   color: var(--green-color);
   position: relative;
+  font-family: 'Gotham-bold';
+
   &::before{
     content: url("@/assets/Sprinkle.svg");
     position: absolute;

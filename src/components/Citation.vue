@@ -28,7 +28,7 @@ export default {
             p{
                 color: var(--orange-color);
                 font-size: 1.5rem;
-                font-weight: 500;
+                font-weight: 600;
             }
             &-deco{
                 &--first{
