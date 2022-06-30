@@ -10,7 +10,7 @@ export default {
     meta: [{
       hid: 'robots',
       name: 'robots',
-      content: 'index, follow'
+      content: process.env.NODE_ENV === 'development' ? 'noindex, nofollow' : 'index, follow'
     }, {
       name: 'keywords',
       hid: 'keywords',
