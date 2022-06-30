@@ -1,5 +1,6 @@
 {
   "name": "balise360",
+  "author": "K-torze Dev. Team",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -28,12 +29,12 @@
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.16.3",
-    "@nuxtjs/eslint-config": "^8.0.0",
+    "@nuxtjs/eslint-config": "^6.0.1",
     "@nuxtjs/eslint-module": "^3.0.2",
-    "eslint": "^8.4.1",
+    "eslint": "^7.28.0",
     "eslint-plugin-nuxt": "^3.1.0",
     "eslint-plugin-vue": "^8.2.0",
-    "node-sass": "^6.0.1",
+    "node-sass": "^6.0.0",
     "nuxt-gsap-module": "^1.7.1",
     "sass-loader": "^10.1.1"
   }
