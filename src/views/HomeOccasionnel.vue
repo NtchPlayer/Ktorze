@@ -34,35 +34,36 @@ export default {
   },
   data () {
     return{
-        fotorama: {
-          text: '<span>Rejoignez la plateforme qui regroupe les endroits les  </span><span>plus spectaculaires du patrimoine naturel français.</span>',
-          src: 'coverfotorama-2.png'
-        },
+      fotorama: {
+        text: '<span>La plateforme qui propose des randonnées adaptées </span><span>à tous aventuriers engagés !</span>',
+        src: 'coverfotorama-2.png'
+      },
 
-        form: {
-          text: 'Organiser de temps en temps des balades incroyables et accessibles de tous en recevant les idées par mail !',
-          src: 'FormImg-2.png'
-        },
-        sectionbottom: {
-          text:"<p>Vous pouvez avec  notre application vous renseignez sur tous les parcours de randonnée, redécouvrir la France et sa biodiversité sous un autre angle mais aussi préserver notre patrimoine !</p><p>Une solution qui va permettre d’accompagner nos aventuriers à s’organiser et de bien s’orienter durant leur randonnée. En utilisant balise 360 les randonneurs vont participer selon leur localisation à récolter des données scientifiques sur l’impact du réchauffement climatique sur la nature.</p><p>Vous êtes les héros, qui participeront à sauvegarder notre cher patrimoine naturel !</p>",
-          src:'cover-bottom-2.png'
-        },
-
-        slides: [
+      slides: [
         {
           image: require('@/assets/icons/map.svg'),
           title: 'Des parcours personnalisés',
-          content: 'Trouvez des parcours de randonnée adaptés à vos envies. Indiquez différents critères sur votre profil comme le niveau, la durée et le type de parcours.',
+          content: "Trouvez des parcours de randonnée adaptés à vos envies. Même si vous randonnez de manière occasionnelle, l'application vous proposera une rando qui vous correspond.",
         }, {
           image: require('@/assets/icons/leaf.svg'),
           title: 'Protégez l’environnement',
-          content: 'Ressourcez vous dans la nature mais ressourcez la également au travers de vos parcours. Randonnez tout en apprenant à observer, analyser et préserver la nature. ',
+          content: "Ressourcez vous dans la nature mais ressourcez la également au travers de vos parcours. Randonnez tout en apprenant à observer, analyser et préserver la nature.",
         }, {
           image: require('@/assets/icons/heart.svg'),
           title: 'Rejoignez la communauté',
-          content: 'Parcourez les sentiers mais aussi les avis de tous les randonneurs sur notre plateforme. Partagez vos expériences et encouragez celles des autres !',
+          content: "Parcourez les sentiers mais aussi les avis de tous les randonneurs. Vous y retrouverez des personnes qui comme vous, ne sont pas forcément des experts, et dont les conseils seront précieux et adaptés à votre profil !",
         }
       ],
+      
+      sectionbottom: {
+        text:"<p>Si vous n'avez pas l'habitude de partir en randonnée, pas de panique ! Vous pouvez avec  notre application vous renseigner sur tous les parcours de randonnée et trouver facilement toutes les informations dont vous avez besoin pour préparer facilement votre sortie !</p><p>Si vous n'utilisez pas une boussole tous les quatre matin, devenez un expert et impressionnez vos amis en utilisant nos cartes interactives détaillées avec notre GPS embarqué ! En plus, en utilisant balise 360 les randonneurs vont participer selon leur localisation à récolter des données scientifiques sur l’impact du réchauffement climatique sur la nature.</p><p>Vous êtes les héros, qui participeront à sauvegarder notre cher patrimoine naturel !</p>",
+        src:'cover-bottom-2.png'
+      },
+
+      form: {
+        text: 'Organiser de temps en temps des balades incroyables et accessibles de tous en recevant les idées par mail !',
+        src: 'FormImg-2.png'
+      },
     }
   }
 }
