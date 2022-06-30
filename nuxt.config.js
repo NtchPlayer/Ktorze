@@ -134,6 +134,18 @@ export default {
     }
   },
 
+  sitemap: {
+    hostname: process.env.BASE_SITE,
+    gzip: true,
+    path: '/sitemap.xml'
+  },
+
+  robots: {
+    /* module options */
+    UserAgent: '*',
+    Sitemap: '/sitemap.xml'
+  },
+
   gtm: {
     autoInit: false,
     publicRuntimeConfig: {
