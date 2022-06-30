@@ -5,7 +5,7 @@
       <h2 class="desktop"><img class="section-title-img" alt="deco citation" src="@/assets/orange-loop.svg">Traçons notre chemin</h2>
       <h2 class="mobile"><span>Traçons</span> notre chemin !</h2>
       <h3 class="desktop">Notre superbe newsletter</h3>
-      <p>Renseignez votre adresse mail afin de vous inscrire à la newsletter</p>
+      <p v-text="datacomponent.text" />
     </div>
 
     <form @submit.prevent='sendingEmail' class="form-home">
@@ -47,10 +47,9 @@
   
   <div class="desktop">
     <figure>
-      <img class="form-img" alt="deco citation" src="@/assets/FormImg.png">
+      <img class="form-img" alt="deco citation" :src="require(`@/assets/${datacomponent.src}`)">
     </figure>
   </div>
-
   <img class="form-deco desktop" alt="deco citation" src="@/assets/DecoForm.svg">
 </div>
 
@@ -62,13 +61,16 @@ import { NewsletterService } from '@/common/api.service';
 
 export default {
   name: 'FormNewsletter',
-  data: function () {
+  data () {
     return {
       email: '',
       openModal: false,
       error: false
     }
   },
+  props: {
+    datacomponent: { type: Object, required: true},
+},
   computed: {
     isEmailValid () {
       return this.email === '' || /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(this.email)

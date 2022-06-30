@@ -1,11 +1,11 @@
 <template>
   <section class="fotorama">
     <figure>
-      <img alt="Vue logo" src="@/assets/coverfotorama.png">
+      <img alt="Vue logo" :src="require(`@/assets/${datacomponent.src}`)">
     </figure>
     <div class="fotorama-content">
       <h1>La rando c’est le pied&nbsp;!</h1>
-      <p><span>Rejoignez la plateforme qui regroupe les endroits les  </span><span>plus spectaculaires du patrimoine naturel français.</span></p>
+      <p v-html="datacomponent.text" />
       <router-link class="btn-primary desktop" :to="{name: 'home'}">Commencez l'aventure&nbsp;!</router-link>
       <router-link class="btn-primary mobile" :to="{name: 'home'}">Allons y !</router-link>
 
@@ -15,7 +15,10 @@
 
 <script>
 export default {
-  name: 'Fotorama'
+  name: 'Fotorama',
+    props: {
+    datacomponent: { type: Object, required: true},
+  },
 }
 </script>
 

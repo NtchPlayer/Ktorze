@@ -5,7 +5,7 @@
 
       <div class="bottomMiddle desktop">
         <figure>
-          <img src="@/assets/cover-bottom.png" alt="">
+          <img :src="require(`@/assets/${datacomponent.src}`)" alt="">
         </figure>
       </div>
 
@@ -13,15 +13,7 @@
         <div class="bottomMiddle--center">
           <h2 class="desktop">Une <span>expérience personnalisée</span> pour chaque utilisateur</h2>
           <h2 class="mobile">Une expérience <span>personnalisée</span></h2>
-          <p>
-            Vous pouvez avec  notre application vous renseignez sur tous les parcours de randonnée, redécouvrir la France et sa biodiversité sous un autre angle mais aussi préserver notre patrimoine !
-          </p>
-          <p>
-            Une solution qui va permettre d’accompagner nos aventuriers à s’organiser et de bien s’orienter durant leur randonnée. En utilisant balise 360 les randonneurs vont participer selon leur localisation à récolter des données scientifiques sur l’impact du réchauffement climatique sur la nature.
-          </p>
-          <p>
-            Vous êtes les héros, qui participeront à sauvegarder notre cher patrimoine naturel !
-          </p>
+          <div v-html="datacomponent.text"/>
           <!-- <router-link class="btn-primary" :to="{name: 'home'}">Découvrir l’application</router-link> -->
         </div>
       </div>
@@ -32,7 +24,10 @@
 
 <script>
 export default {
-    name: 'SectionBottom'
+    name: 'SectionBottom',
+    props: {
+      datacomponent: { type: Object, required: true},
+    },
 }
 </script>
 

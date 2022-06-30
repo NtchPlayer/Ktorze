@@ -38,24 +38,14 @@ export default {
 
   },
 
+  props: {
+    slides: { type: Array, required: true},
+},
+
   
   data () {
     return {
-      slides: [
-        {
-          image: require('@/assets/icons/map.svg'),
-          title: 'Des parcours personnalisés',
-          content: 'Trouvez des parcours de randonnée adaptés à vos envies. Indiquez différents critères sur votre profil comme le niveau, la durée et le type de parcours.',
-        }, {
-          image: require('@/assets/icons/leaf.svg'),
-          title: 'Protégez l’environnement',
-          content: 'Ressourcez vous dans la nature mais ressourcez la également au travers de vos parcours. Randonnez tout en apprenant à observer, analyser et préserver la nature. ',
-        }, {
-          image: require('@/assets/icons/heart.svg'),
-          title: 'Rejoignez la communauté',
-          content: 'Parcourez les sentiers mais aussi les avis de tous les randonneurs sur notre plateforme. Partagez vos expériences et encouragez celles des autres !',
-        }
-      ],
+      
       breakpoints: {
         769: {
           visibleSlides: 1,

@@ -36,16 +36,16 @@ export default {
     return{
         fotorama: {
           text: '<span>Rejoignez la plateforme qui regroupe les endroits les  </span><span>plus spectaculaires du patrimoine naturel français.</span>',
-          src: 'coverfotorama.png'
+          src: 'coverfotorama-2.png'
         },
 
         form: {
-          text: 'Recevez par mail des idées de circuits extraordinaires, avec toutes les informations pour planifier votre périple !',
-          src: 'FormImg.png'
+          text: 'Organiser de temps en temps des balades incroyables et accessibles de tous en recevant les idées par mail !',
+          src: 'FormImg-2.png'
         },
         sectionbottom: {
           text:"<p>Vous pouvez avec  notre application vous renseignez sur tous les parcours de randonnée, redécouvrir la France et sa biodiversité sous un autre angle mais aussi préserver notre patrimoine !</p><p>Une solution qui va permettre d’accompagner nos aventuriers à s’organiser et de bien s’orienter durant leur randonnée. En utilisant balise 360 les randonneurs vont participer selon leur localisation à récolter des données scientifiques sur l’impact du réchauffement climatique sur la nature.</p><p>Vous êtes les héros, qui participeront à sauvegarder notre cher patrimoine naturel !</p>",
-          src:'cover-bottom.png'
+          src:'cover-bottom-2.png'
         },
 
         slides: [
