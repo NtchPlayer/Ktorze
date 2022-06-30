@@ -13,12 +13,17 @@
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.13.6",
+    "@nuxtjs/gtm": "^2.4.0",
     "@nuxtjs/pwa": "^3.3.5",
+    "@nuxtjs/robots": "^2.5.0",
+    "@nuxtjs/sitemap": "^2.4.0",
     "core-js": "^3.19.3",
     "nuxt": "^2.15.8",
+    "sass-loader": "^10.1.1",
     "vue": "^2.6.14",
     "vue-server-renderer": "^2.6.14",
     "vue-template-compiler": "^2.6.14",
+    "vueperslides": "^2.15.3",
     "webpack": "^4.46.0"
   },
   "devDependencies": {
@@ -27,6 +32,9 @@
     "@nuxtjs/eslint-module": "^3.0.2",
     "eslint": "^8.4.1",
     "eslint-plugin-nuxt": "^3.1.0",
-    "eslint-plugin-vue": "^8.2.0"
+    "eslint-plugin-vue": "^8.2.0",
+    "node-sass": "^6.0.1",
+    "nuxt-gsap-module": "^1.7.1",
+    "sass-loader": "^10.1.1"
   }
 }
