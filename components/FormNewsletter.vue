@@ -16,19 +16,50 @@
       </div>
 
       <form class="form-home" @submit.prevent="sendingEmail">
+        <div>
+          <div class="container-input">
+            <label>Prénom</label>
+            <input
+              id="firstname"
+              v-model.trim.lazy="firstname"
+              class="input"
+              :class="{ 'input-invalid': !firstnameIsValid && firstname !== '' }"
+              type="text"
+              name="firstname"
+              minlength="2"
+              required
+              placeholder="Mike"
+            >
+          </div>
+          <div class="container-input">
+            <label>Nom</label>
+            <input
+              id="lastname"
+              v-model.trim.lazy="lastname"
+              class="input"
+              :class="{ 'input-invalid': !lastnameIsValid && lastname !== '' }"
+              type="text"
+              minlength="2"
+              name="lastname"
+              required
+              placeholder="MikeHorn@mail.com"
+            >
+          </div>
+        </div>
         <div class="container-input">
+          <label>Adresse mail</label>
           <input
             id="email"
-            v-model="email"
+            v-model.trim.lazy="email"
             class="input"
-            :class="{ 'input-invalid': !isEmailValid }"
+            :class="{ 'input-invalid': !emailIsValid && email !== '' }"
             type="email"
             pattern=".+@.+."
             name="email"
             required
             placeholder="Votre address mail"
           >
-          <p v-show="!isEmailValid" class="input-error">
+          <p v-show="!emailIsValid && email !== ''" class="input-error">
             Votre adresse mail n'est pas valide.
           </p>
         </div>
@@ -37,13 +68,13 @@
           type="submit"
           value="S’inscrire à la newsletter"
           class="btn-primary desktop"
-          :disabled="!isFormValid"
+          :disabled="!formIsValid"
         >
         <input
           type="submit"
           value="S’inscrire"
           class="btn-primary mobile"
-          :disabled="!isFormValid"
+          :disabled="!formIsValid"
         >
       </form>
 
@@ -72,18 +103,24 @@ export default {
   data () {
     return {
       email: '',
+      firstname: '',
+      lastname: '',
       openModal: false,
       error: false
     }
   },
   computed: {
-    isEmailValid () {
-      return this.email === '' || /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(this.email)
+    firstnameIsValid () {
+      return this.firstname.length > 1
     },
-    isFormValid () {
-      // const regexChoose = this.phonePrefix.find(prefix => prefix.code === this.prefixNumber)
-      // const regex = regexChoose.regex || /^[0-9]+$/
+    lastnameIsValid () {
+      return this.lastname.length > 1
+    },
+    emailIsValid () {
       return /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(this.email)
+    },
+    formIsValid () {
+      return this.firstnameIsValid && this.lastnameIsValid && this.emailIsValid
     }
   },
   methods: {
@@ -91,11 +128,15 @@ export default {
       this.openModal = false
     },
     sendingEmail () {
-      if (this.isEmailValid) {
+      if (this.emailIsValid) {
         this.error = false
         return this.$axios.post('/newsletter/add', {
           email: this.email,
-          listIds: [7]
+          listIds: [7],
+          attributes: {
+            PRENOM: this.firstname,
+            NOM: this.lastname
+          }
         })
           .then(() => {
             this.$gtm.push({ event: 'InscriptionNewsletter' })
@@ -162,19 +203,20 @@ export default {
   }
 
   &-home{
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto 50px auto;
+    max-width: 780px;
+    > div{
       display: flex;
-      flex-direction: column;
-      margin: 0 auto 50px auto;
-      max-width: 780px;
+      justify-content: space-between;
       .container-input{
-        input{
-          min-width: 280px;
-        }
-        display: block;
+        width: calc(50% - 5px);
       }
-      .btn-primary{
-        max-width: max-content;
-      }
+    }
+    .btn-primary{
+      max-width: max-content;
+    }
   }
   &-modal{
     position: fixed;

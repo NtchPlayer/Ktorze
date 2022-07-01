@@ -149,7 +149,7 @@ select:-webkit-autofill,
 select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {
   -webkit-text-fill-color: var(--green-color);
-  -webkit-box-shadow: 0 0 0px 1000px #F5FEFF9E inset;
+  -webkit-box-shadow: 0 0 0 1000px #F5FEFF9E inset;
   transition: background-color 5000s ease-in-out 0s;
   background: var(--input);
   border: 1px solid var(--input-border);
@@ -160,10 +160,9 @@ select:-webkit-autofill:focus {
   display: flex;
   flex-direction: column;
   label {
-    margin: 15px 0px 5px 0px;
-    font-size: 0.75rem;
-    font-weight: 600;
-    color: var(--green-color);
+    margin: 15px 0 5px 0;
+    font-family: 'Apfel', sans-serif;
+    color: var(--pale-color);
   }
 }
 
