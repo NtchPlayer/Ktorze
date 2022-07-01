@@ -7,6 +7,8 @@ const HomeOccasionnel = () =>
     import ( /* webpackChunkName: "home-occasionnel" */ '@/views/HomeOccasionnel.vue')
 const HomeFamille = () =>
     import ( /* webpackChunkName: "home-famille" */ '@/views/HomeFamille.vue')
+const Dashboard = () =>
+    import ( /* webpackChunkName: "dashboard" */ '@/views/Dashboard.vue')
 
 const routes = [{
         path: '/',
@@ -23,6 +25,11 @@ const routes = [{
         component: HomeFamille,
         name: 'home-famille'
     },
+    {
+        path: '/dashboard',
+        component: Dashboard,
+        name: 'dashboard'
+    }
 ]
 
 const router = createRouter({
