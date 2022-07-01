@@ -5,16 +5,16 @@
 
       <div class="bottomMiddle desktop">
         <figure>
-          <img :src="require(`@/assets/${datacomponent.src}`)" alt="">
+          <img :src="require(`@/assets/section/${datacomponent.src}`)" alt="">
         </figure>
       </div>
 
       <div class="bottomMiddle">
         <div class="bottomMiddle--center">
-          <h2 class="desktop">Une <span>expérience personnalisée</span> pour chaque utilisateur</h2>
-          <h2 class="mobile">Une expérience <span>personnalisée</span></h2>
+          <h2>Une <span>expérience personnalisée</span> pour chaque utilisateur</h2>
           <div v-html="datacomponent.text"/>
-          <!-- <router-link class="btn-primary" :to="{name: 'home'}">Découvrir l’application</router-link> -->
+          <h2>Une action <span>engagée</span> pour l’environnement</h2>
+          <div v-html="datacomponent.text2"/>
         </div>
       </div>
     </div>
@@ -24,10 +24,10 @@
 
 <script>
 export default {
-    name: 'SectionBottom',
-    props: {
-      datacomponent: { type: Object, required: true},
-    },
+  name: 'SectionBottom',
+  props: {
+    datacomponent: { type: Object, required: true }
+  }
 }
 </script>
 
@@ -44,7 +44,7 @@ export default {
   font-family: 'Gotham-bold';
 
   &::before{
-    content: url("@/assets/Sprinkle.svg");
+    content: url("@/assets/decos/Sprinkle.svg");
     position: absolute;
     width: 35px;
     height: 39px;
@@ -83,7 +83,6 @@ export default {
   .bottomMiddle{
     width: 50%;
     height: 420px;
-    background: linear-gradient(180deg, #ffffff80 0%, #cec9b540 48.23%, #ffffff80 98.75%);
     font-family: 'Apfel';
     &:last-child{
       padding-left: 20px;
@@ -105,7 +104,6 @@ export default {
     }
     p{
       margin-bottom: 20px;
-      
     }
     ul{
       margin: 40px 0;
@@ -159,6 +157,5 @@ export default {
     }
   }
  }
-
 
 </style>

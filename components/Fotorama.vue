@@ -1,7 +1,7 @@
 <template>
   <section class="fotorama">
     <figure>
-      <img alt="Vue logo" :src="require(`@/assets/${datacomponent.src}`)">
+      <img alt="Vue logo" :src="require(`@/assets/fotorama/${datacomponent.src}`)">
     </figure>
     <div class="fotorama-content">
       <h1>La rando c’est le pied&nbsp;!</h1>
@@ -17,14 +17,14 @@
 export default {
   name: 'Fotorama',
   props: {
-    datacomponent: { type: Object, required: true},
+    datacomponent: { type: Object, required: true }
   }
 }
 </script>
 
 <style lang="scss">
  .fotorama{
-   height: calc(100vh - 80px);
+  height: 100vh;
   position: relative;
   overflow: hidden;
   display: flex;
@@ -113,5 +113,5 @@ export default {
         transform: translate(0);
       }
   }
- }
+}
 </style>
