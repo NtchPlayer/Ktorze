@@ -12,37 +12,37 @@
 
 <script>
 export default {
-    name: 'Citation'
+  name: 'Citation'
 }
 </script>
 
 <style lang="scss">
-    .citation{
-        width: 100%;
-        &-content{
-            width: max-content;
-            display: block;
-            margin: auto;
-            position: relative;
-            margin-bottom: 130px;
-            text-align: center;
-            p{
-                color: var(--orange-color);
-                font-size: 1.5rem;
-                font-weight: 600;
-            }
-            &-deco{
-                &--first{
-                    position: absolute;
-                    top: -50px;
-                    left: -45px;
-                }
-                &--second{
-                    position: absolute;
-                    bottom: -30px;
-                    right: -55px;
-                }
-            }
-        }
+.citation{
+  width: 100%;
+  &-content{
+    width: max-content;
+    display: block;
+    margin: auto;
+    position: relative;
+    margin-bottom: 130px;
+    text-align: center;
+    p{
+      color: var(--orange-color);
+      font-size: 1.5rem;
+      font-weight: 600;
     }
+    &-deco{
+      &--first{
+        position: absolute;
+        top: -50px;
+        left: -45px;
+      }
+      &--second{
+        position: absolute;
+        bottom: -30px;
+        right: -55px;
+      }
+    }
+  }
+}
 </style>
