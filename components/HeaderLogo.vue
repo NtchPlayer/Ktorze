@@ -32,13 +32,16 @@ export default {
 <style lang="scss">
 nav{
   background: var(--green-color);
+  position: fixed;
+  z-index: 5;
+  width: 100vw;
 }
 .main-nav{
   width: 100%;
   max-width: 1440px;
   padding: 0 50px;
   margin: auto;
-  height: 80px;
+  height: 70px;
   display: flex;
   justify-content: space-between;
   align-items: center;

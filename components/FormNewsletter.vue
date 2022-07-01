@@ -3,7 +3,7 @@
     <div>
       <div class="form-intro">
         <h1 class="desktop">
-          <img class="section-title-img" alt="deco citation" src="@/assets/orange-loop.svg">
+          <img class="section-title-img" alt="deco citation" src="@/assets/decos/orange-loop.svg">
           Traçons notre chemin
         </h1>
         <h2 class="mobile">
@@ -87,10 +87,10 @@
 
     <div class="desktop">
       <figure>
-        <img class="form-img" alt="deco citation" :src="require(`@/assets/${datacomponent.src}`)">
+        <img class="form-img" alt="deco citation" :src="require(`@/assets/form/${datacomponent.src}`)">
       </figure>
     </div>
-    <img class="form-deco desktop" alt="deco citation" src="@/assets/DecoForm.svg">
+    <img class="form-deco desktop" alt="deco citation" src="@/assets/decos/DecoForm.svg">
   </div>
 </template>
 

@@ -26,8 +26,9 @@
         :content="slide.content"
       />
     </vueper-slides>
-    <img class="section-home-img" src="@/assets/topo-left.png" alt="deco-left">
-    <img class="section-home-img-second" src="@/assets/topo-right.png" alt="deco-right">
+    <img class="section-home-img" src="@/assets/decos/topo-left.png" alt="deco-left">
+    <img class="section-home-img-second" src="@/assets/decos/topo-right.png" alt="deco-right">
+    <router-link class="btn-primary" :to="{name: 'home'}">Découvrir Balise 360</router-link>
   </section>
 </template>
 
@@ -155,6 +156,7 @@ export default {
     }
   }
   &s{
+    z-index: -1;
     max-height: 300px;
     padding: 0 50px;
     margin: 100px auto 50px auto;
@@ -165,9 +167,6 @@ export default {
   .section-home{
     margin-bottom: 100px;
     padding: 0 25px;
-    .btn-primary{
-      display: none;
-    }
   }
   .container-card{
     flex-direction: column;
@@ -178,6 +177,7 @@ export default {
     position: relative;
     max-width: 440px;
     padding: 0 0;
+    z-index: 10;
 
     &__bullet{
       & .default{
