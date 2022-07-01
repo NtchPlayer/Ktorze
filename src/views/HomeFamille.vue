@@ -56,7 +56,7 @@ export default {
       ],
       
       sectionbottom: {
-        text:"<p>Vous recherchez une randonnée facile à faire en famille ? Balise 360 vous propose différents parcours de randonnées adaptés à vos envies  et toutes les informations dont vous avez besoin pour préparer facilement votre sortie !</p><p>Si vos enfants aiment les courses d'orientation et les chasses aux trésors, utilisez nos cartes interactives et son GPS embarqué pour partir à l'aventure ! Comme on pense à la planète et à l'avenir de nos enfants, en utilisant balise 360 les randonneurs vont participer selon leur localisation à récolter des données scientifiques sur l’impact du réchauffement climatique sur la nature.</p><p>Vous êtes les héros, qui participeront à sauvegarder notre cher patrimoine naturel !</p>",
+        text:"<p>Vous recherchez une randonnée facile à faire en famille ? <strong>Balise 360</strong> vous propose différents parcours de randonnées adaptés à vos envies  et toutes les informations dont vous avez besoin pour préparer facilement votre sortie !</p><p>Si vos enfants aiment les courses d'orientation et les chasses aux trésors, utilisez nos cartes interactives et son GPS embarqué pour partir à l'aventure ! Comme on pense à la planète et à l'avenir de nos enfants, en utilisant balise 360 les randonneurs vont participer selon leur localisation à récolter des données scientifiques sur l’impact du réchauffement climatique sur la nature.</p><p>Vous êtes les héros, qui participeront à sauvegarder notre cher patrimoine naturel !</p>",
         src:'cover-bottom-3.png'
       },
 
