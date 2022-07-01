@@ -1,0 +1,47 @@
+@font-face {
+  font-family: 'Gotham';
+  src:
+    local('Gotham'),
+    url('../static/fonts/Gotham/GothamBook.otf') format('opentype'),
+    url('../static/fonts/Gotham/GothamBook.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: 100%;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gotham';
+  src:
+    local('Gotham-bold'),
+    url('../static/fonts/Gotham/GothamBold.otf') format('opentype'),
+    url('../static/fonts/Gotham/GothamBold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: 100%;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Apfel';
+  src:
+    local('Apfel'),
+    url('../static/fonts/ApfelGrotezk/ApfelGrotezk-Regular.otf') format('opentype'),
+    url('../static/fonts/ApfelGrotezk/ApfelGrotezk-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: 100%;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Apfel';
+  src:
+    local('Apfel-bold'),
+    url('../static/fonts/ApfelGrotezk/ApfelGrotezk-Fett.otf') format('opentype'),
+    url('../static/fonts/ApfelGrotezk/ApfelGrotezk-Fett.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: 100%;
+  font-display: swap;
+}

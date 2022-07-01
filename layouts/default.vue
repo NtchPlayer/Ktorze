@@ -1,20 +1,20 @@
 <template>
   <div>
-    <HeaderLogo />
+    <Header />
     <Nuxt />
     <Footer />
   </div>
 </template>
 
 <script>
-import HeaderLogo from '@/components/HeaderLogo.vue'
+import Header from '~/components/Header.vue'
 import Footer from '@/components/Footer'
 
 export default {
   name: 'Default',
   components: {
     Footer,
-    HeaderLogo
+    Header
   }
 }
 </script>

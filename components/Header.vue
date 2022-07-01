@@ -1,119 +1,82 @@
 <template>
-  <nav class="main-nav">
-    <ul class="nav-list">
-      <li class="nav-list-item">
-        <span class="nav-list-item-decoration" />
-        <router-link :to="{name: 'home'}">L'équipe</router-link>
-      </li>
-      <li class="nav-list-item">
-        <span class="nav-list-item-decoration" />
-        <router-link :to="{name: 'home'}">Notre projet</router-link>
-      </li>
-      <li class="nav-list-item">
-        <span class="nav-list-item-decoration" />
-        <router-link :to="{name: 'home'}">Les fonctionnalités</router-link>
-      </li>
-    </ul>
-    <div class="container-buttons">
-      <button
-          type="button"
-          @click.prevent="paramsModal = true"
-      >
-        <span aria-label="Paramètre du site" class="fas fa-cog"></span>
-      </button>
-      <Teleport to="body">
-        <ModalParams v-if="paramsModal" @close-modal="paramsModal = false" />
-      </Teleport>
-      <router-link class="btn-primary btn-primary-fotorama" :to="{name: 'home'}">Télécharger l'application</router-link>
-    </div>
-  </nav>
+  <header>
+    <nav class="main-nav">
+      <h1>
+        <nuxt-link :to="{name: 'home'}">
+          <figure>
+            <img class="main-nav--logo" alt="Balise360 logo" src="@/assets/balise360-mobile.svg">
+          </figure>
+        </nuxt-link>
+      </h1>
+      <ul>
+        <li>
+          <nuxt-link :to="{ hash: 'fonctionnalites', query: $route.query }">
+            Nos fonctionnalités
+          </nuxt-link>
+        </li>
+
+        <li>
+          <nuxt-link :to="{ hash: 'nous-choisir', query: $route.query }">
+            Nous choisir
+          </nuxt-link>
+        </li>
+
+        <li>
+          <nuxt-link :to="{ hash: 'newsletter', query: $route.query }">
+            Notre newsletter
+          </nuxt-link>
+        </li>
+      </ul>
+    </nav>
+  </header>
 </template>
 
 <script>
-import ModalParams from '@/components/modal/ModalParams'
-
 export default {
-  name: 'Header',
-  components: {
-    ModalParams
-  },
-  data () {
-    return {
-      paramsModal: false
-    }
-  }
+  name: 'Header'
 }
 </script>
 
 <style lang="scss">
+header{
+  background: var(--green-color);
+  position: fixed;
+  z-index: 5;
+  width: 100vw;
+}
+
 .main-nav{
-  height: 80px;
-  position: absolute;
   width: 100%;
-  z-index: 1;
-  .container-buttons{
-    position: absolute;
-    right: 15px;
-    top: 40%;
-    transform: translateY(-50%);
+  max-width: 1440px;
+  padding: 0 50px;
+  margin: auto;
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  &--logo{
+    width: 138px;
+    margin-left: 35px;
+
+  }
+  ul{
     display: flex;
-    align-items: center;
-    button{
-      margin-right: 10px;
+    gap: 50px;
+    li{
+      color: var(--background-color);
+      font-family: 'Apfel', sans-serif;
+      font-weight: bold;
     }
   }
 }
 
-.nav-list{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  margin-top: 30px;
-  &-item{
-    margin-left: 20px;
-    position: relative;
-    a{
-      font-size: 1.8rem;
-      color:var(--green-color);
-      font-weight: 600;
-    }
-    &-decoration{
-      display: inline-block;
-      position: relative;
-      width: 50px;
-      height: 20px;
-      margin-right: 10px;
-      &::before,
-      &::after{
-        content: '';
-        display: inline-block;
-        background-color: var(--green-color);
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-      }
-      &::before{
-        right: 0;
-        width: 100%;
-        height: 1px;
-      }
-      &::after{
-        right: 0;
-        width: 10px;
-        height: 10px;
-        border-radius: 50px;
-      }
-    }
-    &:first-child::before{
-      content: '';
-      position: absolute;
-      display: inline-block;
-      width: 1px;
-      height: 70px;
-      background-color: var(--green-color);
-      left: 0;
-      bottom: 50%;
+@media (min-width: 0px) and (max-width: 768px) {
+  .main-nav{
+    position: absolute;
+    z-index: 5;
+    &::before{
+      content: none;
     }
   }
 }

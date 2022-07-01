@@ -1,14 +1,14 @@
 <template>
   <section class="fotorama">
     <figure>
-      <img alt="Vue logo" :src="require(`@/assets/fotorama/${datacomponent.src}`)">
+      <img alt="Vue logo" :src="require(`@/assets/fotorama/${dataComponent.src}`)">
     </figure>
-    <div class="fotorama-content">
-      <h1>La rando c’est le pied&nbsp;!</h1>
-      <p v-html="datacomponent.text" />
-      <router-link class="btn-primary desktop" :to="{name: 'home'}">Commencez l'aventure&nbsp;!</router-link>
-      <router-link class="btn-primary mobile" :to="{name: 'home'}">Allons y !</router-link>
-
+    <div class="max-width fotorama-content">
+      <h1 class="fotorama-title">La rando c’est le pied&nbsp;!</h1>
+      <p class="fotorama-description" v-text="dataComponent.text" />
+      <router-link class="btn-primary" :to="{name: 'home'}">
+        <b>Rejoigner l’aventure</b>
+      </router-link>
     </div>
   </section>
 </template>
@@ -17,13 +17,13 @@
 export default {
   name: 'Fotorama',
   props: {
-    datacomponent: { type: Object, required: true }
+    dataComponent: { type: Object, required: true }
   }
 }
 </script>
 
 <style lang="scss">
- .fotorama{
+.fotorama{
   height: 100vh;
   position: relative;
   overflow: hidden;
@@ -36,30 +36,24 @@ export default {
 
   &-content{
     width: 100%;
-    max-width: 1440px;
-    margin: 0 auto;
-    text-align: left;
-    padding: 10% 10%;
+    padding-bottom: 10%;
   }
-  h1{
-    display: flex;
-    flex-direction: column;
+  &-title{
     font-size: 3.3125rem;
-    font-weight: 600;
     color:var(--orange-color);
     margin-bottom: 30px;
-    font-family: 'Gotham-bold';
-
-    &~p{
-      text-align: left;
-      color:var(--pale-color);
-      display: flex;
-      flex-direction: column;
-      margin-bottom: 25px;
-      font-size: 1.5rem;
-      line-height: 1.8rem;
-    }
+    font-weight: bold;
   }
+   &-description{
+     text-align: left;
+     color:var(--pale-color);
+     display: flex;
+     flex-direction: column;
+     margin-bottom: 25px;
+     font-size: 1.5rem;
+     line-height: 1.8rem;
+     max-width: 662px;
+   }
   figure{
     position: absolute;
     height: 100vh;
@@ -72,19 +66,14 @@ export default {
       object-fit: cover;
     }
   }
-  .btn-primary-fotorama{
-    position: absolute;
-    top: 20px;
-    right: 20px;
-  }
- }
+}
 
- @media (min-width: 0px) and (max-width: 768px) {
+@media (min-width: 0px) and (max-width: 768px) {
   .fotorama{
     height: 100vh;
     align-items: center;
     padding: 0 25px;
-    h1{
+    &-title{
       position: unset;
       display: flex;
       flex-direction: column;
@@ -92,26 +81,15 @@ export default {
       line-height: 35px;
       margin-bottom: 15px;
       font-size: 2rem;
-      span{
-        font-size: 1.375rem;
-        &~span {
-          text-align: right;
-          font-size: 1.875rem;
-        }
-      }
-      &~p{
-        position: unset;
-        display: block;
-        max-width: 320px;
-        font-size: 1rem;
-        margin-bottom: 25px;
-        line-height: 1.2rem;
-      }
     }
-      .btn-primary-fotorama-center{
-        position: unset;
-        transform: translate(0);
-      }
+    &-description{
+      position: unset;
+      display: block;
+      max-width: 320px;
+      font-size: 1rem;
+      margin-bottom: 25px;
+      line-height: 1.2rem;
+    }
   }
 }
 </style>

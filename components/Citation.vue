@@ -1,12 +1,10 @@
 <template>
   <section class="citation desktop">
-    <div class="citation-content">
-      <!-- <img class="citation-content-deco--first" alt="deco citation" src="@/assets/DecoCitation.svg"> -->
-      <p>Tous les héros ne portent pas de cape…</p>
-      <p>mais certains portent des chaussures de randonnée !</p>
-      <!-- <img class="citation-content-deco--second" alt="deco citation" src="@/assets/DecoCitation2.png"> -->
-    </div>
-
+    <h1 class="citation-content">
+      Tous les héros ne portent pas de cape…
+      <br>
+      mais certains portent des chaussures de randonnée !
+    </h1>
   </section>
 </template>
 
@@ -18,31 +16,13 @@ export default {
 
 <style lang="scss">
 .citation{
-  width: 100%;
+  margin-bottom: 158px;
   &-content{
-    width: max-content;
-    display: block;
-    margin: auto;
-    position: relative;
-    margin-bottom: 130px;
     text-align: center;
-    p{
-      color: var(--orange-color);
-      font-size: 1.5rem;
-      font-weight: 600;
-    }
-    &-deco{
-      &--first{
-        position: absolute;
-        top: -50px;
-        left: -45px;
-      }
-      &--second{
-        position: absolute;
-        bottom: -30px;
-        right: -55px;
-      }
-    }
+    color: var(--orange-color);
+    font-size: 2.5rem;
+    font-weight: bold;
+    line-height: 2.7rem;
   }
 }
 </style>

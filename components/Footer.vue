@@ -1,47 +1,52 @@
 <template>
   <footer>
-    <div class="footerMain">
-      <figure class="ftOutdoor desktop">
-        <h4 class="ftTitle">
+    <div class="max-width footer-container">
+      <section class="footer-col desktop">
+        <h4 class="footer-title">
           A propos
         </h4>
         <p><strong>Balise 360</strong> est un concept pour les randonneurs engagés pour l’environnement.</p>
         <p>Aidez dès maintenant à contribuer au patrimoine français en créant votre compte.</p>
-      </figure>
-      <figure class="ftAddress">
-        <h4 class="ftTitle">
-          Nous contacter
-        </h4>
-        <p>Notre service après ventes :<br>+33 00 00 00 00 00</p>
-      </figure>
-      <figure class="ftSocialM">
-        <h4 class="ftTitle">
+      </section>
+      <section class="footer-col">
+        <div>
+          <h4 class="footer-title">
+            Nous contacter
+          </h4>
+          <p>Notre service après ventes :<br>+33 00 00 00 00 00</p>
+        </div>
+        <div>
+          <h4 class="footer-title">
+            Réglementation
+          </h4>
+          <ul class="footer-list">
+            <li class="footer-list-item">Les Cookies</li>
+            <li class="footer-list-item">La RGPD</li>
+          </ul>
+        </div>
+      </section>
+      <section class="footer-col">
+        <h4 class="footer-title">
           Nos réseaux
         </h4>
-        <p>
-          <a class="link" href="https://www.facebook.com/groups/444668887091380" target="_blank">
-            Facebook
-          </a>
-        </p>
-        <p>
-          <a class="link" href="https://www.instagram.com/balise360/" target="_blank">
-            Instagram
-          </a>
-        </p>
-        <p>
-          <a class="link" href="https://www.pinterest.fr/balise360/" target="_blank">
-            Pinterest
-          </a>
-        </p>
-        <p>
-          <a class="link" href="https://web.tunecore.fr/dashboard" target="_blank">
-            Spotify
-          </a>
-        </p>
-      </figure>
+        <ul class="footer-list">
+          <li class="footer-list-item">
+            <a class="link" href="https://www.facebook.com/groups/444668887091380" target="_blank">Facebook</a>
+          </li>
+          <li class="footer-list-item">
+            <a class="link" href="https://www.instagram.com/balise360/" target="_blank">Instagram</a>
+          </li>
+          <li class="footer-list-item">
+            <a class="link" href="https://www.pinterest.fr/balise360/" target="_blank">Pinterest</a>
+          </li>
+          <li class="footer-list-item">
+            <a class="link" href="https://web.tunecore.fr/dashboard" target="_blank">Spotify</a>
+          </li>
+        </ul>
+      </section>
     </div>
-    <img class="-home-img" src="@/assets/decos/topo-bottom-left.png" alt="decoration">
-    <img class="-home-img" src="@/assets/decos/topo-bottom-right.png" alt="decoration">
+    <!--<img class="-home-img" src="@/assets/decos/topo-bottom-left.png" alt="decoration">-->
+    <!--<img class="-home-img" src="@/assets/decos/topo-bottom-right.png" alt="decoration">-->
   </footer>
 </template>
 
@@ -53,42 +58,41 @@ export default {
 
 <style lang="scss">
 footer{
-  height: 382px;
   background-color: var(--green-color);
-}
-
-.footerMain{
-  height: 314px;
-  display: flex;
-  justify-content: space-around;
-  padding-top: 60px;
   font-family: 'Apfel',serif;
   color: var(--background-color);
-
-  .ftTitle{
-    font-weight: bold;
-    font-size: 1.5rem;
-    color: var(--blue-color);
-    text-transform: uppercase;
-    font-family: 'Apfel-bold',serif;
-    margin-bottom: 10px;
-  }
+  padding-top: 80px;
+  padding-bottom: 60px;
 }
 
-.ftOutdoor, .ftAddress{
+.footer-container{
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-title{
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: var(--blue-color);
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.footer-col{
   max-width: 250px;
-  p{
+  &:first-child p{
     line-height: 29px;
+  }
+  > div:nth-child(2){
+    margin-top: 40px;
   }
   p~p{
       margin-top: 30px;
   }
 }
-.ftSocialM{
-  line-height: 29px;
-  p{
-    margin-bottom: 15px;
-  }
+
+.footer-list-item{
+  margin: 20px 0;
 }
 
 @media (min-width: 0px) and (max-width: 768px){

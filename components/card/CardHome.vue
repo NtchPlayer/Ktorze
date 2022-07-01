@@ -38,7 +38,7 @@ export default {
     margin-bottom: 20px;
     line-height: 1.3rem;
     min-height: 42px;
-    font-family: 'Apfel-bold',serif;
+    font-weight: bold;
   }
   &-link{
     text-align: left;

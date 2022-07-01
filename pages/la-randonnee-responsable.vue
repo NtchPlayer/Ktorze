@@ -1,16 +1,14 @@
 <template>
-  <div>
-    <HeaderLogo />
-    <Fotorama :datacomponent="fotorama" />
-    <SectionHome :slides="slides" />
-    <Citation />
-    <SectionBottom :datacomponent="sectionBottom" />
-    <FormNewsletter :datacomponent="form" />
-  </div>
+  <main>
+    <Fotorama :data-component="fotorama" />
+    <SectionHome id="fonctionnalites" class="max-width" :data-component="slides" />
+    <Citation class="max-width" />
+    <SectionBottom id="nous-choisir" class="max-width" :data-component="sectionBottom" />
+    <FormNewsletter id="newsletter" class="max-width" :data-component="form" />
+  </main>
 </template>
 
 <script>
-import HeaderLogo from '@/components/HeaderLogo.vue'
 import Fotorama from '@/components/Fotorama.vue'
 import SectionHome from '@/components/SectionHome.vue'
 import SectionBottom from '@/components/SectionBottom.vue'
@@ -20,7 +18,6 @@ import FormNewsletter from '@/components/FormNewsletter.vue'
 export default {
   name: 'Home',
   components: {
-    HeaderLogo,
     Fotorama,
     SectionHome,
     SectionBottom,
@@ -41,62 +38,41 @@ export default {
         break
     }
     const fotorama = [{
-      text: '<span>Rejoignez la plateforme qui regroupe les endroits les  </span><span>plus spectaculaires du patrimoine naturel français.</span>',
+      text: 'Rejoignez la plateforme qui regroupe les endroits les plus spectaculaires du patrimoine naturel français.',
       src: 'coverfotorama.png'
     }, {
-      text: '<span>La plateforme qui propose des randonnées adaptées </span><span>à tous aventuriers engagés !</span>',
+      text: 'La plateforme qui propose des randonnées adaptées à tous aventuriers engagés !',
       src: 'coverfotorama-2.png'
     }, {
-      text: '<span>Rejoignez la plateforme qui regroupe les endroits les  </span><span>plus spectaculaires du patrimoine naturel français.</span>',
+      text: 'La plateforme qui propose des randonnées adaptées à toutes les familles d\'aventuriers engagées !',
       src: 'coverfotorama-3.png'
     }]
 
-    const slides = [[{
-      image: require('@/assets/icons/map.svg'),
-      title: 'Des parcours personnalisés',
-      content: 'Trouvez des parcours de randonnée adaptés à vos envies. Indiquez différents critères sur votre profil comme le niveau, la durée et le type de parcours.'
-    }, {
-      image: require('@/assets/icons/leaf.svg'),
-      title: 'Protégez l’environnement',
-      content: 'Ressourcez vous dans la nature mais ressourcez la également au travers de vos parcours. Randonnez tout en apprenant à observer, analyser et préserver la nature. '
-    }, {
-      image: require('@/assets/icons/heart.svg'),
-      title: 'Rejoignez la communauté',
-      content: 'Parcourez les sentiers mais aussi les avis de tous les randonneurs sur notre plateforme. Partagez vos expériences et encouragez celles des autres !'
-    }], [{
-      image: require('@/assets/icons/map.svg'),
-      title: 'Des parcours personnalisés',
-      content: "Trouvez des parcours de randonnée adaptés à vos envies. Même si vous randonnez de manière occasionnelle, l'application vous proposera une rando qui vous correspond."
-    }, {
-      image: require('@/assets/icons/leaf.svg'),
-      title: 'Protégez l’environnement',
-      content: 'Ressourcez vous dans la nature mais ressourcez la également au travers de vos parcours. Randonnez tout en apprenant à observer, analyser et préserver la nature.'
-    }, {
-      image: require('@/assets/icons/heart.svg'),
-      title: 'Rejoignez la communauté',
-      content: 'Parcourez les sentiers mais aussi les avis de tous les randonneurs. Vous y retrouverez des personnes qui comme vous, ne sont pas forcément des experts, et dont les conseils seront précieux et adaptés à votre profil !'
-    }], [{
-      image: require('@/assets/icons/map.svg'),
-      title: 'Des parcours personnalisés',
-      content: 'Trouvez des parcours de randonnée à faire en famille. Indiquez vos différents critères sur votre profil comme le niveau, la durée et le type de parcours que vous aimez faire. Balise 360 se charge du reste !'
-    }, {
-      image: require('@/assets/icons/leaf.svg'),
-      title: 'Protégez l’environnement',
-      content: 'Ressourcez vous dans la nature mais ressourcez la également au travers de vos parcours. Randonnez tout en apprenant à vos enfants à observer, analyser et préserver la nature.'
-    }, {
-      image: require('@/assets/icons/heart.svg'),
-      title: 'Rejoignez la communauté',
-      content: 'Ressourcez vous dans la nature mais ressourcez la également au travers de vos parcours. Randonnez tout en apprenant à vos enfants à observer, analyser et préserver la nature.'
-    }]]
+    const slides = [[
+      'Trouvez des parcours de randonnée adaptés à vos envies. Indiquez différents critères sur votre profil comme le niveau, la durée et le type de parcours.',
+      'Ressourcez vous dans la nature mais ressourcez la également au travers de vos parcours. Randonnez tout en apprenant à observer, analyser et préserver la nature.',
+      'Parcourez les sentiers mais aussi les avis de tous les randonneurs sur notre plateforme. Partagez vos expériences et encouragez celles des autres !'
+    ], [
+      'Trouvez des parcours de randonnée adaptés à vos envies. Même si vous randonnez de manière occasionnelle, notre plateforme vous proposera une rando qui vous correspond.',
+      'Ressourcez vous dans la nature mais ressourcez la également au travers de vos parcours. Randonnez tout en apprenant à observer, analyser et préserver la nature.',
+      'Parcourez les sentiers mais aussi les avis de tous les randonneurs. Vous y retrouverez des personnes qui comme vous, ne sont pas forcément des experts, et dont les conseils seront précieux et adaptés à votre profil !'
+    ], [
+      'Trouvez des parcours de randonnée à faire en famille. Indiquez vos différents critères sur votre profil comme le niveau, la durée et le type de parcours que vous aimez faire. Balise 360 se charge du reste !',
+      'Ressourcez vous dans la nature mais ressourcez la également au travers de vos parcours. Randonnez tout en apprenant à vos enfants à observer, analyser et préserver la nature.',
+      'Parcourez les sentiers mais aussi les avis de familles de randonneurs qui racontent leurs expériences et dont les conseils seront précieux pour préparer votre randonnée !'
+    ]]
 
     const sectionBottom = [{
-      text: '<p>Vous pouvez avec notre application vous renseignez sur tous les parcours de randonnée, <strong>redécouvrir la France</strong> et sa biodiversité sous un autre angle mais aussi préserver notre patrimoine !</p><p>Une solution qui va permettre d’accompagner nos aventuriers à s’organiser et de bien s’orienter durant leur randonnée. En utilisant <strong>balise 360</strong> les randonneurs vont participer selon leur localisation à récolter des données scientifiques sur l’impact du réchauffement climatique sur la nature.</p><p>Vous êtes les héros, qui participeront à sauvegarder <strong>notre cher patrimoine naturel !</strong></p>',
+      block1: 'Grâce à l’application, vous aurez à disposition de <strong>nombreux parcours de randonnée</strong>.<br><strong>Redécouvrez la France et sa biodiversité</strong> sous un autre angle et <strong>préservez notre patrimoine !</strong>',
+      block2: 'Aidez-nous aussi à <strong>récolter des données scientifiques</strong> sur l’impact du réchauffement climatique sur la nature en fonction de votre localisation.<p>Vous êtes <strong>les héros qui aideront à sauvegarder notre cher patrimoine naturel !</strong>',
       src: 'cover-bottom.png'
     }, {
-      text: "<p>Si vous n'avez pas l'habitude de partir en randonnée, pas de panique ! Vous pouvez avec  notre application vous <strong>renseigner</strong> sur tous les parcours de randonnée et trouver <strong>facilement</strong> toutes les informations dont vous avez besoin pour préparer facilement votre sortie !</p><p>Si vous n'utilisez pas une boussole tous les quatre matin, devenez un expert et impressionnez vos amis en utilisant nos cartes interactives détaillées avec notre GPS embarqué ! En plus, en utilisant <strong>balise 360</strong> les randonneurs vont participer selon leur localisation à récolter des données scientifiques sur l’impact du réchauffement climatique sur la nature.</p><p>Vous êtes les héros, qui participeront à sauvegarder <strong>notre cher patrimoine naturel !</strong></p>",
+      block1: "<strong>Si vous n'avez pas l'habitude de partir en randonnée, pas de panique !</strong><br>Vous pouvez avec notre application <strong>vous renseigner</strong> sur tous les parcours de randonnée et <strong>trouver facilement toutes les informations</strong> dont vous avez besoin pour préparer facilement votre sortie !",
+      block2: 'En utilisant Balise 360, les randonneurs vont participer selon leur localisation à récolter des données scientifiques sur <strong>l’impact du réchauffement climatique</strong> sur la nature.<br>Vous êtes les héros, qui participeront à sauvegarder notre cher patrimoine naturel !',
       src: 'cover-bottom-2.png'
     }, {
-      text: '<p>Vous pouvez avec notre application vous renseignez sur tous les parcours de randonnée, <strong>redécouvrir la France</strong> et sa biodiversité sous un autre angle mais aussi préserver notre patrimoine !</p><p>Une solution qui va permettre d’accompagner nos aventuriers à s’organiser et de bien s’orienter durant leur randonnée. En utilisant <strong>balise 360</strong> les randonneurs vont participer selon leur localisation à récolter des données scientifiques sur l’impact du réchauffement climatique sur la nature.</p><p>Vous êtes les héros, qui participeront à sauvegarder <strong>notre cher patrimoine naturel !</strong></p>',
+      block1: 'Vous recherchez une randonnée facile à faire en famille ? <strong>Balise 360</strong> vous propose <strong>différents parcours de randonnées</strong> adaptés à vos envies et dispose de toutes les informations dont vous avez besoin pour préparer facilement votre sortie !',
+      block2: "Comme on pense à la planète et à l'avenir de nos enfants, en utilisant Balise 360 les randonneurs vont participer selon leur localisation à récolter des données scientifiques sur <strong>l’impact du réchauffement climatique</strong> sur la nature.<br>Vous êtes les héros, qui participeront à sauvegarder notre cher patrimoine naturel !",
       src: 'cover-bottom-3.png'
     }]
 

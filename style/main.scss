@@ -1,139 +1,178 @@
 @charset "utf-8";
 @import 'theme-colors.scss';
-@font-face {
-    font-family: 'Gotham';
-    src: local('Gotham'), url('../static/fonts/Gotham/GothamBook.ttf') format('truetype');
-}
-
-@font-face {
-    font-family: 'Gotham-bold';
-    src: local('Gotham-bold'), url('../static/fonts/Gotham/GothamBold.ttf') format('truetype');
-}
-
-@font-face {
-    font-family: 'Apfel';
-    src: local('Apfel'), url('../static/fonts/ApfelGrotezk/ApfelGrotezk-Regular.ttf') format('truetype');
-}
-
-@font-face {
-    font-family: 'Apfel-bold';
-    src: local('Apfel-bold'), url('../static/fonts/ApfelGrotezk/ApfelGrotezk-Fett.ttf') format('truetype');
-}
+@import 'fonts.scss';
 
 html {
-    font-size: 16px;
-    padding: 0;
-    margin: 0;
-    font-family: 'Gotham', sans-serif;
-    background-color: var(--background-color);
-    color: var(--green-color);
+  font-size: 16px;
+  padding: 0;
+  margin: 0;
+  font-family: 'Gotham', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  background-color: var(--background-color);
+  color: var(--green-color);
 }
 
 body {
-    overflow-x: hidden;
+  overflow-x: hidden;
+}
+
+b,
+strong{
+  font-weight: bold;
 }
 
 #app {
-    overflow-x: hidden;
+  overflow-x: hidden;
+}
+
+.flex{
+  display: flex;
+}
+
+.f-center{
+  justify-content: center;
+}
+
+.color-orange{
+  color: var(--orange-color);
 }
 
 .section-title {
-    font-size: 2.5rem;
-    text-align: center;
-    color: var(--green-color);
-    font-weight: 500;
-    max-width: max-content;
-    margin: auto;
+  font-size: 2.5rem;
+  text-align: center;
+  color: var(--green-color);
+  font-weight: bold;
+  width: 100%;
+}
+
+.second-title{
+  font-family: 'Apfel', sans-serif;
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: var(--green-color);
+  line-height: 1.62rem;
+  margin-bottom: 20px;
+}
+
+.text-body{
+  font-size: 1rem;
+  line-height: 1.6rem;
+}
+
+.max-width{
+  max-width: 1440px;
+  padding-left: 100px;
+  padding-right: 100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.container-section{
+  display: flex;
+  justify-content: space-between;
+  > div{
+    width: calc(50% - 30px);
+  }
+}
+
+.image-section{
+  width: 100%;
+  object-fit: cover;
+  z-index:-1;
+  img{
+    width: 100%;
+  }
 }
 
 .btn-primary {
-    padding: 17.5px 35px;
-    display: inline-block;
-    border-radius: 40px;
-    background-color: var(--green-color);
-    color: var(--pale-color);
-    font-size: 1rem;
-    transition-duration: var(--transition-duration);
-    font-weight: 500;
-    max-width: max-content;
-    cursor: pointer;
-    &:hover {
-        background-color: var(--green-hover);
-    }
+  padding: 17.5px 35px;
+  display: inline-block;
+  border-radius: 40px;
+  background-color: var(--green-color);
+  color: #fff;
+  font-size: 1rem;
+  transition-duration: var(--transition-duration);
+  font-weight: 500;
+  max-width: max-content;
+  cursor: pointer;
+  &:hover {
+    background-color: var(--green-hover);
+  }
 }
 
 input.btn-primary {
-    margin-top: 25px;
-    font-weight: 600;
-    width: 100%;
-    &:disabled {
-        cursor: not-allowed;
-        background-color: var(--grey-color);
-    }
+  margin-top: 25px;
+  font-weight: 600;
+  width: 100%;
+  &:disabled {
+    cursor: not-allowed;
+    background-color: var(--grey-color);
+  }
 }
 
 .btn-secondary {
-    padding: 10px 30px;
-    display: inline-block;
-    border-radius: 40px;
-    border: 1px solid var(--green-color);
-    color: var(--green-color);
-    background: var(--background-color);
-    font-size: 1rem;
-    transition-duration: var(--transition-duration);
+  padding: 10px 30px;
+  display: inline-block;
+  border-radius: 40px;
+  border: 1px solid var(--green-color);
+  color: var(--green-color);
+  background: var(--background-color);
+  font-size: 1rem;
+  transition-duration: var(--transition-duration);
 }
 
 // modal css
 .modal-container {
-    position: fixed;
-    background-color: rgba(0, 0, 0, .7);
-    width: 100vw;
-    height: 100vh;
-    top: 0;
-    left: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 10;
+  position: fixed;
+  background-color: rgba(0, 0, 0, .7);
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
 }
 
 .modal {
-    background-color: var(--background-color);
-    border-radius: var(--border-radius);
-    overflow: hidden;
-    min-width: 700px;
-    &-header {
-        padding: 15px;
-        background-color: var(--green-color);
-        color: #fff;
-        font-weight: 500;
-        display: flex;
-        justify-content: space-between;
-        .fas {
-            margin-right: 10px;
-        }
+  background-color: var(--background-color);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  min-width: 700px;
+  &-header {
+    padding: 15px;
+    background-color: var(--green-color);
+    color: #fff;
+    font-weight: 500;
+    display: flex;
+    justify-content: space-between;
+    .fas {
+      margin-right: 10px;
     }
-    &-body {
-        padding: 15px;
-        &-title {
-            font-size: 1.2rem;
-            font-weight: 500;
-            margin-bottom: 15px;
-        }
-        &-controller {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 20px;
-        }
+  }
+  &-body {
+    padding: 15px;
+    &-title {
+      font-size: 1.2rem;
+      font-weight: 500;
+      margin-bottom: 15px;
     }
+    &-controller {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+  }
 }
 
 .link {
-    color: var(--background-color);
+  color: var(--background-color);
 }
 
 strong {
-    font-weight: 600;
+  font-weight: 600;
 }
 
 // Input css
@@ -146,84 +185,84 @@ textarea:-webkit-autofill:focus,
 select:-webkit-autofill,
 select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {
-    -webkit-text-fill-color: var(--green-color);
-    -webkit-box-shadow: 0 0 0 1000px #F5FEFF9E inset;
-    transition: background-color 5000s ease-in-out 0s;
-    background: var(--input);
-    border: 1px solid var(--input-border);
-    padding: 18px;
+  -webkit-text-fill-color: var(--green-color);
+  -webkit-box-shadow: 0 0 0 1000px #F5FEFF9E inset;
+  transition: background-color 5000s ease-in-out 0s;
+  background: var(--input);
+  border: 1px solid var(--input-border);
+  padding: 18px;
 }
 
 .container-input {
-    display: flex;
-    flex-direction: column;
-    label {
-        margin: 15px 0 5px 0;
-        font-family: 'Apfel', sans-serif;
-        color: var(--pale-color);
-    }
+  display: flex;
+  flex-direction: column;
+  label {
+      margin: 15px 0 5px 0;
+      font-family: 'Apfel', sans-serif;
+      color: var(--pale-color);
+  }
 }
 
 .input,
 .select {
-    background: var(--input);
-    border: 1px solid var(--input-border);
-    padding: 18px;
-    transition: var(--transition-duration);
-    outline: transparent solid 2px;
-    border-radius: var(--border-radius);
-    font-size: .875rem;
-    &::placeholder {
-        color: var(--grey-color);
-    }
-    &:focus {
-        color: var(--green-color);
-    }
-    &.input-invalid {
-        border: 1px solid red;
-    }
-    &:-webkit-autofill,
-    &:-webkit-autofill-focus,
-    &:-webkit-autofill-hover {
-        color: var(--green-color);
-    }
-    &:focus,
-    &:focus-visible {
-        outline-color: var(--green-color);
-    }
+  background: var(--input);
+  border: 1px solid var(--input-border);
+  padding: 18px;
+  transition: var(--transition-duration);
+  outline: transparent solid 2px;
+  border-radius: var(--border-radius);
+  font-size: .875rem;
+  &::placeholder {
+    color: var(--grey-color);
+  }
+  &:focus {
+    color: var(--green-color);
+  }
+  &.input-invalid {
+    border: 1px solid red;
+  }
+  &:-webkit-autofill,
+  &:-webkit-autofill-focus,
+  &:-webkit-autofill-hover {
+    color: var(--green-color);
+  }
+  &:focus,
+  &:focus-visible {
+    outline-color: var(--green-color);
+  }
 }
 
 .input-error {
-    padding: 10px 0;
+  padding: 10px 0;
 }
 
 // Responsive
 @media (min-width: 0px) and (max-width: 768px) {
-    .burger-menu {
-        display: block;
-    }
-    .main-nav {
-        display: none;
-    }
-    .mobile {
-        display: block;
-    }
-    .desktop {
-        display: none;
-    }
+  .burger-menu {
+    display: block;
+  }
+  .main-nav {
+    display: none;
+  }
+  .mobile {
+    display: block;
+  }
+  .desktop {
+    display: none;
+  }
 }
 
 @media (min-width: 769px) {
-    .burger-menu {
-        display: none;
-    }
-    .main-nav {
-        display: block;
-    }
-    .mobile {
-        display: none;
-    }
-    .desktop {
-        display: block;
-    }
+  .burger-menu {
+    display: none;
+  }
+  .main-nav {
+    display: block;
+  }
+  .mobile {
+    display: none;
+  }
+  .desktop {
+    display: block;
+  }
 }

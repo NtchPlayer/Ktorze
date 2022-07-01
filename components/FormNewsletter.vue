@@ -1,22 +1,19 @@
 <template>
-  <div class="form">
+  <section class="section-form container-section">
     <div>
       <div class="form-intro">
-        <h1 class="desktop">
-          <img class="section-title-img" alt="deco citation" src="@/assets/decos/orange-loop.svg">
+        <h1 class="section-title desktop">
+          <!-- <img class="section-title-img" alt="deco citation" src="@/assets/decos/orange-loop.svg">-->
           Traçons notre chemin
         </h1>
-        <h2 class="mobile">
-          <span>Traçons</span> notre chemin !
+        <h2 class="second-title">
+          Notre super <span class="color-orange">Carnet de Voyage</span>
         </h2>
-        <h3 class="desktop">
-          Notre superbe newsletter
-        </h3>
-        <p v-text="datacomponent.text" />
+        <p class="text-body" v-text="dataComponent.text" />
       </div>
 
-      <form class="form-home" @submit.prevent="sendingEmail">
-        <div>
+      <form class="form-newsletter" @submit.prevent="sendingEmail">
+        <div class="form-newsletter-identity">
           <div class="container-input">
             <label>Prénom</label>
             <input
@@ -84,21 +81,19 @@
         </button>
       </div>
     </div>
-
     <div class="desktop">
-      <figure>
-        <img class="form-img" alt="deco citation" :src="require(`@/assets/form/${datacomponent.src}`)">
+      <figure class="image-section">
+        <img class="form-img" alt="deco citation" :src="require(`@/assets/form/${dataComponent.src}`)">
       </figure>
     </div>
-    <img class="form-deco desktop" alt="deco citation" src="@/assets/decos/DecoForm.svg">
-  </div>
+  </section>
 </template>
 
 <script>
 export default {
   name: 'FormNewsletter',
   props: {
-    datacomponent: { type: Object, required: true }
+    dataComponent: { type: Object, required: true }
   },
   data () {
     return {
@@ -155,30 +150,21 @@ export default {
 </script>
 
 <style lang="scss">
-.form{
-  display: flex;
-  justify-content: center;
-  gap: 50px;
-  align-items: center;
-  position: relative;
-  max-width: 1440px;
-  margin: auto auto 250px auto;
-  padding: 75px 15px 0 15px;
+.section-form{
+  margin-bottom: 250px;
+  margin-top: 75px;
   font-family: 'Apfel', serif;
 
-  figure{
-    width: 100%;
-    img{
-      width: 100%;
-    }
+  .section-title{
+    text-align: left;
+    margin-bottom: 60px;
   }
-  &-intro{
-    position: relative;
-    h2{
-      margin-bottom: 90px;
-      font-family: 'Apfel-bold', serif;
 
-    }
+  > div:first-child{
+    max-width: 483px;
+  }
+
+  &-intro{
     h3{
       color: var(--green-color);
       font-size: 1.5rem;
@@ -199,23 +185,6 @@ export default {
       color: var(--green-color);
       font-size: 2.5rem;
       font-weight: 500;
-    }
-  }
-
-  &-home{
-    display: flex;
-    flex-direction: column;
-    margin: 0 auto 50px auto;
-    max-width: 780px;
-    > div{
-      display: flex;
-      justify-content: space-between;
-      .container-input{
-        width: calc(50% - 5px);
-      }
-    }
-    .btn-primary{
-      max-width: max-content;
     }
   }
   &-modal{
@@ -240,40 +209,13 @@ export default {
       font-weight: 500;
     }
   }
-  &-deco{
-    position: absolute;
-    bottom: -150px;
-  }
 }
 
-.phone-container{
+.form-newsletter-identity{
   display: flex;
-  .select{
-    margin-right: 20px;
-  }
-  > div{
-    transition-duration: var(--transition-duration);
-    outline: 2px solid transparent;
-    width: 100%;
-    display: grid;
-    grid-template-columns: 70px 1fr;
-    &:focus-within{
-      outline-color: var(--green-color);
-      border-radius: var(--border-radius);
-    }
-  }
-  .prefix-number{
-    text-align: center;
-    display: inline-block;
-    border-radius: var(--border-radius) 0 0 var(--border-radius);
-    background: var(--input);
-    border: 1px solid var(--input-border);
-    padding: 10.5px 0;
-    border-right: none;
-  }
-  .input{
-    outline: none;
-    border-radius: 0 var(--border-radius) var(--border-radius) 0;
+  justify-content: space-between;
+  .container-input{
+    width: calc(50% - 5px);
   }
 }
 

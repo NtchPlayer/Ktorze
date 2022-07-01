@@ -1,10 +1,10 @@
 <template>
   <div>
-    <Fotorama :datacomponent="fotorama" />
+    <Fotorama :data-component="fotorama" />
     <SectionHome :slides="slides" />
     <Citation />
-    <SectionBottom :datacomponent="sectionbottom" />
-    <FormNewsletter :datacomponent="form" />
+    <SectionBottom :data-component="sectionbottom" />
+    <FormNewsletter :data-component="form" />
   </div>
 </template>
 
