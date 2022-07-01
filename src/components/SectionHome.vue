@@ -18,6 +18,8 @@
         :content="slide.content">
       </vueper-slide>
     </vueper-slides>
+    <img class="section-home-img" src="@/assets/topo-left.png" alt="">
+    <img class="section-home-img-second" src="@/assets/topo-right.png" alt="">
   </section>
 </template>
 
@@ -97,9 +99,6 @@ export default {
       position: absolute;
       top: -38px;
       left: -32px;
-      & svg path{
-
-      }
     }
   }
   &-home{

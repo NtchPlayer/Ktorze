@@ -35,12 +35,14 @@
                 </p>
 
             </figure>
-
         </div>
         
         <!-- <div class="footerCopyright">
             <h4>Copyright @ K-Torze 2022. Tous droits réservés.</h4>
         </div> -->
+    <img class="-home-img" src="@/assets/topo-bottom-left.png" alt="">
+    <img class="-home-img" src="@/assets/topo-bottom-right.png" alt="">
+        
 
     </footer>
   
@@ -73,12 +75,12 @@ export default {
         justify-content: space-around;
         padding-top: 60px;
         font-family: 'Apfel';
-        color: var(--blue-color);
+        color: var(--background-color);
 
         .ftTitle{
             font-weight: bold;
             font-size: 1.5rem;
-            color: var(--pale-color);
+            color: var(--orange-color);
             text-transform: uppercase;
             font-family: 'Apfel-bold';
             margin-bottom: 10px;

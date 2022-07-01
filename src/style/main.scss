@@ -2,23 +2,22 @@
 @import 'theme-colors.scss';
 @font-face {
     font-family: 'Gotham';
-    src: local('Gotham'),
-    url('@/assets/fonts/Gotham/GothamBook.ttf') format('truetype');
+    src: local('Gotham'), url('@/assets/fonts/Gotham/GothamBook.ttf') format('truetype');
 }
+
 @font-face {
     font-family: 'Gotham-bold';
-    src: local('Gotham-bold'),
-    url('@/assets/fonts/Gotham/GothamBold.ttf') format('truetype');
+    src: local('Gotham-bold'), url('@/assets/fonts/Gotham/GothamBold.ttf') format('truetype');
 }
+
 @font-face {
     font-family: 'Apfel';
-    src: local('Apfel'),
-    url('@/assets/fonts/ApfelGrotezk/ApfelGrotezk-Regular.ttf') format('truetype');
+    src: local('Apfel'), url('@/assets/fonts/ApfelGrotezk/ApfelGrotezk-Regular.ttf') format('truetype');
 }
+
 @font-face {
     font-family: 'Apfel-bold';
-    src: local('Apfel-bold'),
-    url('@/assets/fonts/ApfelGrotezk/ApfelGrotezk-Fett.ttf') format('truetype');
+    src: local('Apfel-bold'), url('@/assets/fonts/ApfelGrotezk/ApfelGrotezk-Fett.ttf') format('truetype');
 }
 
 html {
@@ -130,7 +129,7 @@ input.btn-primary {
 }
 
 .link {
-    color: var(--blue-color);
+    color: var(--background-color);
 }
 
 strong {
@@ -199,7 +198,6 @@ select:-webkit-autofill:focus {
     padding: 10px 0;
 }
 
-
 // Responsive
 @media (min-width: 0px) and (max-width: 768px) {
     .burger-menu {
@@ -208,10 +206,10 @@ select:-webkit-autofill:focus {
     .main-nav {
         display: none;
     }
-    .mobile{
+    .mobile {
         display: block;
     }
-    .desktop{
+    .desktop {
         display: none;
     }
 }
@@ -223,10 +221,10 @@ select:-webkit-autofill:focus {
     .main-nav {
         display: block;
     }
-    .mobile{
+    .mobile {
         display: none;
     }
-    .desktop{
+    .desktop {
         display: block;
     }
 }

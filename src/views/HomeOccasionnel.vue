@@ -56,7 +56,7 @@ export default {
       ],
       
       sectionbottom: {
-        text:"<p>Si vous n'avez pas l'habitude de partir en randonnée, pas de panique ! Vous pouvez avec  notre application vous renseigner sur tous les parcours de randonnée et trouver facilement toutes les informations dont vous avez besoin pour préparer facilement votre sortie !</p><p>Si vous n'utilisez pas une boussole tous les quatre matin, devenez un expert et impressionnez vos amis en utilisant nos cartes interactives détaillées avec notre GPS embarqué ! En plus, en utilisant balise 360 les randonneurs vont participer selon leur localisation à récolter des données scientifiques sur l’impact du réchauffement climatique sur la nature.</p><p>Vous êtes les héros, qui participeront à sauvegarder notre cher patrimoine naturel !</p>",
+        text:"<p>Si vous n'avez pas l'habitude de partir en randonnée, pas de panique ! Vous pouvez avec  notre application vous <strong>renseigner</strong> sur tous les parcours de randonnée et trouver <strong>facilement</strong> toutes les informations dont vous avez besoin pour préparer facilement votre sortie !</p><p>Si vous n'utilisez pas une boussole tous les quatre matin, devenez un expert et impressionnez vos amis en utilisant nos cartes interactives détaillées avec notre GPS embarqué ! En plus, en utilisant <strong>balise 360</strong> les randonneurs vont participer selon leur localisation à récolter des données scientifiques sur l’impact du réchauffement climatique sur la nature.</p><p>Vous êtes les héros, qui participeront à sauvegarder <strong>notre cher patrimoine naturel !</strong></p>",
         src:'cover-bottom-2.png'
       },
 
