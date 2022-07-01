@@ -19,7 +19,7 @@
           pattern=".+@.+."
           name="email"
           required
-          placeholder="Votre adress mail"
+          placeholder="Votre adresse mail"
         >
         <p class="input-error" v-show="!isEmailValid">
           Votre adresse mail n'est pas valide.
