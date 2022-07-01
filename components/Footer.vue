@@ -40,6 +40,8 @@
         </p>
       </figure>
     </div>
+    <img class="-home-img" src="@/assets/topo-bottom-left.png" alt="decoration">
+    <img class="-home-img" src="@/assets/topo-bottom-right.png" alt="decoration">
   </footer>
 </template>
 
@@ -61,12 +63,12 @@ footer{
   justify-content: space-around;
   padding-top: 60px;
   font-family: 'Apfel',serif;
-  color: var(--blue-color);
+  color: var(--background-color);
 
   .ftTitle{
     font-weight: bold;
     font-size: 1.5rem;
-    color: var(--pale-color);
+    color: var(--orange-color);
     text-transform: uppercase;
     font-family: 'Apfel-bold',serif;
     margin-bottom: 10px;

@@ -16,15 +16,15 @@
 <script>
 export default {
   name: 'Fotorama',
-    props: {
+  props: {
     datacomponent: { type: Object, required: true},
-  },
+  }
 }
 </script>
 
 <style lang="scss">
  .fotorama{
-  height: calc(100vh - 92px) ;
+   height: calc(100vh - 80px);
   position: relative;
   overflow: hidden;
   display: flex;
@@ -32,7 +32,7 @@ export default {
   justify-content: flex-end;
   align-items: center;
   z-index: 0;
-  font-family: 'Gotham';
+  font-family: 'Gotham', sans-serif;
 
   &-content{
     width: 100%;
