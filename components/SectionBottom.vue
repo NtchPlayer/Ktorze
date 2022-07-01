@@ -1,8 +1,9 @@
 <template>
-<section>
-    <h2 class="main-title desktop">Pourquoi utiliser Balise 360 ?</h2>
+  <section>
+    <h2 class="main-title desktop">
+      Pourquoi utiliser Balise 360 ?
+    </h2>
     <div class="sectionBottom">
-
       <div class="bottomMiddle desktop">
         <figure>
           <img :src="require(`@/assets/${datacomponent.src}`)" alt="">
@@ -11,23 +12,25 @@
 
       <div class="bottomMiddle">
         <div class="bottomMiddle--center">
-          <h2 class="desktop">Une <span>expérience personnalisée</span> pour chaque utilisateur</h2>
-          <h2 class="mobile">Une expérience <span>personnalisée</span></h2>
-          <div v-html="datacomponent.text"/>
-          <!-- <router-link class="btn-primary" :to="{name: 'home'}">Découvrir l’application</router-link> -->
+          <h2 class="desktop">
+            Une <span>expérience personnalisée</span> pour chaque utilisateur
+          </h2>
+          <h2 class="mobile">
+            Une expérience <span>personnalisée</span>
+          </h2>
+          <div v-html="datacomponent.text" />
         </div>
       </div>
     </div>
-
-</section>
+  </section>
 </template>
 
 <script>
 export default {
-    name: 'SectionBottom',
-    props: {
-      datacomponent: { type: Object, required: true},
-    },
+  name: 'SectionBottom',
+  props: {
+    datacomponent: { type: Object, required: true }
+  }
 }
 </script>
 
@@ -41,10 +44,10 @@ export default {
   font-weight: 600;
   color: var(--green-color);
   position: relative;
-  font-family: 'Gotham-bold';
+  font-family: 'Gotham-bold',serif;
 
   &::before{
-    content: url("@/assets/Sprinkle.svg");
+    content: url('@/assets/Sprinkle.svg');
     position: absolute;
     width: 35px;
     height: 39px;
@@ -84,7 +87,7 @@ export default {
     width: 50%;
     height: 420px;
     background: linear-gradient(180deg, #ffffff80 0%, #cec9b540 48.23%, #ffffff80 98.75%);
-    font-family: 'Apfel';
+    font-family: 'Apfel',serif;
     &:last-child{
       padding-left: 20px;
     }
@@ -97,7 +100,7 @@ export default {
       margin: auto;
       justify-content: center;
       h2{
-        font-family: 'Apfel-bold';
+        font-family: 'Apfel-bold',serif;
       }
       p{
         color: var(--green-color);
@@ -105,7 +108,7 @@ export default {
     }
     p{
       margin-bottom: 20px;
-      
+
     }
     ul{
       margin: 40px 0;
@@ -159,6 +162,4 @@ export default {
     }
   }
  }
-
-
 </style>
