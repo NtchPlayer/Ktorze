@@ -1,11 +1,25 @@
 <template>
-  <nav class="main-nav">
-    <figure>
-      <router-link :to="{name: 'home'}">
-        <img class="main-nav--logo desktop" alt="Balise360 logo" src="@/assets/balise360.svg">
-        <img class="main-nav--logo mobile" alt="Balise360 logo" src="@/assets/balise360-mobile.svg">
-</router-link>
-    </figure>
+  <nav>
+    <div class="main-nav">
+      <figure>
+        <router-link :to="{name: 'home'}">
+          <img class="main-nav--logo" alt="Balise360 logo" src="@/assets/balise360-mobile.svg">
+        </router-link>
+      </figure>
+      <ul>
+        <router-link :to="{name: 'home'}">
+          <li>Nos fonctionnalités</li>
+        </router-link>
+
+        <router-link :to="{name: 'home'}">
+          <li>Nous choisir</li>
+        </router-link>
+
+        <router-link :to="{name: 'home'}">
+          <li>Notre newsletter</li>
+        </router-link>
+      </ul>
+    </div>
   </nav>
 </template>
 
@@ -16,26 +30,31 @@ export default {
 </script>
 
 <style lang="scss">
+nav{
+  background: var(--green-color);
+}
 .main-nav{
   width: 100%;
   max-width: 1440px;
   padding: 0 50px;
   margin: auto;
-  height: 92px;
+  height: 80px;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
   position: relative;
-  &:before{
-    content: '';
-    height: 1px;
-    width: 100%;
-    background: #000;
-  }
   &--logo{
     width: 138px;
     margin-left: 35px;
 
+  }
+  ul{
+    display: flex;
+    gap: 50px;
+    li{
+      color: var(--background-color);
+      font-family: 'Apfel';
+    }
   }
 }
 

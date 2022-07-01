@@ -24,7 +24,7 @@ export default {
 
 <style lang="scss">
  .fotorama{
-  height: calc(100vh - 92px) ;
+  height: calc(100vh - 80px) ;
   position: relative;
   overflow: hidden;
   display: flex;
