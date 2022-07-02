@@ -1,8 +1,8 @@
 <template>
   <section class="section-form container-section">
-    <div>
+    <div class="container-section-content">
       <div class="form-intro">
-        <h1 class="section-title desktop">
+        <h1 class="main-title desktop">
           <!-- <img class="section-title-img" alt="deco citation" src="@/assets/decos/orange-loop.svg">-->
           Traçons notre chemin
         </h1>
@@ -69,7 +69,7 @@
         >
         <input
           type="submit"
-          value="S’inscrire"
+          value="Recevoir les circuits"
           class="btn-primary mobile"
           :disabled="!formIsValid"
         >
@@ -83,7 +83,7 @@
     </div>
     <div class="desktop">
       <figure class="image-section">
-        <img class="form-img" alt="deco citation" :src="require(`@/assets/form/${dataComponent.src}`)">
+        <img class="form-img" :alt="dataComponent.img.alt" :src="require(`@/assets/form/${dataComponent.img.src}`)">
       </figure>
     </div>
   </section>
@@ -151,17 +151,20 @@ export default {
 
 <style lang="scss">
 .section-form{
-  margin-bottom: 250px;
   margin-top: 75px;
   font-family: 'Apfel', serif;
 
-  .section-title{
+  .main-title{
     text-align: left;
     margin-bottom: 60px;
   }
 
-  > div:first-child{
+  .container-section-content{
     max-width: 483px;
+  }
+
+  .section-form .container-section-content{
+    max-width: unset;
   }
 
   &-intro{
@@ -220,33 +223,28 @@ export default {
 }
 
 @keyframes form-modal{
-    0% {
-        opacity: 0;
-    }
-    50% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
- @media (min-width: 0px) and (max-width: 768px) {
-  .form{
-    padding: 0 50px;
-    margin: auto auto 150px auto;
-    &-intro{
-      h2{
-        margin-bottom: 20px;
-        font-size: 1.5rem;
-        span{
-          color: var(--orange-color);
-        }
-      }
-      p{
-        line-height: 1.25rem;
-      }
-    }
-  }
+@media screen and (max-width: 768px) {
+ .section-form {
+   .container-section-content {
+     max-width: unset;
+   }
+   .form-newsletter-identity{
+     display: block;
+     .container-input{
+       width: 100%;
+     }
+   }
  }
+}
 </style>

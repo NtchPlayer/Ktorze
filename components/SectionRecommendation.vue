@@ -1,6 +1,6 @@
 <template>
   <section class="section-recommendation">
-    <h1 class="section-title">Les randonneurs la recommande</h1>
+    <h1 class="main-title">Les randonneurs la recommande</h1>
     <div class="container-comments">
       <CardComment
         v-for="(comment, i) of comments"

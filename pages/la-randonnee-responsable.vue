@@ -25,27 +25,48 @@ export default {
     FormNewsletter
   },
   asyncData ({ query }) {
-    let userId = 0
+    let templateId = 0
     switch (query.template) {
       case 'pour-tous':
-        userId = 1
+        templateId = 1
         break
       case 'en-famille':
-        userId = 2
+        templateId = 2
         break
       default:
-        userId = 0
+        templateId = 0
         break
     }
+
+    const imgsForm = [{
+      src: 'FormImg.png',
+      alt: 'Un homme fait de la randonnée dans la montagne'
+    }, {
+      src: 'FormImg-2.png',
+      alt: "Un groupe d'ami observe un paysage"
+    }, {
+      src: 'FormImg-3.png',
+      alt: 'Une mère et ses filles face à un lac de montagne'
+    }]
+
     const fotorama = [{
       text: 'Rejoignez la plateforme qui regroupe les endroits les plus spectaculaires du patrimoine naturel français.',
-      src: 'coverfotorama.png'
+      img: {
+        alt: 'Homme campant sur un montagne',
+        src: 'coverfotorama.png'
+      }
     }, {
       text: 'La plateforme qui propose des randonnées adaptées à tous aventuriers engagés !',
-      src: 'coverfotorama-2.png'
+      img: {
+        alt: "Groupe d'ami se baladant dans une plaine",
+        src: 'coverfotorama-2.png'
+      }
     }, {
       text: 'La plateforme qui propose des randonnées adaptées à toutes les familles d\'aventuriers engagées !',
-      src: 'coverfotorama-3.png'
+      img: {
+        alt: "Un père et ses enfants autour d'un lac",
+        src: 'coverfotorama-3.png'
+      }
     }]
 
     const slides = [[
@@ -64,37 +85,46 @@ export default {
 
     const sectionBottom = [{
       block1: 'Grâce à l’application, vous aurez à disposition de <strong>nombreux parcours de randonnée</strong>.<br><strong>Redécouvrez la France et sa biodiversité</strong> sous un autre angle et <strong>préservez notre patrimoine !</strong>',
-      block2: 'Aidez-nous aussi à <strong>récolter des données scientifiques</strong> sur l’impact du réchauffement climatique sur la nature en fonction de votre localisation.<p>Vous êtes <strong>les héros qui aideront à sauvegarder notre cher patrimoine naturel !</strong>',
-      src: 'cover-bottom.png'
+      block2: 'Aidez-nous aussi à <strong>récolter des données scientifiques</strong> sur l’impact du réchauffement climatique sur la nature en fonction de votre localisation.Vous êtes <strong>les héros qui aideront à sauvegarder notre cher patrimoine naturel !</strong>',
+      img1: {
+        alt: "Un couple s'ambrassent dans la montagne",
+        src: 'cover-bottom.png'
+      }
     }, {
       block1: "<strong>Si vous n'avez pas l'habitude de partir en randonnée, pas de panique !</strong><br>Vous pouvez avec notre application <strong>vous renseigner</strong> sur tous les parcours de randonnée et <strong>trouver facilement toutes les informations</strong> dont vous avez besoin pour préparer facilement votre sortie !",
       block2: 'En utilisant Balise 360, les randonneurs vont participer selon leur localisation à récolter des données scientifiques sur <strong>l’impact du réchauffement climatique</strong> sur la nature.<br>Vous êtes les héros, qui participeront à sauvegarder notre cher patrimoine naturel !',
-      src: 'cover-bottom-2.png'
+      img1: {
+        alt: "Groupe d'ami face à un paysage de montagne",
+        src: 'cover-bottom-2.png'
+      }
     }, {
       block1: 'Vous recherchez une randonnée facile à faire en famille ? <strong>Balise 360</strong> vous propose <strong>différents parcours de randonnées</strong> adaptés à vos envies et dispose de toutes les informations dont vous avez besoin pour préparer facilement votre sortie !',
       block2: "Comme on pense à la planète et à l'avenir de nos enfants, en utilisant Balise 360 les randonneurs vont participer selon leur localisation à récolter des données scientifiques sur <strong>l’impact du réchauffement climatique</strong> sur la nature.<br>Vous êtes les héros, qui participeront à sauvegarder notre cher patrimoine naturel !",
-      src: 'cover-bottom-3.png'
+      img1: {
+        alt: 'Un père et sa fille face à un lac de montagne',
+        src: 'cover-bottom-3.png'
+      }
     }]
+
+    sectionBottom[templateId].img2 = imgsForm[templateId]
 
     const form = [{
-      text: 'Recevez par mail des idées de circuits extraordinaires, avec toutes les informations pour planifier votre périple !',
-      src: 'FormImg.png'
+      text: 'Recevez par mail des idées de circuits extraordinaires, avec toutes les informations pour planifier votre périple !'
     }, {
-      text: 'Organiser de temps en temps des balades incroyables et accessibles de tous en recevant les idées par mail !',
-      src: 'FormImg-2.png'
+      text: 'Organiser de temps en temps des balades incroyables et accessibles de tous en recevant les idées par mail !'
     }, {
-      text: 'Recevez par mail des idées de sorties qui feront plaisir à toute la famille !',
-      src: 'FormImg-3.png'
+      text: 'Recevez par mail des idées de sorties qui feront plaisir à toute la famille !'
     }]
 
+    form[templateId].img = imgsForm[templateId]
+
     return {
-      slides: slides[userId],
-      fotorama: fotorama[userId],
-      form: form[userId],
-      sectionBottom: sectionBottom[userId]
+      slides: slides[templateId],
+      fotorama: fotorama[templateId],
+      form: form[templateId],
+      sectionBottom: sectionBottom[templateId]
     }
   },
-  watchQuery: true,
   head () {
     return {
       title: ', la solution de tous les randonneurs engagés',
@@ -120,6 +150,7 @@ export default {
         content: 'Balise 360, la solution qui permet à tous les randonneurs passionnés et engagés de préparer ses itinéraires de randonnées, de se repérer avec ses cartes numériques et son GPS intégré.'
       }]
     }
-  }
+  },
+  watchQuery: true
 }
 </script>

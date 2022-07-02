@@ -1,12 +1,14 @@
 <template>
   <section class="fotorama">
     <figure>
-      <img alt="Vue logo" :src="require(`@/assets/fotorama/${dataComponent.src}`)">
+      <img :alt="dataComponent.img.alt" :src="require(`@/assets/fotorama/${dataComponent.img.src}`)">
     </figure>
     <div class="max-width fotorama-content">
-      <h1 class="fotorama-title">La rando c’est le pied&nbsp;!</h1>
+      <h1 class="fotorama-title">
+        La rando c’est le pied&nbsp;!
+      </h1>
       <p class="fotorama-description" v-text="dataComponent.text" />
-      <router-link class="btn-primary" :to="{name: 'home'}">
+      <router-link class="btn-primary" :to="{name: 'la-randonnee-responsable'}">
         <b>Rejoigner l’aventure</b>
       </router-link>
     </div>
@@ -68,28 +70,22 @@ export default {
   }
 }
 
-@media (min-width: 0px) and (max-width: 768px) {
-  .fotorama{
-    height: 100vh;
-    align-items: center;
-    padding: 0 25px;
-    &-title{
-      position: unset;
-      display: flex;
-      flex-direction: column;
-      max-width: 320px;
-      line-height: 35px;
-      margin-bottom: 15px;
-      font-size: 2rem;
-    }
-    &-description{
-      position: unset;
-      display: block;
-      max-width: 320px;
-      font-size: 1rem;
-      margin-bottom: 25px;
-      line-height: 1.2rem;
-    }
+@media screen and (max-width: 768px) {
+  .fotorama-content{
+    margin-bottom: 25px;
+  }
+  .fotorama-title{
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+  }
+  .fotorama-description{
+    font-size: 1rem;
+    margin-bottom: 15px;
+  }
+
+  .btn-primary{
+    padding-top: 12px;
+    padding-bottom: 12px;
   }
 }
 </style>

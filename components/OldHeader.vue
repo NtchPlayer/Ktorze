@@ -3,15 +3,15 @@
     <ul class="nav-list">
       <li class="nav-list-item">
         <span class="nav-list-item-decoration" />
-        <router-link :to="{name: 'home'}">L'équipe</router-link>
+        <router-link :to="{name: 'la-randonnee-responsable'}">L'équipe</router-link>
       </li>
       <li class="nav-list-item">
         <span class="nav-list-item-decoration" />
-        <router-link :to="{name: 'home'}">Notre projet</router-link>
+        <router-link :to="{name: 'la-randonnee-responsable'}">Notre projet</router-link>
       </li>
       <li class="nav-list-item">
         <span class="nav-list-item-decoration" />
-        <router-link :to="{name: 'home'}">Les fonctionnalités</router-link>
+        <router-link :to="{name: 'la-randonnee-responsable'}">Les fonctionnalités</router-link>
       </li>
     </ul>
     <div class="container-buttons">
@@ -24,7 +24,7 @@
       <Teleport to="body">
         <ModalParams v-if="paramsModal" @close-modal="paramsModal = false" />
       </Teleport>
-      <router-link class="btn-primary btn-primary-fotorama" :to="{name: 'home'}">Télécharger l'application</router-link>
+      <router-link class="btn-primary btn-primary-fotorama" :to="{name: 'la-randonnee-responsable'}">Télécharger l'application</router-link>
     </div>
   </nav>
 </template>

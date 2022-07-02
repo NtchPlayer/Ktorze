@@ -1,8 +1,8 @@
 <template>
   <footer>
     <div class="max-width footer-container">
-      <section class="footer-col desktop">
-        <h4 class="footer-title">
+      <section class="footer-col">
+        <h4 class="second-title upper-case color-blue">
           A propos
         </h4>
         <p><strong>Balise 360</strong> est un concept pour les randonneurs engagés pour l’environnement.</p>
@@ -10,23 +10,27 @@
       </section>
       <section class="footer-col">
         <div>
-          <h4 class="footer-title">
+          <h4 class="second-title upper-case color-blue">
             Nous contacter
           </h4>
           <p>Notre service après ventes :<br>+33 00 00 00 00 00</p>
         </div>
-        <div>
-          <h4 class="footer-title">
+        <div class="footer-col-policy">
+          <h4 class="second-title upper-case color-blue">
             Réglementation
           </h4>
           <ul class="footer-list">
-            <li class="footer-list-item">Les Cookies</li>
-            <li class="footer-list-item">La RGPD</li>
+            <li class="footer-list-item">
+              Les Cookies
+            </li>
+            <li class="footer-list-item">
+              La RGPD
+            </li>
           </ul>
         </div>
       </section>
       <section class="footer-col">
-        <h4 class="footer-title">
+        <h4 class="second-title upper-case color-blue">
           Nos réseaux
         </h4>
         <ul class="footer-list">
@@ -63,19 +67,12 @@ footer{
   color: var(--background-color);
   padding-top: 80px;
   padding-bottom: 60px;
+  margin-top: 250px;
 }
 
 .footer-container{
   display: flex;
   justify-content: space-between;
-}
-
-.footer-title{
-  font-weight: bold;
-  font-size: 1.5rem;
-  color: var(--blue-color);
-  text-transform: uppercase;
-  margin-bottom: 10px;
 }
 
 .footer-col{
@@ -95,25 +92,33 @@ footer{
   margin: 20px 0;
 }
 
-@media (min-width: 0px) and (max-width: 768px){
+@media screen and (max-width: 970px){
   footer{
-    height: 450px;
+    padding: 50px 0;
   }
-  .footerMain{
-    height: 450px;
-    flex-direction: column;
-    padding: 50px 70px;
+  .footer-col:first-child{
+    display: none;
   }
-  .ftOutdoor,.ftAddress, .ftSocialM{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    .ftTitle{
-      font-size: 1.5rem;
+}
+
+@media screen and (max-width: 768px) {
+  footer{
+    margin-top: 50px;
+  }
+}
+
+@media screen and (max-width: 530px) {
+  .footer-container{
+    display: block;
+    .footer-col{
+      margin-bottom: 40px;
+      &:last-child{
+        margin-bottom: 0;
+      }
     }
-    p{
-      text-align: left;
-    }
+  }
+  .footer-col-policy{
+    display: none;
   }
 }
 </style>

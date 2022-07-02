@@ -3,7 +3,7 @@
     <p>
       <strong>Rejoindre l'aventure</strong>  dès aujourd'hui
     </p>
-    <router-link class="btn-secondary" :to="{name: 'home'}">
+    <router-link class="btn-secondary" :to="{name: 'la-randonnee-responsable'}">
       Commencer
     </router-link>
   </div>
