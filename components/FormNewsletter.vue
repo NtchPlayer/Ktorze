@@ -3,8 +3,7 @@
     <div class="container-section-content">
       <div class="form-intro">
         <h1 class="main-title desktop">
-          <!-- <img class="section-title-img" alt="deco citation" src="@/assets/decos/orange-loop.svg">-->
-          Traçons notre chemin
+          <span class="decoration-circle">Traçons</span> notre chemin
         </h1>
         <h2 class="second-title">
           Notre super <span class="color-orange">Carnet de Voyage</span>
@@ -153,10 +152,22 @@ export default {
 .section-form{
   margin-top: 75px;
   font-family: 'Apfel', serif;
-
+  padding-bottom: 250px;
+  background-image: url(../assets/decos/deco-4.png), url(../assets/decos/deco-3.png);
+  background-repeat: no-repeat;
+  background-position: -53px 553px, calc(100% - -57px) 71px;
+  background-size: 940px, 408px;
   .main-title{
     text-align: left;
     margin-bottom: 60px;
+  }
+
+  .decoration-circle::before{
+    background-image: url(../assets/decos/orange-loop.svg);
+    width: 189px;
+    height: 126px;
+    right: -8px;
+    bottom: calc(50% - 13px);
   }
 
   .container-section-content{
@@ -167,28 +178,8 @@ export default {
     max-width: unset;
   }
 
-  &-intro{
-    h3{
-      color: var(--green-color);
-      font-size: 1.5rem;
-      font-weight: 500;
-    }
-    .section-title-img{
-      position: absolute;
-      top: -35px;
-      left: -65px;
-    }
-    p{
-      font-size: 1rem;
-      margin: 5px 0 25px auto;
-      max-width: 600px;
-      color: var(--green-color);
-    }
-    h2{
-      color: var(--green-color);
-      font-size: 2.5rem;
-      font-weight: 500;
-    }
+  .btn-primary{
+    max-width: max-content;
   }
   &-modal{
     position: fixed;
@@ -231,6 +222,12 @@ export default {
   }
   100% {
     opacity: 1;
+  }
+}
+
+@media screen and (max-width: 1000px){
+  .section-form{
+    background: none;
   }
 }
 

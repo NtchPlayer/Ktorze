@@ -58,6 +58,19 @@ strong{
   width: 100%;
 }
 
+.decoration-circle{
+  position: relative;
+  &::before{
+    content: '';
+    display: block;
+    position: absolute;
+    z-index: -1;
+    transform: translateY(50%);
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+}
+
 .second-title{
   font-family: 'Apfel', sans-serif;
   font-weight: bold;
@@ -132,7 +145,6 @@ strong{
   font-size: 1rem;
   transition-duration: var(--transition-duration);
   font-weight: 500;
-  max-width: max-content;
   cursor: pointer;
   &:hover {
     background-color: var(--green-hover);

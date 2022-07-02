@@ -49,8 +49,6 @@
         </ul>
       </section>
     </div>
-    <!--<img class="-home-img" src="@/assets/decos/topo-bottom-left.png" alt="decoration">-->
-    <!--<img class="-home-img" src="@/assets/decos/topo-bottom-right.png" alt="decoration">-->
   </footer>
 </template>
 
@@ -67,7 +65,6 @@ footer{
   color: var(--background-color);
   padding-top: 80px;
   padding-bottom: 60px;
-  margin-top: 250px;
 }
 
 .footer-container{

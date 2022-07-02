@@ -3,6 +3,7 @@
     <Header @openMenu="responsiveMenu = true" />
     <NavResponsive v-show="responsiveMenu" @closeMenu="responsiveMenu = false" />
     <Nuxt />
+    <NotificationsCookie />
     <Footer />
   </div>
 </template>
@@ -11,13 +12,15 @@
 import Header from '@/components/Header.vue'
 import NavResponsive from '@/components/NavResponsive'
 import Footer from '@/components/Footer'
+import NotificationsCookie from '@/components/notifications/NotificationsCookie'
 
 export default {
   name: 'Default',
   components: {
     Footer,
     Header,
-    NavResponsive
+    NavResponsive,
+    NotificationsCookie
   },
   data () {
     return {

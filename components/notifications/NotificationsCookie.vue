@@ -1,8 +1,8 @@
 <template>
   <div v-if="active" class="container-notifications">
-    <div class="container-cookie">
+    <div class="max-width container-cookie">
       <p>Acceptez-vous les cookies google tags managers ?</p>
-      <div class="container-cookie-button">
+      <div class="container-cookie-button flex">
         <button
           type="button"
           class="btn-primary"
@@ -31,7 +31,7 @@ export default {
     }
   },
   methods: {
-    gtmGestion(val) {
+    gtmGestion (val) {
       localStorage.setItem('gtmState', val)
       this.active = false
       this.$gtm.enable(val)
@@ -42,7 +42,7 @@ export default {
     if (gtmState === null) {
       this.active = true
     }
-  },
+  }
 }
 </script>
 
@@ -52,17 +52,15 @@ export default {
   z-index: 5;
   bottom: 0;
   width: 100%;
-  display: flex;
   justify-content: center;
-  margin-bottom: 10px;
+  background-color: #fff;
+  box-shadow: 0 0 11px rgba(0, 0, 0, 0.3);
+  padding: 15px 0;
 }
 
 .container-cookie{
-  background-color: #fff;
   display: flex;
-  padding: 10px;
   border-radius: var(--border-radius);
-  box-shadow: 0 0 11px rgba(0, 0, 0, 0.3);
   p {
     align-self: center;
   }
@@ -71,6 +69,20 @@ export default {
   }
   button{
     margin: 0 5px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .container-cookie{
+    text-align: center;
+    display: block;
+    &-button{
+      margin-top: 20px;
+      margin-left: 0;
+      button{
+        width: 100%;
+      }
+    }
   }
 }
 </style>
