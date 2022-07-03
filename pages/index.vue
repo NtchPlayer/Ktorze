@@ -9,10 +9,10 @@
     <h1 class="main-title">
       Connectez-vous
     </h1>
-    <form>
-      <InputEmail ref="email-input" v-model="email" />
-      <InputPassword ref="password-input" v-model="password" />
-      <input :disabled="!formIsValid" class="input btn-primary" type="submit" value="Connexion">
+    <form @submit.prevent="login">
+      <InputEmail ref="input-email" v-model="email" />
+      <InputPassword ref="input-password" v-model="password" />
+      <input class="input btn-primary" type="submit" value="Connexion">
     </form>
     <p class="links-container">
       <nuxt-link :to="{ name: 'auth-sign-up' }">
@@ -35,8 +35,8 @@ export default {
   layout: 'auth',
   data () {
     return {
-      email: '',
-      password: ''
+      email: 'test@exemple.com',
+      password: 'couette1'
     }
   },
   head () {
@@ -55,13 +55,26 @@ export default {
   },
   computed: {
     emailIsValid () {
-      return this.$refs['email-input']?.emailIsValid
+      return this.$refs['input-email']?.emailIsValid
     },
     passwordIsValid () {
-      return this.$refs['password-input']?.passwordIsValid
-    },
-    formIsValid () {
-      return this.emailIsValid && this.passwordIsValid
+      return this.$refs['input-password']?.passwordIsValid
+    }
+    // formIsValid () {
+    //   return this.emailIsValid && this.passwordIsValid
+    // }
+  },
+  methods: {
+    login () {
+      this.$auth.loginWith('local', {
+        data: {
+          email: this.email,
+          password: this.password
+        }
+      })
+        .then(() => {
+          console.log('test')
+        })
     }
   }
 }

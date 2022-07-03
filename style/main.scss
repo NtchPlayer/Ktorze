@@ -148,15 +148,18 @@ strong{
   cursor: pointer;
   &:hover {
     background-color: var(--green-hover);
+    color: #fff;
   }
 }
 
 input.btn-primary {
+  color: var(--green-color);
   margin-top: 25px;
   font-weight: 600;
   width: 100%;
   &:disabled {
     cursor: not-allowed;
+    color: #fff;
     background-color: var(--grey-color);
   }
 }

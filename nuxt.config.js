@@ -83,6 +83,7 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
+    '@nuxtjs/auth-next',
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
     '@nuxtjs/gtm',
@@ -150,6 +151,34 @@ export default {
     enabled: true,
     debug: true,
     autoInit: false
+  },
+
+  auth: {
+    redirect: {
+      login: '/',
+      logout: '/',
+      callback: '/login',
+      home: '/profile/quiz'
+    },
+    strategies: {
+      local: {
+        token: {
+          property: 'payload.token',
+          global: true
+          // required: true,
+          // type: 'Bearer'
+        },
+        user: {
+          property: 'user'
+          // autoFetch: true
+        },
+        endpoints: {
+          login: { url: '/auth/login', method: 'post' },
+          logout: { url: '/auth/logout', method: 'post' },
+          user: { url: '/auth/user', method: 'get' }
+        }
+      }
+    }
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build

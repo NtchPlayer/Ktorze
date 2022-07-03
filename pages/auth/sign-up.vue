@@ -6,7 +6,7 @@
     <p class="text-body t-center">
       Aidez-nous à vous proposer des équipements, des sentiers et des services sur mesure en saisissant vos données
     </p>
-    <form>
+    <form @submit.prevent="signUp">
       <InputEmail ref="input-email" v-model="email" />
       <InputPassword ref="input-password" v-model="password" />
       <InputFirstname ref="input-firstname" v-model="firstname" />
@@ -50,12 +50,12 @@ export default {
   layout: 'auth',
   data () {
     return {
-      email: '',
-      password: '',
-      firstname: '',
-      lastname: '',
-      birthday: '',
-      gender: ''
+      email: 'test@exemple.com',
+      password: 'couette1',
+      firstname: 'Test',
+      lastname: 'Exemple',
+      birthday: '2000-01-01',
+      gender: 'male'
     }
   },
   head () {
@@ -81,6 +81,30 @@ export default {
         this.$refs['input-birthday']?.birthdayIsValid &&
         this.$refs['input-gender']?.genderIsValid &&
         this.$refs['input-policy']?.policy
+    }
+  },
+  methods: {
+    signUp () {
+      if (!this.formIsValid) {
+        return
+      }
+      return this.$axios
+        .post('/users/signup', {
+          email: this.email,
+          password: this.password,
+          firstname: this.firstname,
+          lastname: this.lastname,
+          birthday: this.birthday,
+          gender: this.gender
+        })
+        .then((e) => {
+          this.$auth.setUser(e.data.user)
+          this.$auth.setUserToken(e.data.payload.token, e.data.payload.refresh_token)
+          this.$router.push({ name: 'profile-quiz' })
+        })
+        .catch((e) => {
+          console.log(e)
+        })
     }
   }
 }
