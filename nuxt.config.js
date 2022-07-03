@@ -38,7 +38,7 @@ export default {
     }, {
       hid: 'twitter:title',
       name: 'twitter:title',
-      content: 'Balise360'
+      content: 'Balise 360, la solution de tous les randonneurs engagés'
     }, {
       hid: 'twitter:description',
       name: 'twitter:description',
@@ -106,6 +106,7 @@ export default {
       appleStatusBarStyle: 'black-translucent',
       mobileAppIOS: true,
       theme_color: '#658672',
+      ogDescription: 'Balise 360, la solution qui permet à tous les randonneurs passionnés et engagés de préparer ses itinéraires de randonnées, de se repérer avec ses cartes numériques et son GPS intégré.',
       ogHost: process.env.BASE_SITE,
       ogImage: {
         path: `${process.env.BASE_SITE}/open-graph.jpg`,
