@@ -68,6 +68,7 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    '@/plugins/gtm'
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -147,12 +148,9 @@ export default {
   },
 
   gtm: {
+    enabled: true,
     autoInit: false,
-    publicRuntimeConfig: {
-      gtm: {
-        id: process.env.GOOGLE_TAG_MANAGER_ID
-      }
-    }
+    debug: true
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build

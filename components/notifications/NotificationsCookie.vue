@@ -34,13 +34,17 @@ export default {
     gtmGestion (val) {
       localStorage.setItem('gtmState', val)
       this.active = false
-      this.$gtm.enable(val)
+      if (val) {
+        return this.$gtm.init('GTM-T2KB2Q6')
+      }
     }
   },
   mounted () {
     const gtmState = localStorage.getItem('gtmState')
     if (gtmState === null) {
       this.active = true
+    } else {
+      return this.$gtm.init('GTM-T2KB2Q6')
     }
   }
 }
@@ -60,6 +64,7 @@ export default {
 
 .container-cookie{
   display: flex;
+  justify-content: space-between;
   border-radius: var(--border-radius);
   p {
     align-self: center;
@@ -69,6 +74,7 @@ export default {
   }
   button{
     margin: 0 5px;
+    padding: 13px 60px;
   }
 }
 
