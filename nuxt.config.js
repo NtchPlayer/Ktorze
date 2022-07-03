@@ -148,9 +148,10 @@ export default {
   },
 
   gtm: {
-    enabled: true,
+    enabled: false,
     autoInit: false,
-    debug: true
+    debug: true,
+    pageTracking: true
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build

@@ -35,7 +35,7 @@ export default {
       localStorage.setItem('gtmState', val)
       this.active = false
       if (val) {
-        return this.$gtm.init('GTM-T2KB2Q6')
+        this.$gtm.init('GTM-T2KB2Q6')
       }
     }
   },
@@ -44,7 +44,7 @@ export default {
     if (gtmState === null) {
       this.active = true
     } else {
-      return this.$gtm.init('GTM-T2KB2Q6')
+      this.$gtm.init('GTM-T2KB2Q6')
     }
   }
 }
