@@ -67,9 +67,7 @@ export default {
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [
-    '@/plugins/gtm'
-  ],
+  plugins: [],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: false,
@@ -148,10 +146,9 @@ export default {
   },
 
   gtm: {
-    enabled: false,
-    autoInit: false,
+    enabled: true,
     debug: true,
-    pageTracking: true
+    autoInit: false
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build

@@ -27,19 +27,19 @@
       </h1>
       <ul class="desktop">
         <li>
-          <nuxt-link :to="{ hash: 'fonctionnalites', query: $route.query }">
+          <nuxt-link id="nav-link-functionality" :to="{ hash: 'fonctionnalites', query: $route.query }">
             Nos fonctionnalités
           </nuxt-link>
         </li>
 
         <li>
-          <nuxt-link :to="{ hash: 'nous-choisir', query: $route.query }">
+          <nuxt-link id="nav-link-choose" :to="{ hash: 'nous-choisir', query: $route.query }">
             Nous choisir
           </nuxt-link>
         </li>
 
         <li>
-          <nuxt-link :to="{ hash: 'newsletter', query: $route.query }">
+          <nuxt-link id="nav-link-newsletter" :to="{ hash: 'newsletter', query: $route.query }">
             Notre newsletter
           </nuxt-link>
         </li>

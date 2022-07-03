@@ -30,7 +30,7 @@
       />
     </vueper-slides>
     <p class="t-center desktop">
-      <router-link class="btn-primary" :to="{name: 'la-randonnee-responsable'}">Découvrir Balise 360</router-link>
+      <a class="btn-primary" href="https://linktr.ee/balise360" target="_blank">Découvrir Balise 360</a>
     </p>
   </section>
 </template>
@@ -111,6 +111,11 @@ export default {
   background-size: 710px, 550px;
   .main-title.mobile{
     text-align: left;
+  }
+
+  .t-center{
+    position: relative;
+    z-index: 5;
   }
 
   .decoration-circle::before{

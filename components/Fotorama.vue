@@ -8,7 +8,7 @@
         La rando c’est le pied&nbsp;!
       </h1>
       <p class="fotorama-description" v-text="dataComponent.text" />
-      <router-link class="btn-primary" :to="{name: 'la-randonnee-responsable'}">
+      <router-link class="btn-primary" :to="{ hash: '#newsletter' }">
         <b>Rejoigner l’aventure</b>
       </router-link>
     </div>

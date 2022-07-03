@@ -30,12 +30,24 @@ export default {
       active: false
     }
   },
+  computed: {
+    GTM_ID () {
+      switch (this.$route.query.template) {
+        case 'pour-tous':
+          return 'GTM-MB8V8WG'
+        case 'en-famille':
+          return 'GTM-PMK2XN9'
+        default:
+          return 'GTM-T2KB2Q6'
+      }
+    }
+  },
   methods: {
     gtmGestion (val) {
       localStorage.setItem('gtmState', val)
       this.active = false
       if (val) {
-        this.$gtm.init('GTM-T2KB2Q6')
+        this.$gtm.init(this.GTM_ID)
       }
     }
   },
@@ -44,7 +56,7 @@ export default {
     if (gtmState === null) {
       this.active = true
     } else {
-      this.$gtm.init('GTM-T2KB2Q6')
+      this.$gtm.init(this.GTM_ID)
     }
   }
 }

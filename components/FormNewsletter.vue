@@ -59,17 +59,10 @@
             Votre adresse mail n'est pas valide.
           </p>
         </div>
-
-        <input
-          type="submit"
-          value="S’inscrire à la newsletter"
-          class="btn-primary desktop"
-          :disabled="!formIsValid"
-        >
         <input
           type="submit"
           value="Recevoir les circuits"
-          class="btn-primary mobile"
+          class="btn-primary desktop"
           :disabled="!formIsValid"
         >
       </form>
