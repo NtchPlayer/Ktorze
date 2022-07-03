@@ -43,7 +43,7 @@ export default {
 
 <style lang="scss">
 .section-bottom{
-  margin-bottom: 180px;
+  margin-bottom: 150px;
   .main-title{
     text-align: left;
     margin-bottom: 50px;
