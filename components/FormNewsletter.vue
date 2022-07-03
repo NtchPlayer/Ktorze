@@ -42,23 +42,10 @@
             >
           </div>
         </div>
-        <div class="container-input">
-          <label>Adresse mail</label>
-          <input
-            id="email"
-            v-model.trim.lazy="email"
-            class="input"
-            :class="{ 'input-invalid': !emailIsValid && email !== '' }"
-            type="email"
-            pattern=".+@.+."
-            name="email"
-            required
-            placeholder="Votre address mail"
-          >
-          <p v-show="!emailIsValid && email !== ''" class="input-error">
-            Votre adresse mail n'est pas valide.
-          </p>
-        </div>
+        <InputEmail
+          ref="email-input"
+          v-model="email"
+        />
         <input
           type="submit"
           value="Recevoir les circuits"
@@ -82,8 +69,13 @@
 </template>
 
 <script>
+import InputEmail from '@/components/input/InputEmail'
+
 export default {
   name: 'FormNewsletter',
+  components: {
+    InputEmail
+  },
   props: {
     dataComponent: { type: Object, required: true }
   },
@@ -104,7 +96,7 @@ export default {
       return this.lastname.length > 1
     },
     emailIsValid () {
-      return /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(this.email)
+      return this.$refs['email-input'].emailIsValid
     },
     formIsValid () {
       return this.firstnameIsValid && this.lastnameIsValid && this.emailIsValid
