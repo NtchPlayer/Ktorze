@@ -1,84 +1,72 @@
 <template>
   <div>
-    <Fotorama :data-component="fotorama" />
-    <SectionHome :slides="slides" />
-    <Citation />
-    <SectionBottom :data-component="sectionbottom" />
-    <FormNewsletter :data-component="form" />
+    <figure class="main-logo">
+      <img alt="Icon balise 360" src="@/assets/balise360.svg">
+    </figure>
+    <p class="main-title">
+      Bienvenue.
+    </p>
+    <h1 class="main-title">
+      Connectez-vous
+    </h1>
+    <form>
+      <InputEmail ref="email-input" v-model="email" />
+      <InputPassword ref="password-input" v-model="password" />
+      <input :disabled="!formIsValid" class="input btn-primary" type="submit" value="Connexion">
+    </form>
+    <p class="links-container">
+      <nuxt-link :to="{ name: 'auth-sign-up' }">
+        Se créer un compte
+      </nuxt-link>
+    </p>
   </div>
 </template>
 
 <script>
-import Fotorama from '@/components/Fotorama.vue'
-import SectionHome from '@/components/SectionHome.vue'
-import SectionBottom from '@/components/SectionBottom.vue'
-import Citation from '@/components/Citation.vue'
-import FormNewsletter from '@/components/FormNewsletter.vue'
+import InputEmail from '@/components/input/InputEmail'
+import InputPassword from '@/components/input/InputPassword'
 
 export default {
   name: 'Home',
   components: {
-    Fotorama,
-    SectionHome,
-    SectionBottom,
-    Citation,
-    FormNewsletter
+    InputPassword,
+    InputEmail
   },
+  layout: 'auth',
   data () {
     return {
-      fotorama: {
-        text: '<span>Rejoignez la plateforme qui regroupe les endroits les  </span><span>plus spectaculaires du patrimoine naturel français.</span>',
-        src: 'coverfotorama.png'
-      },
-      slides: [{
-        image: require('@/assets/icons/map.svg'),
-        title: 'Des parcours personnalisés',
-        content: 'Trouvez des parcours de randonnée à faire en famille. Indiquez vos différents critères sur votre profil comme le niveau, la durée et le type de parcours que vous aimez faire. Balise 360 se charge du reste !'
-      }, {
-        image: require('@/assets/icons/leaf.svg'),
-        title: 'Protégez l’environnement',
-        content: 'Ressourcez vous dans la nature mais ressourcez la également au travers de vos parcours. Randonnez tout en apprenant à vos enfants à observer, analyser et préserver la nature.'
-      }, {
-        image: require('@/assets/icons/heart.svg'),
-        title: 'Rejoignez la communauté',
-        content: 'Parcourez les sentiers mais aussi les avis de tous les randonneurs sur notre plateforme. Partagez vos expériences et encouragez celles des autres !'
-      }],
-      sectionbottom: {
-        text: '<p>Grâce à l’application, vous aurez à disposition de <strong>nombreux parcours de randonnée.</strong></p><p><strong>Redécouvrez la France et sa biodiversité sous un autre angle et préservez notre patrimoine !</p>',
-        text2: '<p>Aidez-nous aussi à récolter des données scientifiques sur l’impact du réchauffement climatique sur la nature en fonction de votre localisation.</p><p>Vous êtes les héros qui aideront à sauvegarder notre cher patrimoine naturel !</p>',
-        src: 'cover-bottom.png'
-      },
-      form: {
-        text: 'Recevez par mail des idées de circuits extraordinaires, avec toutes les informations pour planifier votre périple !',
-        src: 'FormImg.png'
-      }
+      email: '',
+      password: ''
     }
   },
   head () {
     return {
-      title: ', la solution de tous les randonneurs engagés',
+      title: ' - Login',
       meta: [{
-        hid: 'description',
-        name: 'description',
-        content: 'Balise 360, la solution qui permet à tous les randonneurs passionnés et engagés de préparer ses itinéraires de randonnées, de se repérer avec ses cartes numériques et son GPS intégré.'
-      }, {
         hid: 'og:title',
         property: 'og:title',
-        content: 'Balise 360, la solution de tous les randonneurs engagés'
-      }, {
-        hid: 'og:description',
-        name: 'og:description',
-        content: 'Balise 360, la solution qui permet à tous les randonneurs passionnés et engagés de préparer ses itinéraires de randonnées, de se repérer avec ses cartes numériques et son GPS intégré.'
+        content: 'Balise360 - Login'
       }, {
         hid: 'twitter:title',
         name: 'twitter:title',
-        content: 'Balise 360, la solution de tous les randonneurs engagés'
-      }, {
-        hid: 'twitter:description',
-        name: 'twitter:description',
-        content: 'Balise 360, la solution qui permet à tous les randonneurs passionnés et engagés de préparer ses itinéraires de randonnées, de se repérer avec ses cartes numériques et son GPS intégré.'
+        content: 'Balise360 - Login'
       }]
+    }
+  },
+  computed: {
+    emailIsValid () {
+      return this.$refs['email-input']?.emailIsValid
+    },
+    passwordIsValid () {
+      return this.$refs['password-input']?.passwordIsValid
+    },
+    formIsValid () {
+      return this.emailIsValid && this.passwordIsValid
     }
   }
 }
 </script>
+
+<style>
+
+</style>
