@@ -1,7 +1,7 @@
 <template>
   <article class="card-comment">
     <figure class="card-comment-img">
-      <img :src="require(`@/assets/comments/${img.src}.png`)" :alt="img.src" />
+      <img loading="lazy" :src="require(`@/assets/comments/${img.src}.png`)" :alt="img.src" />
     </figure>
     <div class="card-comment-content">
       <h1 class="card-comment-name" v-text="name" />

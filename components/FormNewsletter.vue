@@ -62,7 +62,7 @@
     </div>
     <div class="desktop">
       <figure class="image-section">
-        <img class="form-img" :alt="dataComponent.img.alt" :src="require(`@/assets/form/${dataComponent.img.src}`)">
+        <img loading="lazy" class="form-img" :alt="dataComponent.img.alt" :src="require(`@/assets/form/${dataComponent.img.src}`)">
       </figure>
     </div>
   </section>
