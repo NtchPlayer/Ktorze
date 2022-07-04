@@ -8,22 +8,21 @@
       <br>
       vous appelle !
     </h2>
-    <vueper-slides
-      class="no-shadow"
-      bullets-outside
-      :arrows="false"
-      :breakpoints="breakpoints"
-      :slide-ratio="1/2"
-      :gap="2"
-    >
-      <vueper-slide
-        v-for="(slide, i) in slides"
-        :key="i"
-        :image="slide.image"
-        :title="slide.title"
-        :content="slide.content"
-      />
-    </vueper-slides>
+    <swiper class="swiper" :options="swiperOptions">
+      <swiper-slide class="slide">
+        <h2>Des parcours personnalisés</h2>
+        <p>Trouvez des parcours de randonnée adaptés à vos envies. Indiquez différents critères sur votre profil comme le niveau, la durée et le type de parcours.</p>
+      </swiper-slide>
+      <swiper-slide class="slide">
+        <h2>Protégez l’environnement</h2>
+        <p>Ressourcez vous dans la nature mais ressourcez la également au travers de vos parcours. Randonnez tout en apprenant à observer, analyser et préserver la nature.</p>
+      </swiper-slide>
+      <swiper-slide class="slide">
+        <h2>Rejoignez la communauté</h2>
+        <p>Parcourez les sentiers mais aussi les avis de tous les randonneurs sur notre plateforme. Partagez vos expériences et encouragez celles des autres !</p>
+      </swiper-slide>
+      <div class="swiper-pagination mobile" slot="pagination"></div>
+    </swiper>
     <p class="t-center desktop">
       <a class="btn-primary" href="https://linktr.ee/balise360" target="_blank">Découvrir Balise 360</a>
     </p>
@@ -31,66 +30,37 @@
 </template>
 
 <script>
-import { VueperSlides, VueperSlide } from 'vueperslides'
-import 'vueperslides/dist/vueperslides.css'
+import { Swiper, SwiperSlide } from 'vue-awesome-swiper'
+
+import 'swiper/css/swiper.css'
 
 export default {
+  ssr: false,
   name: 'SectionHome',
   components: {
-    VueperSlides,
-    VueperSlide
+    Swiper,
+    SwiperSlide
   },
+
   props: {
     dataComponent: { type: Array, required: true }
   },
   data () {
     return {
-      breakpoints: {
-        769: {
-          visibleSlides: 1,
-          draggingDistance: 20,
-          gap: 0
+      swiperOptions: {
+        spaceBetween: 35,
+        watchOverflow: false,
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true
         },
-        1024: {
-          visibleSlides: 3,
-          touchable: false
-        },
-        3200: {
-          visibleSlides: 3,
-          gap: 10,
-          touchable: false
+        breakpoints: {
+          769: {
+            slidesPerView: 3,
+            allowTouchMove: false
+          }
         }
       }
-    }
-  },
-  computed: {
-    slides () {
-      const defaultDatas = [{
-        image: require('@/assets/icons/map.svg'),
-        title: 'Des parcours personnalisés'
-      }, {
-        image: require('@/assets/icons/leaf.svg'),
-        title: 'Protégez l’environnement'
-      }, {
-        image: require('@/assets/icons/heart.svg'),
-        title: 'Rejoignez la communauté'
-      }]
-      this.dataComponent.forEach((data, i) => {
-        defaultDatas[i].content = data
-      })
-      return defaultDatas
-    }
-  },
-  methods: {
-    drawSvg (event) {
-      const pathSvg = event.target.children[0]
-
-      if (pathSvg === undefined || null) {
-        return
-      }
-      this.$gsap.set(event.target, { visibility: 'visible' })
-      const tl = this.$gsap.timeline({ repeat: 0, repeatDelay: 1 })
-      tl.to(event.target, { strokeDashoffset: '=73', repeat: -1, ease: 'power1.out' })
     }
   }
 }
@@ -101,6 +71,41 @@ export default {
   padding-top: 100px;
   padding-bottom: 175px;
   position: relative;
+  .swiper-container{
+    overflow-y: visible;
+    overflow-x: clip;
+    margin: 75px 0;
+    .swiper-wrapper{
+      .swiper-slide{
+        padding-top: 75px;
+        background: url("@/assets/icons/leaf.svg") no-repeat local 0% 0%;
+        &:first-child{
+          background: url("@/assets/icons/map.svg") no-repeat local 0% 0%;
+        }
+        &:last-child{
+          background: url("@/assets/icons/heart.svg") no-repeat local 0% 0%;
+        }
+        h2{
+          font-size: 1.5rem;
+          font-weight: bold;
+          margin-bottom: 20px;
+        }
+        p{
+          line-height: 26px;
+        }
+      }
+    }
+  }
+  .swiper-pagination{
+    bottom: -40px;
+    &-bullet{
+      background: var(--orange-color);
+      opacity: 1;
+      &-active{
+        background: var(--green-color);
+      }
+    }
+  }
   &::before{
   content: url("@/assets/decos/deco-1.png");
     position: absolute;
@@ -139,64 +144,12 @@ export default {
   }
 }
 
-// CAROUSEL
-.vueperslides{
-  z-index: 0 !important;
-}
- .vueperslide{
-  background-repeat: no-repeat;
-  background-attachment: scroll;
-  background-position: 0 0;
-  padding: 82px 0 0 0;
-  background-size: unset;
-  font-family: 'Apfel', serif;
-  &__title{
-    font-size: 1.5rem;
-    margin-bottom: 15px;
-    font-weight: bold;
-  }
-  &__content{
-    font-size: 1rem;
-    line-height: 1.6rem;
-  }
-  &__content-wrapper{
-    &:not(.vueperslide__content-wrapper--outside-top):not(.vueperslide__content-wrapper--outside-bottom){
-      align-items: flex-start;
-      text-align: left;
-      justify-content: flex-start;
-    }
-  }
-  &s{
-    z-index: -1;
-    max-height: 300px;
-    padding: 0 20px;
-    margin: 100px auto 50px auto;
-  }
- }
-
  @media screen and (max-width: 768px) {
   .section-home{
     margin-bottom: 100px;
     background: none;
-  }
- //CAROUSSEL
- .vueperslides{
-    position: relative;
-    padding: 0 0;
-    z-index: 10;
-    &__bullet{
-      & .default{
-       border: none;
-       background-color: var(--orange-color);
-     }
-     &--active{
-      & .default{
-        background-color: var(--green-color);
-      }
-     }
-    }
-    &__parallax-wrapper{
-      min-height: 220px;
+    &::before, &::after{
+      content: none;
     }
   }
 }
