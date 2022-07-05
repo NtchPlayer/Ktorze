@@ -1,13 +1,12 @@
 <template>
   <main>
-    <p>Profile</p>
+    <h1>Map</h1>
   </main>
 </template>
 
 <script>
 export default {
-  name: 'Profile',
-  layout: 'app',
-  middleware: 'auth'
+  name: 'Map',
+  layout: 'app'
 }
 </script>
