@@ -1,7 +1,7 @@
 <template>
   <section class="fotorama">
     <figure>
-      <img :alt="dataComponent.img.alt" :src="require(`@/assets/fotorama/${dataComponent.img.src}`)">
+      <img loading="lazy" :alt="dataComponent.img.alt" :src="require(`@/assets/fotorama/${dataComponent.img.src}`)">
     </figure>
     <div class="max-width fotorama-content">
       <h1 class="fotorama-title">

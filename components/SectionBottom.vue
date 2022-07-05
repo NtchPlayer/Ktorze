@@ -6,7 +6,7 @@
     <div class="container-section">
       <div class="container-section-image">
         <figure class="image-section">
-          <img :src="require(`@/assets/section/${dataComponent.img1.src}`)" :alt="dataComponent.img1.alt">
+          <img loading="lazy" :src="require(`@/assets/section/${dataComponent.img1.src}`)" :alt="dataComponent.img1.alt">
         </figure>
       </div>
       <div>
@@ -18,7 +18,7 @@
         </div>
         <div class="mobile">
           <figure class="image-section">
-            <img class="form-img" :alt="dataComponent.img2.alt" :src="require(`@/assets/form/${dataComponent.img2.src}`)">
+            <img loading="lazy" class="form-img" :alt="dataComponent.img2.alt" :src="require(`@/assets/form/${dataComponent.img2.src}`)">
           </figure>
         </div>
         <div class="container-section-content">
@@ -43,7 +43,7 @@ export default {
 
 <style lang="scss">
 .section-bottom{
-  margin-bottom: 180px;
+  margin-bottom: 150px;
   .main-title{
     text-align: left;
     margin-bottom: 50px;

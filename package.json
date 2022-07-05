@@ -24,9 +24,9 @@
     "nuxt": "^2.15.8",
     "sass-loader": "^10.1.1",
     "vue": "^2.6.14",
+    "vue-awesome-swiper": "^4.1.1",
     "vue-server-renderer": "^2.6.14",
     "vue-template-compiler": "^2.6.14",
-    "vueperslides": "^2.15.3",
     "webpack": "^4.46.0"
   },
   "devDependencies": {

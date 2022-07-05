@@ -62,7 +62,7 @@
     </div>
     <div class="desktop">
       <figure class="image-section">
-        <img class="form-img" :alt="dataComponent.img.alt" :src="require(`@/assets/form/${dataComponent.img.src}`)">
+        <img loading="lazy" class="form-img" :alt="dataComponent.img.alt" :src="require(`@/assets/form/${dataComponent.img.src}`)">
       </figure>
     </div>
   </section>
@@ -137,11 +137,30 @@ export default {
 .section-form{
   margin-top: 75px;
   font-family: 'Apfel', serif;
+  padding-top: 35px;
   padding-bottom: 250px;
-  background-image: url(../assets/decos/deco-4.png), url(../assets/decos/deco-3.png);
-  background-repeat: no-repeat;
-  background-position: -53px 553px, calc(100% - -57px) 71px;
-  background-size: 940px, 408px;
+  position: relative;
+  overflow-y: clip;
+  &::before{
+  content: url("@/assets/decos/deco-4.png");
+    position: absolute;
+    bottom: -190px;
+    left: -380px;
+    z-index: -1;
+    height: 605px;
+    width: 547px;
+    transform: scale(0.3);
+  }
+  &::after{
+    content: url("@/assets/decos/deco-3.png");
+    position: absolute;
+    bottom: 250px;
+    right: 5px;
+    z-index: -1;
+    height: 605px;
+    width: 547px;
+    transform: scale(0.25);
+  }
   .main-title{
     text-align: left;
     margin-bottom: 60px;
