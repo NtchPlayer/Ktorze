@@ -5,10 +5,10 @@
       <client-only>
         <l-map :zoom="zoom" :center="center">
           <l-tile-layer :url="url" />
-          <l-marker
-            v-for="marker of markers"
-            :key="marker.id"
-            :lat-lng="marker.coordinates"
+          <l-geo-json
+            v-for="(data, i) of geoJsonDatas"
+            :key="i"
+            :geojson="data"
           />
         </l-map>
       </client-only>
@@ -20,17 +20,21 @@
 export default {
   name: 'Map',
   layout: 'app',
+  async asyncData ({ $axios }) {
+    const datas = []
+    const test = await $axios.$get('https://umap.openstreetmap.fr/fr/datalayer/114912/')
+    datas.push(test)
+    const test2 = await $axios.$get('https://umap.openstreetmap.fr/fr/datalayer/114911/')
+    datas.push(test2)
+    return {
+      geoJsonDatas: datas
+    }
+  },
   data () {
     return {
       url: 'https://{s}.tile.osm.org/{z}/{x}/{y}.png',
       center: [49.1193089, 6.1757156],
-      markers: [
-        { id: 1, coordinates: [49.114910, 6.178810] },
-        { id: 2, coordinates: [49.133290, 6.154370] },
-        { id: 3, coordinates: [49.102160, 6.158850] },
-        { id: 4, coordinates: [49.136010, 6.199630] },
-        { id: 5, coordinates: [49.105563, 6.182234] }
-      ]
+      zoom: 10
     }
   }
 }
