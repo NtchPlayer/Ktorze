@@ -7,7 +7,7 @@
 <script>
 export default {
   name: 'Profile',
-  layout: 'app',
-  middleware: 'auth'
+  layout: 'app'
+  // middleware: 'auth'
 }
 </script>
