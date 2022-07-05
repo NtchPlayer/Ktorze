@@ -1,14 +1,22 @@
 <template>
-  <main>
-    <button @click.self="back">
-      &lt;
-    </button>
-    <CardTravel
-      v-for="(favori, i) of favoris"
-      :key="i"
-      :data="favori"
-    />
-  </main>
+  <div>
+      <div class="profile-nav">
+        <button>
+          <figure>
+            <img @click.self="back" src="@/assets/icons/arrow-left.svg" alt="">
+          </figure>
+        </button>
+        <h1 class="profile-title">Favoris</h1>
+        <div>'Filter'</div>
+      </div>
+    <main class="profile">
+      <CardTravel
+        v-for="(favori, i) of favoris"
+        :key="i"
+        :data="favori"
+      />
+    </main>
+  </div>
 </template>
 
 <script>
@@ -43,6 +51,7 @@ export default {
           level: 3,
           location: 'Hautes-Alpes, France',
           checked: '24/01/2022',
+          content: 'Jetez un coup d’oeil à cet itinéraire en boucle de 13,0 km près de Ceillac, Hautes-Alpes. Généralement considéré comme un parcours difficile, il faut en moyenne 5h12mins pour le parcourir. Cet itinéraire est idéal pour la randonnée. La meilleure période de visite est de juin à octobre. Les chiens sont les bienvenus et peuvent être lâchés à certains endroits.',
           isWishlist: true
         },
         {
@@ -64,6 +73,7 @@ export default {
           level: 2,
           location: '',
           checked: '',
+          content: 'Jetez un coup d’oeil à cet itinéraire en boucle de 13,0 km près de Ceillac, Hautes-Alpes. Généralement considéré comme un parcours difficile, il faut en moyenne 5h12mins pour le parcourir. Cet itinéraire est idéal pour la randonnée. La meilleure période de visite est de juin à octobre. Les chiens sont les bienvenus et peuvent être lâchés à certains endroits.',
           isWishlist: true
         },
         {
@@ -85,6 +95,7 @@ export default {
           level: 1,
           location: 'Sud, France',
           checked: '24/01/2022',
+          content: 'Jetez un coup d’oeil à cet itinéraire en boucle de 13,0 km près de Ceillac, Hautes-Alpes. Généralement considéré comme un parcours difficile, il faut en moyenne 5h12mins pour le parcourir. Cet itinéraire est idéal pour la randonnée. La meilleure période de visite est de juin à octobre. Les chiens sont les bienvenus et peuvent être lâchés à certains endroits.',
           isWishlist: false
         }
       ]

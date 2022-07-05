@@ -34,6 +34,7 @@ export default {
   position: fixed;
   bottom: 0;
   padding: 20px;
+  z-index: 100;
   &-list{
     display: flex;
     justify-content: space-around;
