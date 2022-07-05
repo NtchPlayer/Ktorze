@@ -4,6 +4,7 @@ export default {
     baseSite: process.env.BASE_SITE,
     googleTagManagerId: process.env.GOOGLE_TAG_MANAGER_ID
   },
+
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     titleTemplate: 'Balise360%s',
@@ -57,7 +58,8 @@ export default {
   },
 
   server: {
-    port: process.env.PORT || 8080 // default: 3000
+    port: process.env.PORT || 8080, // default: 3000
+    host: '0.0.0.0'
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
