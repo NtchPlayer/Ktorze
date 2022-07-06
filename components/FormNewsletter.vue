@@ -38,7 +38,7 @@
               minlength="2"
               name="lastname"
               required
-              placeholder="MikeHorn@mail.com"
+              placeholder="Horn"
             >
           </div>
         </div>

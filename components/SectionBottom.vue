@@ -9,7 +9,7 @@
           <img loading="lazy" :src="require(`@/assets/section/${dataComponent.img1.src}`)" :alt="dataComponent.img1.alt">
         </figure>
       </div>
-      <div>
+      <div class="container-section-text">
         <div class="container-section-content">
           <h2 class="second-title">
             Une <span class="color-orange">expérience personnalisée</span> pour chaque utilisateur
@@ -56,8 +56,18 @@ export default {
 }
 
 .container-section{
+  &-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 60px;
+  }
+  &-content{
+    p{
+      line-height: 26px;
+    }
+  }
   .bottomMiddle{
-
     font-family: 'Apfel', serif;
     .text-body{
       margin-bottom: 58px;

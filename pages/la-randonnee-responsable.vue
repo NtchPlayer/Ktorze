@@ -85,7 +85,7 @@ export default {
 
     const sectionBottom = [{
       block1: 'Grâce à l’application, vous aurez à disposition de <strong>nombreux parcours de randonnée</strong>.<br><strong>Redécouvrez la France et sa biodiversité</strong> sous un autre angle et <strong>préservez notre patrimoine !</strong>',
-      block2: 'Aidez-nous aussi à <strong>récolter des données scientifiques</strong> sur l’impact du réchauffement climatique sur la nature en fonction de votre localisation.Vous êtes <strong>les héros qui aideront à sauvegarder notre cher patrimoine naturel !</strong>',
+      block2: 'Aidez-nous aussi à <strong>récolter des données scientifiques</strong> sur l’impact du réchauffement climatique sur la nature en fonction de votre localisation.<br>Vous êtes <strong>les héros qui aideront à sauvegarder notre cher patrimoine naturel !</strong>',
       img1: {
         alt: "Un couple s'ambrassent dans la montagne",
         src: 'cover-bottom.png'
