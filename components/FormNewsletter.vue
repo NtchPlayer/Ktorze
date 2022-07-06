@@ -145,6 +145,11 @@ export default {
 </script>
 
 <style lang="scss">
+#newsletter{
+  .image-section img{
+    max-height: 480px;
+  }
+}
 .section-form{
   margin-top: 75px;
   font-family: 'Apfel', serif;

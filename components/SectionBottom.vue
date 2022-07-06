@@ -53,6 +53,9 @@ export default {
       top: 10px;
     }
   }
+  .image-section img{
+    max-height: 420px;
+  }
 }
 
 .container-section{
