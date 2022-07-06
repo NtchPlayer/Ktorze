@@ -219,11 +219,16 @@ export default {
   }
 }
 
-.form-newsletter-identity{
-  display: flex;
-  justify-content: space-between;
-  .container-input{
-    width: calc(50% - 5px);
+.form-newsletter{
+  input.btn-primary{
+    color: var(--background-color);
+  }
+  &-identity{
+    display: flex;
+    justify-content: space-between;
+    .container-input{
+      width: calc(50% - 5px);
+    }
   }
 }
 
