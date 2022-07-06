@@ -100,16 +100,6 @@ export default {
     },
     formIsValid () {
       return this.firstnameIsValid && this.lastnameIsValid && this.emailIsValid
-    },
-    listsId () {
-      switch (this.$route.query.template) {
-        case 'pour-tous':
-          return [6]
-        case 'en-famille':
-          return [8]
-        default:
-          return [7]
-      }
     }
   },
   methods: {
@@ -119,9 +109,20 @@ export default {
     sendingEmail () {
       if (this.emailIsValid) {
         this.error = false
+        let listIds = [7]
+        switch (this.$route.query.template) {
+          case 'pour-tous':
+            listIds = [6]
+            break
+          case 'en-famille':
+            listIds = [8]
+            break
+          default:
+            listIds = [7]
+        }
         return this.$axios.post('/newsletter/add', {
           email: this.email,
-          listIds: this.listIds,
+          listIds,
           attributes: {
             PRENOM: this.firstname,
             NOM: this.lastname
