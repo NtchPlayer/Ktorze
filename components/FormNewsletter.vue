@@ -54,7 +54,7 @@
         >
       </form>
 
-      <div v-show="openModal" class="form-modal">
+      <div v-show="openModal" class="section-form-modal">
         <button @click.self="closeModal">
           Votre inscription aux carnets de voyages de Balise 360 est confirmée !
         </button>
