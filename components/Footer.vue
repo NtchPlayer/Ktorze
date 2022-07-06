@@ -24,7 +24,7 @@
               Les Cookies
             </li>
             <li class="footer-list-item">
-              La RGPD
+              <a class="link" href="/rgpd" target="_blank">La RGPD</a>
             </li>
           </ul>
         </div>

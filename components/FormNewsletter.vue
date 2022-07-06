@@ -49,7 +49,7 @@
         <input
           type="submit"
           value="Recevoir les circuits"
-          class="btn-primary desktop"
+          class="btn-primary"
           :disabled="!formIsValid"
         >
       </form>
@@ -247,6 +247,12 @@ export default {
 
 @media screen and (max-width: 768px) {
  .section-form {
+  &::before{
+    content: none;
+  }
+  &::after{
+    content: none;
+  }
    .container-section-content {
      max-width: unset;
    }
