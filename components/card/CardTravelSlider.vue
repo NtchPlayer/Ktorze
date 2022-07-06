@@ -2,10 +2,10 @@
   <swiper class="swiper" :options="swiperOptions">
     <swiper-slide v-for="(data, i) of dataSlider" :key="i" class="slide">
       <figure>
-        <img :src="`../_nuxt/assets/fotorama/${data.src}`" :alt="selectedDog">
+        <img :src="require(`@/assets/fotorama/${data.src}`)" alt="test">
       </figure>
     </swiper-slide>
-    <div class="swiper-pagination" slot="pagination"></div>
+    <div slot="pagination" class="swiper-pagination" />
   </swiper>
 </template>
 
@@ -20,7 +20,7 @@ export default {
     SwiperSlide
   },
   props: {
-    dataSlider: Array
+    dataSlider: { type: Array, required: true }
   },
   data () {
     return {

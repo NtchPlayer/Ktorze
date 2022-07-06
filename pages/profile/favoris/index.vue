@@ -16,10 +16,10 @@ import CardTravel from '@/components/card/CardTravel.vue'
 
 export default {
   name: 'Favoris',
-  layout: 'app',
   components: {
     CardTravel
   },
+  layout: 'app',
   // middleware: 'auth'
   data () {
     return {
