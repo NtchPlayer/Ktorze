@@ -2,7 +2,7 @@
   <swiper class="swiper" :options="swiperOptions">
     <swiper-slide v-for="(data, i) of dataSlider" :key="i" class="slide">
       <figure>
-        <img :src="require(`@/assets/fotorama/${data.src}`)" alt="test">
+        <img :src="`../_nuxt/assets/fotorama/${data.src}`" :alt="data.alt">
       </figure>
     </swiper-slide>
     <div slot="pagination" class="swiper-pagination" />
