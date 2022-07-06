@@ -146,7 +146,7 @@ export default {
 
  @media screen and (max-width: 768px) {
   .section-home{
-    margin-bottom: 100px;
+    padding-bottom: 30px;
     background: none;
     &::before, &::after{
       content: none;

@@ -248,6 +248,7 @@ export default {
 @media screen and (max-width: 1000px){
   .section-form{
     background: none;
+    margin-top: 0;
   }
 }
 

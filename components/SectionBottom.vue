@@ -75,14 +75,14 @@ export default {
   }
 }
 
-//@media screen and (max-width: 768px) {
-//  .section-bottom{
-//    .container-section-content{
-//      padding: 0;
-//      div:not(.mobile) {
-//        pad
-//      }
-//    }
-//  }
-//}
+@media screen and (max-width: 768px) {
+ .section-bottom{
+    margin-bottom: 50px;
+ }
+ .container-section{
+  &-text{
+    gap: 0px;
+  }
+ }
+}
 </style>
