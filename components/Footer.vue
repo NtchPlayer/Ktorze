@@ -44,7 +44,7 @@
             <a class="link" href="https://www.pinterest.fr/balise360/" target="_blank">Pinterest</a>
           </li>
           <li class="footer-list-item">
-            <a class="link" href="https://web.tunecore.fr/dashboard" target="_blank">Spotify</a>
+            <a class="link" href="https://podcast.ausha.co/murmures-de-la-nature" target="_blank">Ausha</a>
           </li>
         </ul>
       </section>
