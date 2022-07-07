@@ -36,37 +36,37 @@ export default {
       links: [
         {
           baseUrl: 'profile-parameters',
-          src: 'coordonnee.svg',
+          src: 'person.svg',
           text: 'Compte',
           redirect: 'account'
         },
         {
           baseUrl: 'profile-parameters',
-          src: 'parameters.svg',
+          src: 'bell.svg',
           text: 'Notifications',
           redirect: 'notification'
         },
         {
           baseUrl: 'profile-parameters',
-          src: 'stats.svg',
+          src: 'smiley.svg',
           text: 'Accessibilité',
           redirect: 'accessibility'
         },
         {
           baseUrl: 'profile-parameters',
-          src: 'history.svg',
+          src: 'lock.svg',
           text: 'Sécurité',
           redirect: 'security'
         },
         {
           baseUrl: 'profile-parameters',
-          src: 'history.svg',
+          src: 'chat.svg',
           text: 'Centre d\'aide',
           redirect: 'help-center'
         },
         {
           baseUrl: 'profile-parameters',
-          src: 'heart-empty.svg',
+          src: 'out.svg',
           text: 'Me déconnecter',
           redirect: ''
         }

@@ -11,8 +11,8 @@
     </h1>
     <form @submit.prevent="login">
       <InputEmail ref="input-email" v-model="email" />
-      <InputPassword ref="input-password" v-model="password" />
-      <input class="input btn-primary" type="submit" value="Connexion">
+      <InputPassword ref="input-password" v-model="password" placeholder="Mot de passe" />
+      <input class="btn-primary" type="submit" value="Connexion">
     </form>
     <p class="links-container">
       <nuxt-link :to="{ name: 'auth-sign-up' }">

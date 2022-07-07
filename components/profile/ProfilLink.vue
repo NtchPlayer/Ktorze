@@ -27,11 +27,11 @@ export default {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 70px;
-    border: 2px solid var(--green-color);
+    height: 40px;
+    border: 1px solid var(--green-color);
     border-radius: 5px;
     padding: 20px;
-    margin-bottom: 8px;
+    margin-bottom: 12px;
     &-left{
       display: flex;
       align-items: center;
@@ -43,7 +43,7 @@ export default {
     }
     &--click{
       transform: rotate(180deg);
-      height: 30px;
+      height: 25px;
     }
   }
 </style>
