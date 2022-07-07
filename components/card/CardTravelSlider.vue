@@ -2,7 +2,7 @@
   <swiper class="swiper" :options="swiperOptions">
     <swiper-slide v-for="(data, i) of dataSlider" :key="i" class="slide">
       <figure>
-        <img :src="`../_nuxt/assets/fotorama/${data.src}`" :alt="data.alt">
+        <img :src="require(`@/assets/fotorama/${data.src}`)" :alt="data.alt">
       </figure>
     </swiper-slide>
     <div slot="pagination" class="swiper-pagination" />
@@ -14,7 +14,7 @@ import { Swiper, SwiperSlide } from 'vue-awesome-swiper'
 import 'swiper/css/swiper.css'
 
 export default {
-  name: 'CardTravel',
+  name: 'CardTravelSlider',
   components: {
     Swiper,
     SwiperSlide
@@ -39,70 +39,64 @@ export default {
 
 <style lang="scss">
   .profile{
-    margin: 80px 0;
+    margin-bottom: 80px;
     &-nav{
       display: flex;
-      height: 70px;
+      height: 105px;
       justify-content: space-between;
       align-items: center;
-      background: var(--green-color);
-      width: 100vw;
-      padding: 0 20px;
-      position: fixed;
-      top: 0;
-      z-index: 100;
-      color: var(--background-color);
+      width: 100%;
+      padding: 0 30px;
     }
     &-title{
-      font-size: 1.25rem;
+      font-size: 1.5rem;
+      font-weight: bold;
     }
     .card-travel{
       max-width: 600px;
-      margin: auto auto 30px auto;
+      margin: auto auto 15px auto;
+      padding: 15px 15px 30px 15px;
+      background: #99B2A5;
+      border-radius: 5px;
       &-header{
         position: relative;
-        &--img{
-          position: absolute;
-          width: 40px;
-          height: 35px;
-          top: 10px;
-          right: 10px;
-          z-index: 5;
-        }
         &--level{
           max-width: max-content;
           position: absolute;
-          bottom: 10px;
-          left: 10px;
+          bottom: 14px;
+          left: 12px;
           z-index: 5;
           padding: 14px 27px;
           border-radius: 5px;
-          background: var(--green-color);
+          background: var(--orange-color);
           color: var(--background-color);
         }
       }
       &-content{
+        color: #4a4a4a;
+        font-family: 'Apfel';
+        margin-left: 10px;
         &--name{
-          font-size: 1.25rem;
-          padding: 10px 0;
+          font-size: 1.5rem;
+          padding: 15px 0 5px 0;
           font-weight: bold;
+          color: var(--background-color);
         }
         &--location{
           font-size: 1rem;
           line-height: 22px;
-          color: var(--orange-color);
         }
         &--checked{
           font-size: 0.75rem;
-          line-height: 18px;
+          line-height: 22px;
         }
         &-bottom{
           display: flex;
           justify-content: space-between;
-          font-family: 'Apfel';
           align-items: flex-end;
           img{
-            width: 30px;
+            width: 40px;
+            fill: var(--green-color);
           }
         }
       }
@@ -110,7 +104,7 @@ export default {
         .slide{
           img{
             width: 100%;
-            height: 270px;
+            height: 300px;
             object-fit: cover;
           }
         }
@@ -120,10 +114,10 @@ export default {
           width: 12px;
           height: 12px;
           margin: 0 8px !important;
-          background: var(--orange-color);
+          background: var(--green-color);
           opacity: 1;
           &-active{
-            background: var(--green-color);
+            background: var(--orange-color);
           }
         }
       }
