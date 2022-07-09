@@ -83,7 +83,7 @@ export default {
           background: url("@/assets/icons/map.svg") no-repeat local 0% 0%;
         }
         &:last-child{
-          background: url("@/assets/icons/heart.svg") no-repeat local 0% 0%;
+          background: url("@/assets/icons/heart-empty.svg") no-repeat local 0% 0%;
         }
         h2{
           font-size: 1.5rem;
@@ -99,10 +99,10 @@ export default {
   .swiper-pagination{
     bottom: -40px;
     &-bullet{
-      background: var(--orange-color);
+      background: var(--green-color);
       opacity: 1;
       &-active{
-        background: var(--green-color);
+        background: var(--orange-color);
       }
     }
   }
@@ -146,7 +146,7 @@ export default {
 
  @media screen and (max-width: 768px) {
   .section-home{
-    margin-bottom: 100px;
+    padding-bottom: 30px;
     background: none;
     &::before, &::after{
       content: none;

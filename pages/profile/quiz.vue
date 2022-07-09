@@ -25,7 +25,7 @@ export default {
   name: 'Quiz',
   components: { CardQuiz },
   layout: 'auth',
-  middleware: 'auth',
+  // middleware: 'auth',
   async asyncData ({ $axios }) {
     const { data } = await $axios.get('/quiz/questions')
     return {

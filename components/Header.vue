@@ -82,6 +82,7 @@ header{
   position: fixed;
   z-index: 14;
   width: 100vw;
+  transition: 0.2s;
 }
 
 .main-nav{
@@ -113,6 +114,7 @@ header{
 @media screen and (max-width: 768px) {
   header.is-top{
     background-color: transparent;
+    transition: 0.2s;
     .black-icon path{
       fill: #000;
     }

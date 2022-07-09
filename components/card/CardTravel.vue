@@ -5,7 +5,6 @@
       <p class="card-travel-header--level">
         Niveau {{ data.level }}
       </p>
-      <img class="card-travel-header--img" src="@/assets/icons/heart.svg" alt="">
     </div>
     <div class="card-travel-content">
       <p class="card-travel-content--name" v-text="data.name" />
@@ -19,11 +18,7 @@
             Sentier non vérifié
           </p>
         </div>
-        <a href="#">
-          <figure>
-            <img src="@/assets/icons/download.svg" alt="">
-          </figure>
-        </a>
+        <img class="card-travel-content-bottom--img" src="@/assets/icons/heart.svg" alt="">
       </div>
     </div>
   </div>

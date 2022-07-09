@@ -6,8 +6,8 @@
             <img @click.self="back" src="@/assets/icons/arrow-left.svg" alt="">
           </figure>
         </button>
-        <h1 class="profile-title">Favoris</h1>
-        <div>'Filter'</div>
+        <h1 class="profile-title">Détail</h1>
+        <div></div>
       </div>
     <main class="profile">
       <CardTravel
@@ -83,7 +83,7 @@ export default {
               alt: 'dsbghlibl'
             },
             {
-              src: 'coverfotorama-1.png',
+              src: 'coverfotorama.png',
               alt: 'regeyyqe'
             },
             {

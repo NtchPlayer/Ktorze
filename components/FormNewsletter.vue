@@ -54,7 +54,7 @@
         >
       </form>
 
-      <div v-show="openModal" class="form-modal">
+      <div v-show="openModal" class="section-form-modal">
         <button @click.self="closeModal">
           Votre inscription aux carnets de voyages de Balise 360 est confirmée !
         </button>
@@ -145,6 +145,11 @@ export default {
 </script>
 
 <style lang="scss">
+#newsletter{
+  .image-section img{
+    max-height: 480px;
+  }
+}
 .section-form{
   margin-top: 75px;
   font-family: 'Apfel', serif;
@@ -248,6 +253,7 @@ export default {
 @media screen and (max-width: 1000px){
   .section-form{
     background: none;
+    margin-top: 0;
   }
 }
 

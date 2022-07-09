@@ -2,17 +2,26 @@
   <nav class="app-nav">
     <ul class="app-nav-list">
       <li class="app-nav-item">
-        <nuxt-link :to="{ name: 'map' }">
+        <nuxt-link :to="{ name: 'map' }" class="app-nav-item-content">
+          <img src="@/assets/icons/search.svg" alt="search">
+          Recherche
+        </nuxt-link>
+      </li>
+      <li class="app-nav-item">
+        <nuxt-link :to="{ name: 'profile' }" class="app-nav-item-content">
+          <img src="@/assets/icons/location.svg" alt="search">
           Carte
         </nuxt-link>
       </li>
       <li v-if="$auth.loggedIn" class="app-nav-item">
-        <nuxt-link :to="{ name: 'profile' }">
-          Profile
+        <nuxt-link :to="{ name: 'profile' }" class="app-nav-item-content">
+          <img src="@/assets/icons/account.svg" alt="search">
+          Profil
         </nuxt-link>
       </li>
       <li v-else class="app-nav-item">
-        <nuxt-link to="/">
+        <nuxt-link :to="{ name: 'profile' }" class="app-nav-item-content">
+          <img src="@/assets/icons/account.svg" alt="search">
           Connexion
         </nuxt-link>
       </li>
@@ -33,15 +42,30 @@ export default {
   color: #fff;
   position: fixed;
   bottom: 0;
-  padding: 20px;
+  height: 80px;
   z-index: 100;
+  font-family: 'Apfel';
+  display: flex;
   &-list{
+    width: 100%;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
+    align-items: center;
   }
   &-item{
+    height: 100%;
     &:hover{
       text-decoration: underline;
+    }
+    &-content{
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-evenly;
+      img{
+        height: 24px;
+      }
     }
   }
 }
