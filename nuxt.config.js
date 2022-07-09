@@ -69,7 +69,7 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   // plugins: [
-  //   '~/plugins/vue-leaflet.js'
+  //   { src: '~/plugins/gmaps.client.js', mode: 'client' }
   // ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -92,7 +92,9 @@ export default {
     '@nuxtjs/gtm',
     '@nuxtjs/robots',
     '@nuxtjs/sitemap',
-    'nuxt-leaflet'
+    ['nuxt-gmaps', {
+      key: process.env.API_GOOGLE_MAP
+    }]
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
