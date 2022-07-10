@@ -324,7 +324,7 @@ export default {
   }
 
   @media screen and (min-width: 769px) {
-    
+
   }
 
 </style>
