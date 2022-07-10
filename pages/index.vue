@@ -1,28 +1,30 @@
 <template>
-  <div>
-    <figure class="main-logo">
-      <img alt="Icon balise 360" src="@/assets/balise360-green.svg">
+  <div class="auth-container">
+    <div class="auth-container--left">
+      <div class="auth-container--left-content ">
+        <h1 class="main-title">
+          Connexion
+        </h1>
+        <form @submit.prevent="login">
+          <InputEmail ref="input-email" v-model="email" />
+          <InputPassword ref="input-password" v-model="password" placeholder="Mot de passe" />
+          <input class="btn-primary" type="submit" value="Connexion">
+        </form>
+        <p class="links-container">
+          <nuxt-link class="btn-secondary" :to="{ name: 'auth-sign-up' }">
+            Inscription
+          </nuxt-link>
+        </p>
+        <p class="links-container">
+          <nuxt-link :to="{ name: 'auth-sign-up' }">
+            Mot de passe oublié ?
+          </nuxt-link>
+        </p>
+      </div>
+    </div>
+    <figure class="auth-container--img desktop">
+      <img src="@/assets/section/coverlogin.png" alt="cover login">
     </figure>
-    <p class="main-title">
-      Bienvenue.
-    </p>
-    <h1 class="main-title">
-      Connectez-vous
-    </h1>
-    <form @submit.prevent="login">
-      <InputEmail ref="input-email" v-model="email" />
-      <InputPassword ref="input-password" v-model="password" placeholder="Mot de passe" />
-      <input class="btn-primary" type="submit" value="Connexion">
-    </form>
-    <p class="links-container">
-      Mot de passe oublié ?
-    </p>
-    <p class="links-container">
-      Vous n'avez pas de compte ?
-      <nuxt-link :to="{ name: 'auth-sign-up' }">
-        Inscription
-      </nuxt-link>
-    </p>
   </div>
 </template>
 

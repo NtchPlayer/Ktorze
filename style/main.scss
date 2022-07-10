@@ -139,7 +139,7 @@ input.btn-primary {
 }
 
 .btn-secondary {
-    padding: 10px 30px;
+    padding: 17.5px 35px;
     display: inline-block;
     border-radius: 40px;
     border: 1px solid var(--green-color);
@@ -212,23 +212,23 @@ textarea:-webkit-autofill:focus,
 select:-webkit-autofill,
 select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {
-  -webkit-text-fill-color: var(--green-color);
-  -webkit-box-shadow: 0 0 0 1000px #F5FEFF9E inset;
-  transition: background-color 5000s ease-in-out 0s;
-  background: var(--white-color);
-  border: 1px solid var(--input-border);
-  padding: 18px;
+    -webkit-text-fill-color: var(--green-color);
+    -webkit-box-shadow: 0 0 0 1000px #F5FEFF9E inset;
+    transition: background-color 5000s ease-in-out 0s;
+    background: var(--white-color);
+    border: 1px solid var(--input-border);
+    padding: 18px;
 }
 
 .container-input {
-  display: flex;
-  flex-direction: column;
-  margin: 15px 0;
-  label {
-    margin-bottom: 5px;
-    font-family: 'Apfel', sans-serif;
-    color: var(--green-color);
-  }
+    display: flex;
+    flex-direction: column;
+    margin: 15px 0;
+    label {
+        margin-bottom: 5px;
+        font-family: 'Apfel', sans-serif;
+        color: var(--green-color);
+    }
 }
 
 .input,

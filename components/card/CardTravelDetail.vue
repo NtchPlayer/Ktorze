@@ -1,124 +1,146 @@
 <template>
-  <div class="card-travel">
-    <div class="card-travel-content">
-      <p class="card-travel-content--name" v-text="data.name" />
-      <div class="card-travel-content-bottom">
-        <div>
-          <h2 class="card-travel-content--location" v-text="data.location" />
-          <p v-if="data.checked !== ''" class="card-travel-content--checked">
-            Sentier vérifié le : {{ data.checked }}
-          </p>
-          <p v-else class="card-travel-content--checked">
-            Sentier non vérifié
+  <div>
+    <div>
+      <div class="card-travel-top">
+        <div class="card-travel-top--left">
+          <h1 class="card-travel-content--name desktop main-title" v-text="data.name" />
+          <p class="card-travel-header--level desktop">
+            Niveau {{ data.level }}
           </p>
         </div>
-      </div>
-
-      <div class="card-travel-content-main">
-        <div class="card-travel-content-main-description" v-html="data.content"></div>
-        <figure class="card-travel-content-main-map">
-          <img src="@/assets/fotorama/coverfotorama.png" alt="">
-        </figure>
-        <h2 class="card-travel-content-main-title">Caractéristiques</h2>
-
-        <div class="card-travel-content-main-stats">
-          <div class="card-travel-content-main-stats-wrapper">
-            <div class="card-travel-content-main-stats-wrapper--infos">
-              <p>Distance</p>
-              <p v-text="data.length" />
-            </div>
-            <div class="card-travel-content-main-stats--infos">
-              <p>Dénivelé</p>
-              <p v-text="data.elevation" />
-            </div>
-            <div class="card-travel-content-main-stats--infos">
-              <p>Durée</p>
-              <p v-text="data.duration" />
-            </div>
-            <div class="card-travel-content-main-stats--infos">
-              <p>Niveau</p>
-              <p v-text="data.level" />
-            </div>
-          </div>
-          <p class="card-travel-content-main-stats-description" v-html="data.levelDescription" />
-        </div>
-
-        <div class="card-travel-content-main-traffic">
-          <h2 class="card-travel-content-main-title">Fréquentation</h2>
-          <p v-if="data.levelDescription !== ''" class="card-travel-content-main-traffic--checked">
-          </p>
-          <p v-else class="card-travel-content-main-traffic--checked">
-            {{ data.levelDescription }}
-          </p>
-        </div>
-
-        <div class="card-travel-content-main-gears">
-          <h2 class="card-travel-content-main-title">Fréquentation</h2>
-          <h3 class="card-travel-content-second-title">Les vêtements à emmener</h3>
-          <div class="card-travel-content-main-gears-slider">
-            <div>
-              <figure>
-                <img src="@/assets/fotorama/coverfotorama.png" alt="">
-              </figure>
-              Chapeau
-            </div>
-            <div>
-              <figure>
-                <img src="@/assets/fotorama/coverfotorama.png" alt="">
-              </figure>
-              Chapeau
-            </div>
-            <div>
-              <figure>
-                <img src="@/assets/fotorama/coverfotorama.png" alt="">
-              </figure>
-              Chapeau
-            </div>
-            <div>
-              <figure>
-                <img src="@/assets/fotorama/coverfotorama.png" alt="">
-              </figure>
-              Chapeau
-            </div>
-          </div>
-          <h3 class="card-travel-content-second-title">Les accessoires à emmener</h3>
-          <div class="card-travel-content-main-gears-slider">
-            <div>
-              <figure>
-                <img src="@/assets/fotorama/coverfotorama.png" alt="">
-              </figure>
-              Chapeau
-            </div>
-            <div>
-              <figure>
-                <img src="@/assets/fotorama/coverfotorama.png" alt="">
-              </figure>
-              Chapeau
-            </div>
-            <div>
-              <figure>
-                <img src="@/assets/fotorama/coverfotorama.png" alt="">
-              </figure>
-              Chapeau
-            </div>
-            <div>
-              <figure>
-                <img src="@/assets/fotorama/coverfotorama.png" alt="">
-              </figure>
-              Chapeau
-            </div>
-          </div>
-          <p class="card-travel-content-main-gears-description" v-text="data.gearCategoryDescription" />
-        </div>
-
+        <button  class="card-travel-header--level desktop">
+          Randonnée à valider
+        </button>
       </div>
 
     </div>
-    <div class="card-travel-header">
-      <CardTravelSlider :data-slider="data.img" />
-      <p class="card-travel-header--level">
-        Niveau {{ data.level }}
-      </p>
+    <div class="card-travel">
+      <div class="card-travel-content">
+        <p class="card-travel-content--name mobile" v-text="data.name" />
+        <div class="card-travel-content-main">
+          <div class="card-travel-content-main-bottom">
+            <div class="card-travel-content-main-bottom--left">
+              <h2 class="card-travel-content--location" v-text="data.location" />
+              <p v-if="data.checked !== ''" class="card-travel-content--checked">
+                Sentier vérifié le : {{ data.checked }}
+              </p>
+              <p v-else class="card-travel-content--checked">
+                Sentier non vérifié
+              </p>
+            </div>
+          </div>
+          <div class="card-travel-content-main-description" v-html="data.content"></div>
+          <figure class="card-travel-content-main-map">
+            <img src="@/assets/fotorama/coverfotorama.png" alt="">
+          </figure>
+          <h2 class="card-travel-content-main-title">Caractéristiques</h2>
+
+          <div class="card-travel-content-main-stats">
+            <div class="card-travel-content-main-stats-wrapper">
+              <div class="card-travel-content-main-stats-wrapper--infos">
+                <p>Distance</p>
+                <p v-text="data.length" />
+              </div>
+              <div class="card-travel-content-main-stats--infos">
+                <p>Dénivelé</p>
+                <p v-text="data.elevation" />
+              </div>
+              <div class="card-travel-content-main-stats--infos">
+                <p>Durée</p>
+                <p v-text="data.duration" />
+              </div>
+              <div class="card-travel-content-main-stats--infos">
+                <p>Niveau</p>
+                <p v-text="data.level" />
+              </div>
+            </div>
+            <p class="card-travel-content-main-stats-description" v-html="data.levelDescription" />
+          </div>
+
+          <div class="card-travel-content-main-traffic">
+            <h2 class="card-travel-content-main-title">Fréquentation</h2>
+            <p v-if="data.levelDescription !== ''" class="card-travel-content-main-traffic--checked">
+            </p>
+            <p v-else class="card-travel-content-main-traffic--checked">
+              {{ data.levelDescription }}
+            </p>
+          </div>
+
+          <div class="card-travel-content-main-gears">
+            <h2 class="card-travel-content-main-title">Fréquentation</h2>
+            <h3 class="card-travel-content-second-title">Les vêtements à emmener</h3>
+            <div class="card-travel-content-main-gears-slider">
+              <div>
+                <figure>
+                  <img src="@/assets/fotorama/coverfotorama.png" alt="">
+                </figure>
+                Chapeau
+              </div>
+              <div>
+                <figure>
+                  <img src="@/assets/fotorama/coverfotorama.png" alt="">
+                </figure>
+                Chapeau
+              </div>
+              <div>
+                <figure>
+                  <img src="@/assets/fotorama/coverfotorama.png" alt="">
+                </figure>
+                Chapeau
+              </div>
+              <div>
+                <figure>
+                  <img src="@/assets/fotorama/coverfotorama.png" alt="">
+                </figure>
+                Chapeau
+              </div>
+            </div>
+            <h3 class="card-travel-content-second-title">Les accessoires à emmener</h3>
+            <div class="card-travel-content-main-gears-slider">
+              <div>
+                <figure>
+                  <img src="@/assets/fotorama/coverfotorama.png" alt="">
+                </figure>
+                Chapeau
+              </div>
+              <div>
+                <figure>
+                  <img src="@/assets/fotorama/coverfotorama.png" alt="">
+                </figure>
+                Chapeau
+              </div>
+              <div>
+                <figure>
+                  <img src="@/assets/fotorama/coverfotorama.png" alt="">
+                </figure>
+                Chapeau
+              </div>
+              <div>
+                <figure>
+                  <img src="@/assets/fotorama/coverfotorama.png" alt="">
+                </figure>
+                Chapeau
+              </div>
+            </div>
+            <p class="card-travel-content-main-gears-description" v-text="data.gearCategoryDescription" />
+          </div>
+
+        </div>
+
+      </div>
+      <div class="card-travel-header mobile">
+        <CardTravelSlider :data-slider="data.img" />
+        <p class="card-travel-header--level mobile">
+          Niveau {{ data.level }}
+        </p>
+      </div>
+      <div>
+        <div :data-slider="data.img" v-for="(data, i) of data.img" :key="i" class="card-travel-header slide desktop">
+          <figure>
+            <img :src="require(`@/assets/fotorama/${data.src}`)" :alt="data.alt">
+          </figure>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -193,18 +215,9 @@ export default {
         &--checked{
           font-size: 0.75rem;
           line-height: 22px;
-        }
-        &-bottom{
-          display: flex;
-          justify-content: space-between;
-          align-items: flex-end;
-          img{
-            width: 40px;
-            stroke: red;
-          }
-          div{
-            display: flex;
-            align-items: center;
+          &::before{
+            content: '•';
+            margin: 0 5px;
           }
         }
         &-second{
@@ -215,6 +228,18 @@ export default {
           }
         }
         &-main{
+          &-bottom{
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            img{
+              width: 40px;
+            }
+            div{
+              display: flex;
+              align-items: center;
+            }
+          }
           &-map{
             width: 100%;
             height: 235px;
@@ -317,4 +342,95 @@ export default {
       z-index: 5;
     }
   }
+
+  @media screen and (min-width: 769px) {
+    .profile{
+      .card-travel{
+        max-width: unset;
+        flex-direction: row;
+          &-top{
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: 25px;
+          h1{
+            text-align: left;
+            font-size: 3.375rem;
+            color: var(--black-color);
+            line-height: 3rem;
+          }
+          &--left{
+            display: flex;
+            align-items: center;
+          }
+        }
+        &-header{
+          &.desktop{
+            figure{
+              max-width: 560px;
+              max-height: 370px;
+              margin-bottom: 25px;
+              img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+              }
+            }
+          }
+          &--level{
+              &.desktop{
+              position: unset;
+              background: var(--brown-color);
+              white-space: nowrap;
+              margin-left: 15px;
+              font-size: 0.75rem;
+              height: max-content;
+            }
+          }
+        }
+        &-content{
+          padding: 0 0 0 50px;
+          width: 60%;
+          &-main{
+            display: flex;
+            flex-direction: column;
+            &-map{
+              order: 1;
+              margin: 0px 0 30px 0;
+              img{
+                border-radius: 0;
+              }
+            }
+            &-bottom{
+              order: 2;
+              margin-bottom: 10px;
+            }
+            &-description{
+              order: 3;
+              margin-bottom: 10px;
+            }
+            &-title{
+              order: 4;
+            }
+            &-stats{
+              order: 5;
+            }
+            &-traffic{
+              order: 6;
+              &--checked{
+                min-height: 100px;
+              }
+            }
+            &-gears{
+              order: 7;
+              &-description{
+                border: none;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
 </style>
