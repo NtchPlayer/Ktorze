@@ -26,22 +26,15 @@
         </nuxt-link>
       </h1>
       <ul class="desktop">
-        <li>
-          <nuxt-link id="nav-link-functionality" :to="{ hash: 'fonctionnalites', query: $route.query }">
-            Nos fonctionnalités
-          </nuxt-link>
-        </li>
-
-        <li>
-          <nuxt-link id="nav-link-choose" :to="{ hash: 'nous-choisir', query: $route.query }">
-            Nous choisir
-          </nuxt-link>
-        </li>
-
-        <li>
-          <nuxt-link id="nav-link-newsletter" :to="{ hash: 'newsletter', query: $route.query }">
-            Notre newsletter
-          </nuxt-link>
+        <li
+          v-for="(link, i) of links"
+          :key="i"
+        >
+          <nuxt-link
+            :id="link.id"
+            :to="{ hash: link.hash, query: $route.query, name: link.name }"
+            v-text="link.text"
+          />
         </li>
       </ul>
     </nav>
@@ -51,6 +44,9 @@
 <script>
 export default {
   name: 'Header',
+  props: {
+    links: { type: Array, required: true }
+  },
   data () {
     return {
       isTop: true

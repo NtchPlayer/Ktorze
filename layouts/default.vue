@@ -1,6 +1,9 @@
 <template>
   <div>
-    <Header @openMenu="responsiveMenu = true" />
+    <Header
+      @openMenu="responsiveMenu = true"
+      :links="links"
+    />
     <NavResponsive v-show="responsiveMenu" @closeMenu="responsiveMenu = false" />
     <Nuxt />
     <NotificationsCookie />
@@ -24,7 +27,20 @@ export default {
   },
   data () {
     return {
-      responsiveMenu: false
+      responsiveMenu: false,
+      links: [{
+        id: 'nav-link-functionality',
+        text: 'Nos fonctionnalités',
+        hash: 'fonctionnalites'
+      }, {
+        id: 'nav-link-choose',
+        text: 'Nous choisir',
+        hash: 'nous-choisir'
+      }, {
+        id: 'nav-link-newsletter',
+        text: 'Notre newsletter',
+        hash: 'newsletter'
+      }]
     }
   },
   watch: {
