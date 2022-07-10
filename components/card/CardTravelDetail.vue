@@ -351,15 +351,17 @@ export default {
           &-top{
           display: flex;
           justify-content: space-between;
+          align-items: center;
+          margin-bottom: 25px;
           h1{
             text-align: left;
             font-size: 3.375rem;
             color: var(--black-color);
+            line-height: 3rem;
           }
           &--left{
             display: flex;
             align-items: center;
-            margin-bottom: 25px;
           }
         }
         &-header{
@@ -421,6 +423,9 @@ export default {
             }
             &-gears{
               order: 7;
+              &-description{
+                border: none;
+              }
             }
           }
         }
