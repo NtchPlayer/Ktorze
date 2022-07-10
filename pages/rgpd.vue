@@ -1,7 +1,7 @@
 <template>
   <main class="max-width">
     <section class="rgpd">
-      <button @click.self="back">
+      <button @click.prevent="back">
         &lt; Retourner à la page précédente
       </button>
 
@@ -18,7 +18,7 @@
           L’éditeur
         </h3>
 
-        <p>360balise.fr est un site web créé et géré par l'agence de communication K-Torze dans le cadre d'une campagne de promotion de l'entrepreneuriat social pour l'Agence de la Promotion de l’Entreprenariat Français (APEF). Cette page internet a pour objectif de fournir aux utilisateurs l'ensemble des informations concernant le dispositif ‘360 balise’. Les utilisateurs ont également la possibilité de renseigner leur adresse e-mail afin de recevoir par mail toutes les informations relatives aux webinaires organisés dans le cadre du dispositif.</p>
+        <p>Balise360 est un dispositif créé et géré par l'agence K-Torze ayant pour but d'être le compagnon de route des randonneurs engagés pour la protection du patrimoine naturelle français. Cette page internet a pour objectif de fournir aux utilisateurs l'ensemble des informations concernant le dispositif Balise360. Les utilisateurs ont également la possibilité de renseigner leur adresse e-mail afin de recevoir par mail toutes les informations relatives aux offres proposées par Balise360.</p>
 
         <h3 class="second-title">
           Lois applicables
@@ -29,14 +29,18 @@
 
         <ul>
           <li>Traitées de manière licite, loyale et transparente au regard de la personne concernée,</li>
-          <li>Collectées pour des finalités déterminées, explicites et légitimes, et ne pas être traitées ultérieurement d'une manière incompatible avec ces finalités, adéquates, pertinentes et limitées à ce qui est nécessaire au regard des finalités pour lesquelles elles sont traitées, exactes et, si nécessaire, tenues à jour, conservées sous une forme permettant l'identification des personnes concernées pendant une durée n'excédant pas celle nécessaire au regard des finalités pour lesquelles elles sont traitées, traitées de façon à garantir une sécurité appropriée des données à caractère personnel, y compris la protection contre le traitement non autorisé ou illicite.</li>
+          <li>Collectées pour des finalités déterminées, explicites et légitimes, et ne pas être traitées ultérieurement d'une manière incompatible avec ces finalités,</li>
+          <li>Adéquates, pertinentes et limitées à ce qui est nécessaire au regard des finalités pour lesquelles elles sont traitées,</li>
+          <li>Exactes et, si nécessaire, tenues à jour,</li>
+          <li>Conservées sous une forme permettant l'identification des personnes concernées pendant une durée n'excédant pas celle nécessaire au regard des finalités pour lesquelles elles sont traitées,</li>
+          <li>Traitées de façon à garantir une sécurité appropriée des données à caractère personnel, y compris la protection contre le traitement non autorisé ou illicite.</li>
         </ul>
 
         <h3 class="second-title">
           Consentement
         </h3>
 
-        <p>En utilisant 360balise.fr vous consentez à accepter les conditions énoncées dans la présente politique de confidentialité ainsi qu'accepter la collecte, l’utilisation et la conservation des données énumérées dans la présente politique.</p>
+        <p>En utilisant Balise360 vous consentez à accepter les conditions énoncées dans la présente politique de confidentialité ainsi qu'accepter la collecte, l’utilisation et la conservation des données énumérées dans la présente politique.</p>
 
         <h3 class="second-title">
           Modifications
@@ -53,15 +57,15 @@
         </h3>
 
         <p>L'ensemble du contenu écrit, présent sur 360balise.fr est soumis au droit d'auteur. Vous devez demander l'autorisation des éditeurs du site avant toutes, publication ou copie de ces différents contenus. Toute utilisation du contenu écrit à des fins commerciales et publicitaires est strictement interdite.</p>
-        <p>Toute représentation totale ou partielle du site web 360balise.fr par quelque procédé que ce soit, sans l’autorisation expresse de ces éditeurs constituerait une contrefaçon et est donc strictement interdite.</p>
+        <p>Toute représentation totale ou partielle de l'application Balise360 par quelque procédé que ce soit, sans l’autorisation expresse de ces éditeurs constituerait une contrefaçon et est donc strictement interdite.</p>
         <p>Les illustrations et images utilisées appartiennent chacune à leur propriétaire respectif.</p>
 
         <h3 class="second-title">
           Responsabilité
         </h3>
 
-        <p>Les sources des informations diffusées sur le site 360balise.fr sont fiables, mais le site ne garantit pas qu’il soit exempt de défauts, d’erreurs ou d’omissions. Les informations communiquées sont présentées à titre indicatif et général sans valeur contractuelle.</p>
-        <p>Les éditeurs du site 360balise.fr ne peuvent être tenus pour responsables d’éventuels virus qui pourraient infecter l’ordinateur ou tout matériel informatique de l’internaute, suite à une utilisation, à l’accès, ou au téléchargement d'un fichier provenant de ce site.</p>
+        <p>Les sources des informations diffusées sur le site Balise360 sont fiables, mais le site ne garantit pas qu’il soit exempt de défauts, d’erreurs ou d’omissions. Les informations communiquées sont présentées à titre indicatif et général sans valeur contractuelle.</p>
+        <p>Les éditeurs du site Balise360 ne peuvent être tenus pour responsables d’éventuels virus qui pourraient infecter l’ordinateur ou tout matériel informatique de l’internaute, suite à une utilisation, à l’accès, ou au téléchargement d'un fichier provenant de ce site.</p>
 
         <h2 class="main-title">
           Données personnelles
@@ -70,14 +74,16 @@
         <h3 class="second-title">
           Collecte
         </h3>
-        <p>Si vous décidez de vous inscrire à la newsletter mise en place sur 360balise.fr vous consentez à fournir une adresse e-mail valide. Veuillez noter que nous collectons uniquement les données nécessaires à l'inscription de notre newsletter.</p>
+        <p>Si vous décidez de vous inscrire à la newsletter mise en place sur Balise360 vous consentez à fournir une adresse e-mail valide. Veuillez noter que nous collectons uniquement les données nécessaires à l'inscription de notre newsletter.</p>
+        <p>Si vous créer un compte sur notre plateforme, vous consentez à nous fournir l'ensemble des informations demandés pour la création de se dernier. Nous nous assurons la sécurité du stockage de vos informations à caractère personnelle.</p>
         <p>D’autres données sont collectées automatiquement par des services tiers lors de ce site internet. Ce sont avant tout des données techniques. La collecte de ces données est automatique dès que vous entrez sur notre site.</p>
         <p>Nous ne recueillerons pas de données supplémentaires sans vous en informer au préalable.</p>
 
         <h3 class="second-title">
           Utilisation
         </h3>
-        <p>Les données personnelles recueillies sur le site 360balise.fr sont utilisées afin d'analyser votre comportement d'utilisateur ainsi qu'assurer un bon fonctionnement de notre service. Nous n'utilisons pas vos données en dehors de ces utilisations.</p>
+        <p>Les données personnelles recueillies sur le site Balise360 sont utilisées afin d'analyser votre comportement d'utilisateur ainsi qu'assurer un bon fonctionnement de notre service. Nous n'utilisons pas vos données en dehors de ces utilisations.</p>
+        <p>Les données recueillis dans le cadre des collectes d'information scientifiques sont quand à elle transmise à différents organisme compétant pour la protection de l'environnement et l'étude de l'évolution des espaces naturels français.</p>
 
         <h3 class="second-title">
           Partage
@@ -87,14 +93,16 @@
         <ul>
           <li>Si la loi l'exige,</li>
           <li>Si elle est requise pour toute procédure judiciaire, pour prouver ou protéger nos droits légaux.</li>
-          <li>Si vous suivez des hyperliens de 360balise.fr vers d'autres sites, veuillez noter que nous ne sommes pas responsables et n’avons pas de contrôle sur leurs politiques et pratiques de confidentialité.</li>
         </ul>
 
         <h3 class="second-title">
           Protection
         </h3>
 
-        <p>Les données de la newsletter sont stockées par le service SendInBlue. L’ensemble des données stockées sur SendInBlue sont consultables uniquement par les personnes administrant du dispositif 360balise.fr. Ces dernières s’engagent à ne divulguer en aucun cas ces informations. En ce qui concerne les réponses du questionnaire, les données sont stockées dans notre base de données et ne peuvent être visibles par les autres utilisateurs.</p>
+        <p>Les données de la newsletter sont stockées par le service Sendinblue.</p>
+        <p>Les données récolté lors de la création d'un compte sont stockés sur notre propre base de donnée.</p>
+        <p>L’ensemble des données stockées sur Sendinblue ou dans notre base de donnée sont consultables uniquement par les personnes administrant du dispositif Balise360. Ces dernières s’engagent à ne divulguer en aucun cas ces informations. En ce qui concerne les réponses du questionnaire, les données sont stockées dans notre base de données et ne peuvent être visibles par les autres utilisateurs.</p>
+        <p>Enfin les données récolté à l'aide des questionnaires utilisateurs après une randonnée sont consultables par l'ensemble de organisme scientifique en partenariat avec Balise360. Noté que ces données sont totalement anonymisé.</p>
 
         <h3 class="second-title">
           Mineurs
@@ -106,7 +114,8 @@
           Suppression
         </h3>
 
-        <p>Vous pouvez à tout moment nous contacter sur l'adresse mail indiqué en bas de page afin de demander la suppression de vos informations personnelles.</p>
+        <p>Vous pouvez à tout moment nous contacter à l'adresse mail suivante ktorzedc@gmail.com afin de demander la suppression et la consultation de vos informations personnelles.</p>
+        <p>De même vous pouvez demander la suppression de votre compte directement en envoyant un mail à cette même adresse mail.</p>
 
         <h3 class="second-title">
           Politique d’utilisation des cookies
