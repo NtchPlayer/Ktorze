@@ -16,96 +16,99 @@
 
       <div class="card-travel-content-main">
         <div class="card-travel-content-main-description" v-html="data.content"></div>
-        <figure>
-          <img src="" alt="">
+        <figure class="card-travel-content-main-map">
+          <img src="@/assets/fotorama/coverfotorama.png" alt="">
         </figure>
         <h2 class="card-travel-content-main-title">Caractéristiques</h2>
 
         <div class="card-travel-content-main-stats">
-          <div class="card-travel-content-main-stats">
-            <p>Distance</p>
-            <p v-text="data.length" />
+          <div class="card-travel-content-main-stats-wrapper">
+            <div class="card-travel-content-main-stats-wrapper--infos">
+              <p>Distance</p>
+              <p v-text="data.length" />
+            </div>
+            <div class="card-travel-content-main-stats--infos">
+              <p>Dénivelé</p>
+              <p v-text="data.elevation" />
+            </div>
+            <div class="card-travel-content-main-stats--infos">
+              <p>Durée</p>
+              <p v-text="data.duration" />
+            </div>
+            <div class="card-travel-content-main-stats--infos">
+              <p>Niveau</p>
+              <p v-text="data.level" />
+            </div>
           </div>
-          <div class="card-travel-content-main-stats">
-            <p>Dénivelé</p>
-            <p v-text="data.elevation" />
-          </div>
-          <div class="card-travel-content-main-stats">
-            <p>Durée</p>
-            <p v-text="data.duration" />
-          </div>
-          <div class="card-travel-content-main-stats">
-            <p>Niveau</p>
-            <p v-text="data.level" />
-          </div>
-          <p v-html="data.levelDescription" />
+          <p class="card-travel-content-main-stats-description" v-html="data.levelDescription" />
         </div>
 
         <div class="card-travel-content-main-traffic">
-          <h2>Fréquentation</h2>
-          <p v-if="data.levelDescription !== ''" class="card-travel-content--checked">
+          <h2 class="card-travel-content-main-title">Fréquentation</h2>
+          <p v-if="data.levelDescription !== ''" class="card-travel-content-main-traffic--checked">
           </p>
-          <p v-else class="card-travel-content--checked">
+          <p v-else class="card-travel-content-main-traffic--checked">
             {{ data.levelDescription }}
           </p>
         </div>
 
         <div class="card-travel-content-main-gears">
-          <h2>Les vêtements à emmener</h2>
+          <h2 class="card-travel-content-main-title">Fréquentation</h2>
+          <h3 class="card-travel-content-second-title">Les vêtements à emmener</h3>
           <div class="card-travel-content-main-gears-slider">
             <div>
               <figure>
-                <img src="" alt="">
+                <img src="@/assets/fotorama/coverfotorama.png" alt="">
               </figure>
               Chapeau
             </div>
             <div>
               <figure>
-                <img src="" alt="">
+                <img src="@/assets/fotorama/coverfotorama.png" alt="">
               </figure>
               Chapeau
             </div>
             <div>
               <figure>
-                <img src="" alt="">
+                <img src="@/assets/fotorama/coverfotorama.png" alt="">
               </figure>
               Chapeau
             </div>
             <div>
               <figure>
-                <img src="" alt="">
+                <img src="@/assets/fotorama/coverfotorama.png" alt="">
               </figure>
               Chapeau
             </div>
           </div>
-          <h2>Les accessoires à emmener</h2>
+          <h3 class="card-travel-content-second-title">Les accessoires à emmener</h3>
           <div class="card-travel-content-main-gears-slider">
             <div>
               <figure>
-                <img src="" alt="">
+                <img src="@/assets/fotorama/coverfotorama.png" alt="">
               </figure>
               Chapeau
             </div>
             <div>
               <figure>
-                <img src="" alt="">
+                <img src="@/assets/fotorama/coverfotorama.png" alt="">
               </figure>
               Chapeau
             </div>
             <div>
               <figure>
-                <img src="" alt="">
+                <img src="@/assets/fotorama/coverfotorama.png" alt="">
               </figure>
               Chapeau
             </div>
             <div>
               <figure>
-                <img src="" alt="">
+                <img src="@/assets/fotorama/coverfotorama.png" alt="">
               </figure>
               Chapeau
             </div>
           </div>
-          <p v-text="data.gearCategoryDescription" />
+          <p class="card-travel-content-main-gears-description" v-text="data.gearCategoryDescription" />
         </div>
 
       </div>
@@ -202,6 +205,84 @@ export default {
           div{
             display: flex;
             align-items: center;
+          }
+        }
+        &-second{
+          &-title{
+            font-family: 'Gotham';
+            font-weight: bold;
+            margin: 25px 0 20px 0;
+          }
+        }
+        &-main{
+          &-map{
+            width: 100%;
+            height: 235px;
+            margin: 30px 0 30px 0;
+            & img{
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+              border-radius: 15px;
+            }
+          }
+          &-title{
+              font-size: 1.5rem;
+              font-weight: bold;
+              line-height: 25px;
+              margin-bottom: 5px;
+              font-family: 'Gotham';
+              color: var(--green-color);
+              border-top: 1px solid var(--green-color-30);
+              padding-top: 20px;
+          }
+          &-stats{
+            &-wrapper{
+              display: flex;
+              flex-wrap: wrap;
+              justify-content: space-between;
+              gap: 25px;
+              margin: 25px 0 15px 0;
+              p{
+                color: var(--green-color);
+                &:last-child{
+                  color: var(--cyan-color);
+                  font-weight: bold;
+                  font-size: 1.125rem;
+                }
+              }
+            }
+            &-description{
+              margin-bottom: 15px;
+            }
+          }
+          &-traffic{
+            &--checked{
+              min-height: 200px;
+            }
+          }
+          &-gears{
+            &-slider{
+              display: flex;
+              justify-content: space-between;
+              text-align: center;
+              figure{
+                height: 70px;
+                width: 70px;
+                margin-bottom: 5px;
+                img{
+                  height: 100%;
+                  width: 100%;
+                  object-fit: cover;
+                  border-radius: 50%;
+                }
+              }
+            }
+            &-description{
+              margin: 15px 0 15px 0;
+              border-bottom: 1px solid var(--green-color-30);
+              padding-bottom: 15px;
+            }
           }
         }
       }
