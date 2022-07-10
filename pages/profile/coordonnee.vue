@@ -1,8 +1,13 @@
 <template>
   <section>
     <div class="profile-router-view-header">
-      <h1>
-        <strong>Mes coordonnées</strong>
+      <nuxt-link class="mobile" type="button" :to="{name: 'profile'}">
+        <img src="@/assets/icons/arrow-left.svg" alt="Fleche de retour">
+      </nuxt-link>
+      <h1 class="profile-router-view-header-title">
+        <strong>
+          Mes Paramètres
+        </strong>
       </h1>
     </div>
     <form class="profile-router-view-content" @submit.prevent="__updateUserInfos">

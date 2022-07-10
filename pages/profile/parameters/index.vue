@@ -2,11 +2,11 @@
   <div>
     <div class="profile-nav">
       <button>
-        <figure>
-          <img @click.prevent="back" src="@/assets/icons/arrow-left.svg" alt="">
-        </figure>
+        <img src="@/assets/icons/arrow-left.svg" alt="Retour arrière" @click.prevent="back">
       </button>
-      <h1 class="profile-title">Paramètres</h1>
+      <h1 class="profile-title">
+        Paramètres
+      </h1>
       <div>'Filter'</div>
     </div>
     <main class="profile">
@@ -26,11 +26,11 @@ import ProfilLink from '@/components/profile/ProfilLink.vue'
 
 export default {
   name: 'Profile',
-  layout: 'app',
   // middleware: 'auth'
   components: {
     ProfilLink
   },
+  layout: 'app',
   data () {
     return {
       links: [

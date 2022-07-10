@@ -1,0 +1,43 @@
+<template>
+  <main>
+    <div class="profile-router-view-header profile-router-view-header-favoris">
+      <h1 class="profile-router-view-header-title">
+        <strong>
+          Nos 12 randonnées <span class="color-orange">engagées</span>
+        </strong>
+      </h1>
+      <button type="button" @click.prevent="$emit('closeFilter')">
+        <svg width="30" height="20" viewBox="0 0 30 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M11.6667 18.3333C11.6667 19.2538 12.4129 20 13.3333 20H16.6667C17.5871 20 18.3333 19.2538 18.3333 18.3333V18.3333C18.3333 17.4129 17.5871 16.6667 16.6667 16.6667H13.3333C12.4129 16.6667 11.6667 17.4129 11.6667 18.3333V18.3333ZM1.66667 0C0.746193 0 0 0.746192 0 1.66667V1.66667C0 2.58714 0.746192 3.33333 1.66667 3.33333H28.3333C29.2538 3.33333 30 2.58714 30 1.66667V1.66667C30 0.746192 29.2538 0 28.3333 0H1.66667ZM5 10C5 10.9205 5.74619 11.6667 6.66667 11.6667H23.3333C24.2538 11.6667 25 10.9205 25 10V10C25 9.07953 24.2538 8.33333 23.3333 8.33333H6.66667C5.74619 8.33333 5 9.07953 5 10V10Z" fill="#5C8670" />
+        </svg>
+      </button>
+    </div>
+    <section class="container-card-travel">
+      <CardTravel
+        v-for="trail of data"
+        :key="trail.id"
+        :data="trail"
+      />
+    </section>
+  </main>
+</template>
+
+<script>
+import CardTravel from '@/components/card/CardTravel'
+export default {
+  name: 'Trails',
+  components: { CardTravel },
+  async asyncData ({ $axios }) {
+    const { data } = await $axios.get('/trails')
+    return {
+      data
+    }
+  }
+}
+</script>
+
+<style>
+.container-card-travel{
+  padding: 20px;
+}
+</style>

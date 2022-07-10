@@ -2,7 +2,7 @@
   <swiper class="swiper" :options="swiperOptions">
     <swiper-slide v-for="(data, i) of dataSlider" :key="i" class="slide">
       <figure>
-        <img :src="require(`@/assets/fotorama/${data.src}`)" :alt="data.alt">
+        <img :src="require(`@/assets/trails/${folder}/${data.file}`)" :alt="data.alt">
       </figure>
     </swiper-slide>
     <div slot="pagination" class="swiper-pagination" />
@@ -20,12 +20,12 @@ export default {
     SwiperSlide
   },
   props: {
-    dataSlider: { type: Array, required: true }
+    dataSlider: { type: Array, required: true },
+    folder: { type: String, required: true }
   },
   data () {
     return {
       swiperOptions: {
-        slidesPerView: 1,
         spaceBetween: 35,
         watchOverflow: false,
         width: '100%',

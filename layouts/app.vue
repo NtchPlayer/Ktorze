@@ -34,12 +34,14 @@ export default {
 </script>
 
 <style lang="scss">
+.app-container main{
+  padding-top: 30px;
+}
+
 @media screen and (min-width: 768px) {
-  .app-container{
-    main{
-      padding-top: 150px;
-      margin-bottom: 40px;
-    }
+  .app-container main{
+    padding-top: 150px;
+    margin-bottom: 40px;
   }
 }
 </style>

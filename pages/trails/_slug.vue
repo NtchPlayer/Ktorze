@@ -3,7 +3,7 @@
     <main class="profile">
       <button class="btn-back">
         <figure>
-          <img @click.prevent="back" src="@/assets/icons/arrow-left.svg" alt="">
+          <img src="@/assets/icons/arrow-left.svg" alt="Retour Arrière" @click.prevent="back">
         </figure>
       </button>
       <CardTravelDetail

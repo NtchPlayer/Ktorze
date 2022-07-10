@@ -1,6 +1,6 @@
 <template>
   <main class="container-profile">
-    <section class="profile-navbar">
+    <section class="profile-navbar" :class="{ isSubRoad }">
       <ProfilAccount :data="account" />
       <nav class="profile-links">
         <ProfilLink
@@ -18,7 +18,7 @@
         </button>
       </nav>
     </section>
-    <NuxtChild class="profile-router-view" />
+    <NuxtChild class="profile-router-view" :class="{ isSubRoad }" />
   </main>
 </template>
 
@@ -53,6 +53,11 @@ export default {
         redirect: 'favoris'
       }]
     }
+  },
+  computed: {
+    isSubRoad () {
+      return this.$route.name.split('-').length > 1
+    }
   }
 }
 </script>
@@ -62,11 +67,41 @@ export default {
   width: 100%;
 }
 
+.profile-router-view{
+  display: none;
+}
+
+.profile-router-view.isSubRoad{
+  display: block;
+}
+
+.profile-navbar.isSubRoad{
+  display: none;
+}
+
+.profile-router-view-header-title{
+  font-size: 1.5rem;
+}
+
+.profile-router-view-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 @media screen and (min-width: 768px) {
   .container-profile{
     display: grid;
     gap: 20px;
     grid-template-columns: minmax(auto, 340px) auto;
+  }
+
+  .profile-navbar.isSubRoad{
+    display: block;
+  }
+
+  .profile-router-view{
+    display: block;
   }
 
   .profile-links{
