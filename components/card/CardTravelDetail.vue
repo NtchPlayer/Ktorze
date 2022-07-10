@@ -120,7 +120,7 @@
         Niveau {{ data.level }}
       </p>
     </div>
-    <div class="desktop" v-for="(data, i) of dataSlider" :key="i" class="slide">
+    <div v-for="(data, i) of dataSlider" :key="i" class="slide desktop">
       <figure>
         <img :src="require(`@/assets/fotorama/${data.src}`)" :alt="data.alt">
       </figure>
