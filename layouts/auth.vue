@@ -77,8 +77,6 @@ export default {
       }
       a{
         color: var(--green-color);
-        text-decoration: underline;
-        margin-top: 15px;
       }
     }
     .btn-primary{
@@ -86,8 +84,35 @@ export default {
       color: var(--white-color);
       padding: 13.5px 35px;
       background: var(--green-color);
+      width: 100%;
       &:hover{
         background: var(--green-hover);
+      }
+    }
+  }
+}
+@media screen and (min-width: 769px) {
+  .auth-container{
+    .auth-modale{
+      padding: 0;
+    }
+    &--img{
+      height: 100vh;
+      width: 50%;
+      img{
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+    &--left{
+      display: block;
+      margin: auto;
+      width: 50%;
+      padding: 0 50px;
+      &-content{
+        max-width: 360px;
+        margin: auto;
       }
     }
   }

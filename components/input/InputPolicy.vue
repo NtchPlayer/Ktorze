@@ -27,6 +27,7 @@ export default {
   display: flex;
   margin: 20px 0;
   font-size: .75rem;
+  color: var(--black-color-70);
   a{
     text-decoration: underline;
   }
