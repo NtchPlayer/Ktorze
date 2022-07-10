@@ -1,7 +1,7 @@
 <template>
   <div class="card-travel">
     <div class="card-travel-content">
-      <p class="card-travel-content--name" v-text="data.name" />
+      <p class="card-travel-content--name mobile" v-text="data.name" />
       <div class="card-travel-content-bottom">
         <div>
           <h2 class="card-travel-content--location" v-text="data.location" />
@@ -114,11 +114,16 @@
       </div>
 
     </div>
-    <div class="card-travel-header">
+    <div class="card-travel-header mobile">
       <CardTravelSlider :data-slider="data.img" />
       <p class="card-travel-header--level">
         Niveau {{ data.level }}
       </p>
+    </div>
+    <div class="desktop" v-for="(data, i) of dataSlider" :key="i" class="slide">
+      <figure>
+        <img :src="require(`@/assets/fotorama/${data.src}`)" :alt="data.alt">
+      </figure>
     </div>
   </div>
 </template>

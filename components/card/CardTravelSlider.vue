@@ -28,7 +28,6 @@ export default {
         slidesPerView: 1,
         spaceBetween: 35,
         watchOverflow: false,
-        width: '100%',
         pagination: {
           el: '.swiper-pagination',
           clickable: true
