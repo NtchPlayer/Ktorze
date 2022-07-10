@@ -120,7 +120,7 @@
         Niveau {{ data.level }}
       </p>
     </div>
-    <div v-for="(data, i) of dataSlider" :key="i" class="slide desktop">
+    <div :data-slider="data.img" v-for="(data, i) of data.img" :key="i" class="card-travel-header slide desktop">
       <figure>
         <img :src="require(`@/assets/fotorama/${data.src}`)" :alt="data.alt">
       </figure>
@@ -322,4 +322,9 @@ export default {
       z-index: 5;
     }
   }
+
+  @media screen and (min-width: 769px) {
+    
+  }
+
 </style>
