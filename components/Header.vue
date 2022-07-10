@@ -104,7 +104,7 @@ header{
     display: flex;
     gap: 50px;
     li{
-      color: var(--background-color);
+      color: var(--white-color);
       font-family: 'Apfel', sans-serif;
       font-weight: bold;
     }

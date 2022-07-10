@@ -1,7 +1,7 @@
 <template>
   <div>
     <figure class="main-logo">
-      <img alt="Icon balise 360" src="@/assets/balise360.svg">
+      <img alt="Icon balise 360" src="@/assets/balise360-green.svg">
     </figure>
     <p class="main-title">
       Bienvenue.
@@ -15,8 +15,12 @@
       <input class="btn-primary" type="submit" value="Connexion">
     </form>
     <p class="links-container">
+      Mot de passe oublié ?
+    </p>
+    <p class="links-container">
+      Vous n'avez pas de compte ?
       <nuxt-link :to="{ name: 'auth-sign-up' }">
-        Se créer un compte
+        Inscription
       </nuxt-link>
     </p>
   </div>

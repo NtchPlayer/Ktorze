@@ -31,9 +31,10 @@ export default {
     }
     &--location{
       font-size: 1rem;
-      color: #99B2A5;
+      color: var(--green-color-60);
       line-height: 19px;
-      margin-bottom: 20px;
+      margin-bottom: 25px;
+      font-weight: bold;
     }
   }
 </style>

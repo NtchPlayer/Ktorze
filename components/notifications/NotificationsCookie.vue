@@ -69,7 +69,7 @@ export default {
   bottom: 0;
   width: 100%;
   justify-content: center;
-  background-color: #fff;
+  background-color: var(--white-color);
   box-shadow: 0 0 11px rgba(0, 0, 0, 0.3);
   padding: 15px 0;
 }

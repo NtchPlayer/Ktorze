@@ -12,26 +12,30 @@ export default {
 
 <style lang="scss">
 .auth-container{
-  background-color: var(--green-color);
   width: 100vw;
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
+  .btn-back{
+    position: absolute;
+  }
   form{
     margin: 25px 0;
-    .input{
-      width: 295px;
+    .input, .select{
+      min-width: 295px;
       border-radius: 5px;
-      color: var(--green-color);
+      color: var(--black-color-80);
       border: 1px solid var(--green-color);
+      padding: 0 18px;
       &:not(.btn-primary){
         height: 40px;
       }
     }
     .container-input{
       label{
-        color: var(--green-color);
+        color: var(--green-color-50);
         font-weight: 400;
       }
     }
@@ -46,22 +50,45 @@ export default {
   }
   h1.main-title{
     color: var(--orange-color);
-  }
-  .links-container{
-    font-family: 'Apfel';
-    text-align: center;
-    color: var(--orange-color);
-    margin: 20px 0;
-    text-decoration: underline;
+    margin-bottom: 15px;
+    span{
+      color: var(--green-color);
+    }
   }
   .auth-modale{
-    background-color: #fff;
     color: var(--green-color);
     padding: 20px;
     border-radius: var(--border-radius);
+    position: relative;
+    .text-body{
+      line-height: 19px;
+      color: var(--black-color-80);
+    }
+    .links-container{
+      font-family: 'Apfel';
+      text-align: center;
+      color: var(--orange-color);
+      margin: 20px 0;
+      display: flex;
+      flex-direction: column;
+      color: var(--black-color-90);
+      &:last-child{
+        margin-top: 60px;
+      }
+      a{
+        color: var(--green-color);
+        text-decoration: underline;
+        margin-top: 15px;
+      }
+    }
     .btn-primary{
-      border-radius: 5px;
-      color: var(--background-color);
+      border-radius: 25px;
+      color: var(--white-color);
+      padding: 13.5px 35px;
+      background: var(--green-color);
+      &:hover{
+        background: var(--green-hover);
+      }
     }
   }
 }

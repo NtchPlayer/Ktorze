@@ -290,7 +290,7 @@ export default {
     text-align: center;
     display: inline-block;
     border-radius: var(--border-radius) 0 0 var(--border-radius);
-    background: var(--input);
+    background: var(--white-color);
     border: 1px solid var(--input-border);
     padding: 10.5px 0;
     border-right: none;

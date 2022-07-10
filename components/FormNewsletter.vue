@@ -227,7 +227,7 @@ export default {
 
 .form-newsletter{
   input.btn-primary{
-    color: var(--background-color);
+    color: var(--white-color);
   }
   &-identity{
     display: flex;

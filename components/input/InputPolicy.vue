@@ -32,7 +32,6 @@ export default {
   }
   input{
     align-self: flex-start;
-    margin-top: 30px;
   }
   .infos-content{
     margin-left: 10px;

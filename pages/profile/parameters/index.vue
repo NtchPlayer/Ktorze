@@ -3,7 +3,7 @@
     <div class="profile-nav">
       <button>
         <figure>
-          <img @click.self="back" src="@/assets/icons/arrow-left.svg" alt="">
+          <img @click.prevent="back" src="@/assets/icons/arrow-left.svg" alt="">
         </figure>
       </button>
       <h1 class="profile-title">Paramètres</h1>

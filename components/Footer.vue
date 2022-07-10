@@ -62,7 +62,7 @@ export default {
 footer{
   background-color: var(--green-color);
   font-family: 'Apfel',serif;
-  color: var(--background-color);
+  color: var(--white-color);
   padding-top: 80px;
   padding-bottom: 60px;
 }

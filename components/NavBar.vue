@@ -39,7 +39,7 @@ export default {
 .app-nav{
   background-color: var(--green-color);
   width: 100%;
-  color: #fff;
+  color: var(--white-color);
   position: fixed;
   bottom: 0;
   height: 80px;

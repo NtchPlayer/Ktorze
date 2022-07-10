@@ -48,7 +48,7 @@ export default {
   left: 0;
   z-index: 15;
   background-color: var(--green-color);
-  color: #fff;
+  color: var(--white-color);
   &-container-close-button{
     margin-bottom: 50px;
   }

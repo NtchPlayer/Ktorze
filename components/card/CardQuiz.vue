@@ -56,7 +56,7 @@ export default {
   transition-duration: var(--transition-duration);
   &:hover{
     background-color: var(--green-hover);
-    color: #fff;
+    color: var(--white-color);
   }
 }
 </style>

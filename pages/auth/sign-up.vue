@@ -1,10 +1,15 @@
 <template>
   <div>
+    <button class="btn-back">
+        <figure>
+          <img @click.self="back" src="@/assets/icons/arrow-left-orange.svg" alt="">
+        </figure>
+      </button>
     <h1 class="main-title">
-      Créez votre compte
+      <span>Créez</span> votre compte
     </h1>
     <p class="text-body t-center">
-      Aidez-nous à vous proposer des équipements, des sentiers et des services sur mesure en saisissant vos données
+      Pour un accompagnement sur mesure :<br> des équipements, des sentiers et des services selon vos envies et besoins.
     </p>
     <form @submit.prevent="signUp">
       <InputEmail ref="input-email" v-model="email" />
@@ -84,6 +89,9 @@ export default {
     }
   },
   methods: {
+    back () {
+      this.$router.back()
+    },
     signUp () {
       if (!this.formIsValid) {
         return

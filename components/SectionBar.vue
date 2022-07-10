@@ -26,7 +26,7 @@ export default {
   padding: 80px;
   margin-bottom: 80px;
   p{
-    color: var(--background-color);
+    color: var(--white-color);
     font-size: 2rem;
     line-height: 2.4rem;
   }

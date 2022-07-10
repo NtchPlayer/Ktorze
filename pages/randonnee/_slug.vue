@@ -1,16 +1,12 @@
 <template>
   <div>
-    <div class="profile-nav">
-      <button>
+    <main class="profile">
+      <button class="btn-back">
         <figure>
-          <img src="@/assets/icons/arrow-left.svg" alt="" @click.self="back">
+          <img @click.prevent="back" src="@/assets/icons/arrow-left.svg" alt="">
         </figure>
       </button>
-      <h1 class="profile-title">Favoris</h1>
-      <div>'Filter'</div>
-    </div>
-    <main class="profile">
-      <CardTravel
+      <CardTravelDetail
         v-for="(favori, i) of favoris"
         :key="i"
         :data="favori"
@@ -20,12 +16,12 @@
 </template>
 
 <script>
-import CardTravel from '@/components/card/CardTravel.vue'
+import CardTravelDetail from '@/components/card/CardTravelDetail.vue'
 
 export default {
   name: 'Favoris',
   components: {
-    CardTravel
+    CardTravelDetail
   },
   layout: 'app',
   // middleware: 'auth'
@@ -47,12 +43,70 @@ export default {
               alt: 'oyiutre'
             }
           ],
-          name: 'Patrimoine architectural',
+          name: 'Le Cirque de Gavarnie',
           level: 3,
-          location: 'Hautes-Alpes, France',
-          checked: '24/01/2022',
-          content: 'Jetez un coup d’oeil à cet itinéraire en boucle de 13,0 km près de Ceillac, Hautes-Alpes. Généralement considéré comme un parcours difficile, il faut en moyenne 5h12mins pour le parcourir. Cet itinéraire est idéal pour la randonnée. La meilleure période de visite est de juin à octobre. Les chiens sont les bienvenus et peuvent être lâchés à certains endroits.',
-          isWishlist: true
+          location: 'Les Pyrénnés',
+          checked: '08/07/2021',
+          isWishlist: true,
+          content: 'Le Cirque de Gavarnie est un espace naturel préservé exceptionnel. Il est classé au Patrimoine Mondial de l\'Humanité par l’Unesco.<br>Le Cirque de Gavarnie, une randonnée engagée comme vous. En effectuant cet itinéraire vous jouez un rôle décisif pour la préservation de la nature. En effet, en répondant au questionnaire à la fin de la randonnée vous participez activement à la recherche des impacts du réchauffement climatique sur l’environnement.',
+          geojson: [
+            {
+              img: '',
+              alt: ''
+            }
+          ],
+          length: '8,17',
+          elevation: '212',
+          duration: '2h55',
+          levelDescription: '5  à 6 heures de marche par jour environ<br>Dénivelé positif de 500 à 800 mètres<br>Bonne condition physique requise<br>Prévoyez un entraînement avant votre départ',
+          trafficDescription: '',
+          gearCategoryId: '',
+          gearCategoryDescription: 'Nous vous recommandons cependant de regarder la météo avant d’effectuer votre randonnée et d’adapter cette liste à vos besoins !',
+          categoryDescription: [
+            {
+              title: 'Équipements',
+              gears: [
+                {
+                  gear: 'Chapeau'
+                },
+                {
+                  gear: 'Chapeau'
+                },
+                {
+                  gear: 'Chapeau'
+                },
+                {
+                  gear: 'Chapeau'
+                },
+                {
+                  gear: 'Chapeau'
+                },
+                {
+                  gear: 'Chapeau'
+                }
+              ],
+              stuff: [
+                {
+                  gear: 'Chapeau'
+                },
+                {
+                  gear: 'Chapeau'
+                },
+                {
+                  gear: 'Chapeau'
+                },
+                {
+                  gear: 'Chapeau'
+                },
+                {
+                  gear: 'Chapeau'
+                },
+                {
+                  gear: 'Chapeau'
+                }
+              ]
+            }
+          ]
         }
       ]
     }

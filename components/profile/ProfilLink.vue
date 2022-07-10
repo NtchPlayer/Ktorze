@@ -28,22 +28,23 @@ export default {
     align-items: center;
     justify-content: space-between;
     height: 40px;
-    border: 1px solid var(--green-color);
-    border-radius: 5px;
-    padding: 20px;
-    margin-bottom: 12px;
+    padding: 0 20px;
+    margin-bottom: 16px;
     &-left{
       display: flex;
       align-items: center;
+      p{
+        color: var(--black-color-60);
+      }
       img{
-        margin-right: 10px;
-        width: 25px;
-        height: 25px;
+        margin-right: 20px;
+        width: 23px;
+        height: 23px;
       }
     }
     &--click{
       transform: rotate(180deg);
-      height: 25px;
+      height: 15px;
     }
   }
 </style>

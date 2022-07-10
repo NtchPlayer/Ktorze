@@ -6,7 +6,7 @@
             <img @click.self="back" src="@/assets/icons/arrow-left.svg" alt="">
           </figure>
         </button>
-        <h1 class="profile-title">Détail</h1>
+        <h1 class="profile-title">Favoris</h1>
         <div></div>
       </div>
     <main class="profile">
