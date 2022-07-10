@@ -114,11 +114,16 @@
       </div>
 
     </div>
-    <div class="card-travel-header">
+    <div class="card-travel-header mobile">
       <CardTravelSlider :data-slider="data.img" />
       <p class="card-travel-header--level mobile">
         Niveau {{ data.level }}
       </p>
+    </div>
+    <div v-for="(data, i) of dataSlider" :key="i" class="slide desktop">
+      <figure>
+        <img :src="require(`@/assets/fotorama/${data.src}`)" :alt="data.alt">
+      </figure>
     </div>
   </div>
 </template>
