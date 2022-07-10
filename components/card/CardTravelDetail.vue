@@ -1,7 +1,7 @@
 <template>
   <div class="card-travel">
     <div class="card-travel-content">
-      <p class="card-travel-content--name" v-text="data.name" />
+      <p class="card-travel-content--name mobile" v-text="data.name" />
       <div class="card-travel-content-bottom">
         <div>
           <h2 class="card-travel-content--location" v-text="data.location" />
@@ -116,7 +116,7 @@
     </div>
     <div class="card-travel-header">
       <CardTravelSlider :data-slider="data.img" />
-      <p class="card-travel-header--level">
+      <p class="card-travel-header--level mobile">
         Niveau {{ data.level }}
       </p>
     </div>
