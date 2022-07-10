@@ -26,8 +26,9 @@ export default {
 .container-policy{
   display: flex;
   margin: 20px 0;
-  font-size: .75rem;
+  font-size: 1rem;
   color: var(--black-color-70);
+  line-height: 19px;
   a{
     text-decoration: underline;
   }
