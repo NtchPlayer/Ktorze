@@ -10,13 +10,17 @@
       <p class="text-body t-center">
         Pour un accompagnement sur mesure :<br> des équipements, des sentiers et des services selon vos envies et besoins.
       </p>
-      <form @submit.prevent="signUp">
+      <form @submit.prevent="signUp" class="signup">
         <InputEmail ref="input-email" v-model="email" />
         <InputPassword ref="input-password" v-model="password" />
-        <InputFirstname ref="input-firstname" v-model="firstname" />
-        <InputLastname ref="input-lastname" v-model="lastname" />
-        <InputBirthday ref="input-birthday" v-model="birthday" />
-        <InputGender ref="input-gender" v-model="gender" />
+        <div class="form-column">
+          <InputFirstname ref="input-firstname" v-model="firstname" />
+          <InputLastname ref="input-lastname" v-model="lastname" />
+        </div>
+        <div class="form-column">
+          <InputBirthday ref="input-birthday" v-model="birthday" />
+          <InputGender ref="input-gender" v-model="gender" />
+        </div>
         <InputPolicy ref="input-policy" />
         <input class="input btn-primary" type="submit" value="Terminer">
       </form>
@@ -121,6 +125,18 @@ export default {
 }
 </script>
 
-<style>
-
+<style lang="scss">
+  .form-column{
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    .container-input{
+      width: 50%;
+    }
+  }
+  .signup{
+    input.btn-primary{
+      margin-top: 0;
+    }
+  }
 </style>
