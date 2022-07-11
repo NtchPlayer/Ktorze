@@ -8,7 +8,7 @@
           :key="i"
           :data="link"
         />
-        <button type="button" class="profile-links-link">
+        <button type="button" class="profile-links-link profile-links-link-button" @click.prevent="$auth.logout()">
           <span class="profile-links-link-left">
             <figure>
               <img class="profile-links-link--icon" alt="Déconnexion" :src="require(`@/assets/icons/out.svg`)">
@@ -36,11 +36,6 @@ export default {
   // middleware: 'auth'
   data () {
     return {
-      account: {
-        src: 'test.png',
-        fullname: `${this.$auth.user.firstname} ${this.$auth.user.lastname}`,
-        location: 'Paris, France'
-      },
       links: [{
         baseUrl: 'profile',
         src: 'coordonnee.svg',
@@ -82,6 +77,10 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.profile-links-link-button{
+  width: 100%;
 }
 
 @media screen and (min-width: 768px) {

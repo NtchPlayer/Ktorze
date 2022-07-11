@@ -24,9 +24,6 @@ export default {
       links: [{
         text: 'Randonnée',
         name: 'trails'
-      }, {
-        text: 'Profil',
-        name: 'profile'
       }]
     }
   }

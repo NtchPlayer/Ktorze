@@ -15,6 +15,9 @@
             Inscription
           </nuxt-link>
         </p>
+        <p v-show="error">
+          identifiant incorrect
+        </p>
         <p class="links-container">
           <nuxt-link :to="{ name: 'auth-sign-up' }">
             Mot de passe oublié ?
@@ -41,8 +44,9 @@ export default {
   layout: 'auth',
   data () {
     return {
-      email: 'test@exemple.com',
-      password: 'couette1'
+      email: '',
+      password: '',
+      error: false
     }
   },
   head () {
@@ -77,6 +81,8 @@ export default {
           email: this.email,
           password: this.password
         }
+      }).catch(() => {
+        this.error = true
       })
     }
   }

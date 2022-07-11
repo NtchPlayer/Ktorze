@@ -59,6 +59,7 @@ export default {
       }).then(() => {
         this.isValid = true
         setTimeout(() => { this.isValid = false }, 3000)
+        this.$auth.fetchUser()
       })
     }
   }
