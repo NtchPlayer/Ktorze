@@ -81,7 +81,6 @@ export default {
     &--checked{
       font-size: 0.75rem;
       line-height: 22px;
-      margin-top: 10px;
     }
     &-footer{
       display: flex;
@@ -173,6 +172,7 @@ export default {
     }
     .card-travel-description{
       line-height: 1.2rem;
+      margin-bottom: 10px;
     }
   }
 }

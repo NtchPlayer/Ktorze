@@ -142,6 +142,7 @@ export default {
   .trail-card{
     margin-bottom: 80px;
     padding-top: 150px;
+    position: relative;
     &-nav{
       display: flex;
       height: 105px;
@@ -179,6 +180,8 @@ export default {
         color: var(--black-color-80);
         z-index: 2;
         order: 2;
+        background: none;
+        margin-top: 0;
         &--name{
           font-size: 1.5rem;
           font-weight: bold;
@@ -358,7 +361,7 @@ export default {
               margin-bottom: 25px;
               img{
                 width: 100%;
-                height: 100%;
+                max-height: 370px;
                 object-fit: cover;
               }
             }
