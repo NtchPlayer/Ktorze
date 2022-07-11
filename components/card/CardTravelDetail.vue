@@ -60,10 +60,8 @@
 
           <div class="card-travel-content-main-traffic">
             <h2 class="card-travel-content-main-title">Fréquentation</h2>
-            <p v-if="data.levelDescription !== ''" class="card-travel-content-main-traffic--checked">
-            </p>
-            <p v-else class="card-travel-content-main-traffic--checked">
-              {{ data.levelDescription }}
+            <p class="card-travel-content-main-traffic--checked">
+              Bientôt disponible
             </p>
           </div>
 
@@ -271,7 +269,14 @@ export default {
           }
           &-traffic{
             &--checked{
-              min-height: 200px;
+              min-height: 100px;
+              min-height: 100px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              color: var(--black-color-30);
+              font-size: 1.125rem;
+              font-weight: bold;
             }
           }
           &-gears{
@@ -405,9 +410,6 @@ export default {
             }
             &-traffic{
               order: 6;
-              &--checked{
-                min-height: 100px;
-              }
             }
             &-gears{
               order: 7;
