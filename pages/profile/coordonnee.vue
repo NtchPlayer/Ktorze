@@ -11,11 +11,11 @@
       </h1>
     </div>
     <form class="profile-router-view-content" @submit.prevent="__updateUserInfos">
-      <InputFirstname value="Nom" />
-      <InputLastname value="Prénom" />
-      <InputEmail value="test@exemle.com" />
-      <InputGender value="female" />
-      <InputBirthday value="01-01-2000" />
+      <InputFirstname :value="$auth.user.firstname" />
+      <InputLastname :value="$auth.user.lastname" />
+      <InputEmail :value="$auth.user.email" />
+      <InputGender :value="$auth.user.gender" />
+      <InputBirthday :value="$auth.user.birthday" />
       <input class="btn-primary" type="submit" value="Modifier" />
     </form>
   </section>

@@ -4,13 +4,11 @@
       <div class="card-travel-top">
         <div class="card-travel-top--left">
           <h1 class="card-travel-content--name desktop main-title" v-text="data.name" />
-          <p class="card-travel-header--level desktop">
-            Niveau {{ data.level }}
-          </p>
+          <p class="card-travel-header--level desktop" v-text="data.difficulty.level" />
         </div>
-        <button  class="card-travel-header--level desktop">
-          Randonnée à valider
-        </button>
+        <nuxt-link :to="{name: 'survey-slug', params: { slug: data.id }}" class="card-travel-header--level desktop">
+          Répondre au questionnaire
+        </nuxt-link>
       </div>
 
     </div>
@@ -31,15 +29,14 @@
           </div>
           <div class="card-travel-content-main-description" v-html="data.content"></div>
           <figure class="card-travel-content-main-map">
-            <img src="@/assets/fotorama/coverfotorama.png" alt="">
+            <div id="my-app" ref="myMap" />
           </figure>
           <h2 class="card-travel-content-main-title">Caractéristiques</h2>
-
           <div class="card-travel-content-main-stats">
             <div class="card-travel-content-main-stats-wrapper">
               <div class="card-travel-content-main-stats-wrapper--infos">
                 <p>Distance</p>
-                <p v-text="data.length" />
+                <p v-text="`${data.length}Km`" />
               </div>
               <div class="card-travel-content-main-stats--infos">
                 <p>Dénivelé</p>
@@ -47,14 +44,19 @@
               </div>
               <div class="card-travel-content-main-stats--infos">
                 <p>Durée</p>
-                <p v-text="data.duration" />
+                <p v-text="`${Math.round(data.length/4.8)} h`" />
               </div>
               <div class="card-travel-content-main-stats--infos">
                 <p>Niveau</p>
-                <p v-text="data.level" />
+                <p v-text="data.difficulty.id" />
               </div>
             </div>
-            <p class="card-travel-content-main-stats-description" v-html="data.levelDescription" />
+            <ul class="card-travel-content-main-stats-description">
+              <li>{{ data.difficulty.durationMin }} à {{ data.difficulty.durationMax }} heures de marche par jour environ</li>
+              <li>Dénivelé positif de {{ data.difficulty.elevationMin }} à {{ data.difficulty.elevationMax }} mètres</li>
+              <li>Altitude comprise {{ data.difficulty.altitudeMin }} entre {{ data.difficulty.altitudeMax }} mètre</li>
+              <li v-text="data.difficulty.physique" />
+            </ul>
           </div>
 
           <div class="card-travel-content-main-traffic">
@@ -67,59 +69,16 @@
           </div>
 
           <div class="card-travel-content-main-gears">
-            <h2 class="card-travel-content-main-title">Fréquentation</h2>
-            <h3 class="card-travel-content-second-title">Les vêtements à emmener</h3>
+            <h2 class="card-travel-content-main-title">Équipement</h2>
             <div class="card-travel-content-main-gears-slider">
-              <div>
+              <div
+                v-for="(gear, i) of data.gears"
+                :key="i"
+              >
                 <figure>
                   <img src="@/assets/fotorama/coverfotorama.png" alt="">
                 </figure>
-                Chapeau
-              </div>
-              <div>
-                <figure>
-                  <img src="@/assets/fotorama/coverfotorama.png" alt="">
-                </figure>
-                Chapeau
-              </div>
-              <div>
-                <figure>
-                  <img src="@/assets/fotorama/coverfotorama.png" alt="">
-                </figure>
-                Chapeau
-              </div>
-              <div>
-                <figure>
-                  <img src="@/assets/fotorama/coverfotorama.png" alt="">
-                </figure>
-                Chapeau
-              </div>
-            </div>
-            <h3 class="card-travel-content-second-title">Les accessoires à emmener</h3>
-            <div class="card-travel-content-main-gears-slider">
-              <div>
-                <figure>
-                  <img src="@/assets/fotorama/coverfotorama.png" alt="">
-                </figure>
-                Chapeau
-              </div>
-              <div>
-                <figure>
-                  <img src="@/assets/fotorama/coverfotorama.png" alt="">
-                </figure>
-                Chapeau
-              </div>
-              <div>
-                <figure>
-                  <img src="@/assets/fotorama/coverfotorama.png" alt="">
-                </figure>
-                Chapeau
-              </div>
-              <div>
-                <figure>
-                  <img src="@/assets/fotorama/coverfotorama.png" alt="">
-                </figure>
-                Chapeau
+                {{ gear.name }}
               </div>
             </div>
             <p class="card-travel-content-main-gears-description" v-text="data.gearCategoryDescription" />
@@ -129,15 +88,13 @@
 
       </div>
       <div class="card-travel-header mobile">
-        <CardTravelSlider :data-slider="data.img" />
-        <p class="card-travel-header--level mobile">
-          Niveau {{ data.level }}
-        </p>
+        <CardTravelSlider :data-slider="data.images" :folder="data.name" />
+        <p class="card-travel-header--level mobile" v-text="data.difficulty.level" />
       </div>
       <div>
-        <div :data-slider="data.img" v-for="(data, i) of data.img" :key="i" class="card-travel-header slide desktop">
+        <div :data-slider="data.img" v-for="(image, i) of data.images" :key="i" class="card-travel-header slide desktop">
           <figure>
-            <img :src="require(`@/assets/fotorama/${data.src}`)" :alt="data.alt">
+            <img :src="require(`@/assets/trails/${data.name}/${image.file}`)" :alt="image.alt">
           </figure>
         </div>
       </div>
@@ -147,6 +104,7 @@
 
 <script>
 import CardTravelSlider from '@/components/card/CardTravelSlider.vue'
+import gmapsInit from '@/plugins/gmaps.client'
 
 export default {
   name: 'CardTravelDetail',
@@ -155,13 +113,35 @@ export default {
   },
   props: {
     data: { type: Object, required: true }
+  },
+  async mounted () {
+    // console.log(this.geoJsonData)
+    // Define var
+    this.google = await gmapsInit()
+    this.geocoder = new this.google.maps.Geocoder()
+    this.kmlLayer = new this.google.maps.KmlLayer()
+    this.infoWindow = new this.google.maps.InfoWindow()
+
+    // Create the map
+    this.map = new this.google.maps.Map(this.$refs.myMap, {
+      center: {
+        lat: 46.52863469527167,
+        lng: 2.43896484375
+      },
+      zoom: 5,
+      mapId: '634725ddae417643'
+    })
+
+    // this.map.data.loadGeoJson('https://storage.googleapis.com/mapsdevsite/json/google.json')
+    this.map.data.addGeoJson(JSON.parse(this.data.geojson))
   }
 }
 </script>
 
-<style lang="scss">
-  .profile{
+<style lang="scss" scoped>
+  .trail-card{
     margin-bottom: 80px;
+    padding-top: 150px;
     &-nav{
       display: flex;
       height: 105px;
@@ -195,7 +175,7 @@ export default {
       }
       &-content{
         padding: 20px;
-        font-family: 'Apfel';
+        font-family: 'Apfel', sans-serif;
         color: var(--black-color-80);
         z-index: 2;
         order: 2;
@@ -204,7 +184,7 @@ export default {
           font-weight: bold;
           line-height: 25px;
           margin-bottom: 5px;
-          font-family: 'Gotham';
+          font-family: 'Gotham', sans-serif;;
           color: var(--green-color);
         }
         &--location{
@@ -222,7 +202,7 @@ export default {
         }
         &-second{
           &-title{
-            font-family: 'Gotham';
+            font-family: 'Gotham', sans-serif;;
             font-weight: bold;
             margin: 25px 0 20px 0;
           }
@@ -252,14 +232,15 @@ export default {
             }
           }
           &-title{
-              font-size: 1.5rem;
-              font-weight: bold;
-              line-height: 25px;
-              margin-bottom: 5px;
-              font-family: 'Gotham';
-              color: var(--green-color);
-              border-top: 1px solid var(--green-color-30);
-              padding-top: 20px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            line-height: 25px;
+            margin-bottom: 25px;
+            font-family: 'Gotham', sans-serif;
+            color: var(--green-color);
+            border-top: 1px solid var(--green-color-30);
+            padding-top: 20px;
+            margin-top: 25px;
           }
           &-stats{
             &-wrapper{
@@ -267,7 +248,7 @@ export default {
               flex-wrap: wrap;
               justify-content: space-between;
               gap: 25px;
-              margin: 25px 0 15px 0;
+              margin-bottom: 15px;
               p{
                 color: var(--green-color);
                 &:last-child{
@@ -279,6 +260,11 @@ export default {
             }
             &-description{
               margin-bottom: 15px;
+              list-style-type: disc;
+              margin-left: 13px;
+              li {
+                margin: 10px 0;
+              }
             }
           }
           &-traffic{
@@ -344,7 +330,7 @@ export default {
   }
 
   @media screen and (min-width: 769px) {
-    .profile{
+    .trail-card{
       .card-travel{
         max-width: unset;
         flex-direction: row;
@@ -396,7 +382,7 @@ export default {
             flex-direction: column;
             &-map{
               order: 1;
-              margin: 0px 0 30px 0;
+              margin: 0 0 30px 0;
               img{
                 border-radius: 0;
               }
@@ -432,5 +418,7 @@ export default {
       }
     }
   }
-
+  #my-app{
+    height: 100%;
+  }
 </style>

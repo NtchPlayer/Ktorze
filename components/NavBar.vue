@@ -2,15 +2,9 @@
   <nav class="app-nav">
     <ul class="app-nav-list">
       <li class="app-nav-item">
-        <nuxt-link :to="{ name: 'map' }" class="app-nav-item-content">
-          <img src="@/assets/icons/search.svg" alt="search">
-          Recherche
-        </nuxt-link>
-      </li>
-      <li class="app-nav-item">
-        <nuxt-link :to="{ name: 'profile' }" class="app-nav-item-content">
+        <nuxt-link :to="{ name: 'trails' }" class="app-nav-item-content">
           <img src="@/assets/icons/location.svg" alt="search">
-          Carte
+          Randonnées
         </nuxt-link>
       </li>
       <li v-if="$auth.loggedIn" class="app-nav-item">

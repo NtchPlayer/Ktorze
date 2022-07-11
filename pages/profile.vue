@@ -38,7 +38,7 @@ export default {
     return {
       account: {
         src: 'test.png',
-        fullname: 'John Doe',
+        fullname: `${this.$auth.user.firstname} ${this.$auth.user.lastname}`,
         location: 'Paris, France'
       },
       links: [{
@@ -46,11 +46,6 @@ export default {
         src: 'coordonnee.svg',
         text: 'Mes coordonnées',
         redirect: 'coordonnee'
-      }, {
-        baseUrl: 'profile',
-        src: 'heart-empty.svg',
-        text: 'Favoris',
-        redirect: 'favoris'
       }]
     }
   },

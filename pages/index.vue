@@ -78,14 +78,7 @@ export default {
           password: this.password
         }
       })
-        .then(() => {
-          console.log('test')
-        })
     }
   }
 }
 </script>
-
-<style>
-
-</style>

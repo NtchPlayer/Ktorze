@@ -23,7 +23,7 @@ export default {
     return {
       links: [{
         text: 'Randonnée',
-        name: 'randonnee'
+        name: 'trails'
       }, {
         text: 'Profil',
         name: 'profile'

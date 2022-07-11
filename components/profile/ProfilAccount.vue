@@ -1,6 +1,6 @@
 <template>
   <div class="profile-user">
-    <img class="profile-user--img" :alt="data.text" :src="require(`@/assets/${data.src}`)">
+    <img class="profile-user--img" alt="Photo de profile" :src="require(`@/assets/default_user.png`)">
     <div class="profile-user-informations">
       <p class="profile-user--name">{{ data.fullname }}</p>
       <p class="profile-user--location">{{ data.location }}</p>

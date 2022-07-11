@@ -124,8 +124,6 @@ export default {
       } else {
         this.options[payload.option] = [payload.choice]
       }
-      console.log(payload)
-      // this.options.
     }
   }
 }
