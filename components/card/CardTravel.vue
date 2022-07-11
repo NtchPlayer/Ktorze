@@ -135,12 +135,21 @@ export default {
 }
 
 @media (min-width: 768px) {
+  .container-card-travel{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 25px;
+    article{
+      margin-bottom: 0;
+    }
+  }
   .card-travel.largeCard{
     background-color: var(--brown-color);
     flex-direction: row-reverse;
     padding: 20px;
     align-items: center;
-    max-width: 680px;
+    max-width: 47%;
+    justify-content: center;
     .swiper-pagination{
       display: none;
     }
@@ -163,6 +172,20 @@ export default {
     .card-travel-description{
       line-height: 1.2rem;
       margin-bottom: 10px;
+      height: 97px;
+      min-width: 228px;
+      display: -webkit-box;
+      -webkit-line-clamp: 5;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+  }
+}
+@media (min-width: 768px) and (max-width: 1230px){
+  .card-travel.largeCard{
+    flex-direction: column-reverse;
+    .card-travel-title{
+      margin-top: 10px;
     }
   }
 }
