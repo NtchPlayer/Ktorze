@@ -3,7 +3,8 @@
     <main class="trail-card">
       <button class="btn-back">
         <figure>
-          <img @click.prevent="back" src="@/assets/icons/arrow-left.svg" alt="">
+          <img class="mobile" @click.prevent="back" src="@/assets/icons/arrow-left-white.svg" alt="">
+          <img class="desktop" @click.prevent="back" src="@/assets/icons/arrow-left.svg" alt="">
         </figure>
       </button>
       <CardTravelDetail
@@ -122,3 +123,23 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+  .trail-card{
+    position: relative;
+    .btn-back{
+      position: absolute;
+      z-index: 5;
+      top: 45px;
+      left: 10px;
+    }
+  }
+  @media screen and (min-width: 769px) {
+    .trail-card{
+      .btn-back{
+        top: 155px;
+        left: -70px;
+      }
+    }
+  }
+</style>

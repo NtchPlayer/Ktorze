@@ -78,16 +78,22 @@ export default {
 .quiz-card{
   display: flex;
   flex-direction: column;
-  figure{
+  transition: 0.3s;
+  border-radius: 15px;
+  &::before{
+    content: '';
+    background: #29292900;
+    width: 200px;
+    height: 188px;
+    position: absolute;
+    border-radius: 15px;
+    transition: 0.3s;
+  }
+  img{
     height: 175px;
     width: 200px;
-    order: 1;
-    img{
-      height: 100%;
-      width: 100%;
-      object-fit: cover;
-      border-radius: 15px;
-    }
+    object-fit: cover;
+    border-radius: 15px;
   }
   p{
     color: var(--white-color);
@@ -97,9 +103,20 @@ export default {
     text-align: center;
     margin-top: -27px;
     order: 2;
+    width: 100%;
   }
   &.active{
-    border: 2px solid var(--green-color);
+    box-shadow: 2px 3px 5px 0px #717171;
+    border-radius: 15px;
+    transform: translate(-2px, -2px);
+    &::before{
+      content: '';
+      background: #bebebe2b;
+      width: 200px;
+      height: 188px;
+      position: absolute;
+      border-radius: 15px;
+    }
   }
 }
 </style>
