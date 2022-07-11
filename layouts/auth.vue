@@ -72,9 +72,7 @@ export default {
       display: flex;
       flex-direction: column;
       color: var(--black-color-90);
-      &:last-child{
-        margin-top: 60px;
-      }
+
       a{
         color: var(--green-color);
       }

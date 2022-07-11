@@ -18,7 +18,9 @@
       <InputBirthday v-model="birthday" />
       <input class="btn-primary" type="submit" value="Modifier" />
     </form>
-    <p v-show="isValid">Modification enregistrer !</p>
+    <transition name="fade">
+      <p class="validation" v-show="isValid">Modification enregistré !</p>
+    </transition>
   </section>
 </template>
 
@@ -66,6 +68,22 @@ export default {
 }
 </script>
 
-<style>
-
+<style lang="scss">
+  .validation{
+    transition: 0.3s;
+    line-height: 1rem;
+    padding: 15px 15px 10px 15px;
+    margin-top: -15px;
+    height: max-content;
+  }
+  .fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+  line-height: 1rem;
+  transition: 0.6s;
+  }
+  .fade-enter, .fade-leave-to {
+    opacity: 0;
+    padding: 0 15px;
+    transition: 0.6s;
+  }
 </style>
