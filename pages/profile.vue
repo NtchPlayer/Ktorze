@@ -48,6 +48,32 @@ export default {
     isSubRoad () {
       return this.$route.name.split('-').length > 1
     }
+  },
+  head () {
+    return {
+      title: ' - Profile',
+      meta: [{
+        hid: 'description',
+        name: 'description',
+        content: 'Vous pouvez paramétrez votre compte Balise 360. Vous aurez accès à l\'historique, vos statiqtiques et vos randonnées favorites.'
+      }, {
+        hid: 'og:title',
+        property: 'og:title',
+        content: 'Balise 360 - Profile'
+      }, {
+        hid: 'og:description',
+        name: 'og:description',
+        content: 'Vous pouvez paramétrez votre compte Balise 360. Vous aurez accès à l\'historique, vos statiqtiques et vos randonnées favorites.'
+      }, {
+        hid: 'twitter:title',
+        name: 'twitter:title',
+        content: 'Balise 360 - Profile'
+      }, {
+        hid: 'twitter:description',
+        name: 'twitter:description',
+        content: 'Vous pouvez paramétrez votre compte Balise 360. Vous aurez accès à l\'historique, vos statiqtiques et vos randonnées favorites.'
+      }]
+    }
   }
 }
 </script>

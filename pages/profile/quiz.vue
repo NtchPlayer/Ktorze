@@ -62,6 +62,32 @@ export default {
       }
       this.currentQuestion++
     }
+  },
+  head () {
+    return {
+      title: ' - Profile',
+      meta: [{
+        hid: 'description',
+        name: 'description',
+        content: 'Balise 360, la solution qui permet à tous les randonneurs passionnés et engagés de préparer ses itinéraires de randonnées, de se repérer avec ses cartes numériques et son GPS intégré.'
+      }, {
+        hid: 'og:title',
+        property: 'og:title',
+        content: 'Balise 360, la solution de tous les randonneurs engagés'
+      }, {
+        hid: 'og:description',
+        name: 'og:description',
+        content: 'Balise 360, la solution qui permet à tous les randonneurs passionnés et engagés de préparer ses itinéraires de randonnées, de se repérer avec ses cartes numériques et son GPS intégré.'
+      }, {
+        hid: 'twitter:title',
+        name: 'twitter:title',
+        content: 'Balise 360, la solution de tous les randonneurs engagés'
+      }, {
+        hid: 'twitter:description',
+        name: 'twitter:description',
+        content: 'Balise 360, la solution qui permet à tous les randonneurs passionnés et engagés de préparer ses itinéraires de randonnées, de se repérer avec ses cartes numériques et son GPS intégré.'
+      }]
+    }
   }
 }
 </script>

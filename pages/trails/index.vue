@@ -31,6 +31,32 @@ export default {
     return {
       data
     }
+  },
+  head () {
+    return {
+      title: ' - Toutes les randonnées',
+      meta: [{
+        hid: 'description',
+        name: 'description',
+        content: 'Vous pouvez accéder à notre liste de randonnées engagées qui correspondent à votre niveau. En choisissant la durée ainsi que le lieu'
+      }, {
+        hid: 'og:title',
+        property: 'og:title',
+        content: 'Balise 360 - Toutes les randonnées'
+      }, {
+        hid: 'og:description',
+        name: 'og:description',
+        content: 'Vous pouvez accéder à notre liste de randonnées engagées qui correspondent à votre niveau. En choisissant la durée ainsi que le lieu'
+      }, {
+        hid: 'twitter:title',
+        name: 'twitter:title',
+        content: 'Balise 360 - Toutes les randonnées'
+      }, {
+        hid: 'twitter:description',
+        name: 'twitter:description',
+        content: 'Vous pouvez accéder à notre liste de randonnées engagées qui correspondent à votre niveau. En choisissant la durée ainsi que le lieu'
+      }]
+    }
   }
 }
 </script>

@@ -31,6 +31,32 @@ export default {
     back () {
       this.$router.back()
     }
+  },
+  head () {
+    return {
+      title: ` - Randonnée [${this.data.name}]`,
+      meta: [{
+        hid: 'description',
+        name: 'description',
+        content: this.data.description
+      }, {
+        hid: 'og:title',
+        property: 'og:title',
+        content: `Balise360 - Randonnée [${this.data.name}]`
+      }, {
+        hid: 'og:description',
+        name: 'og:description',
+        content: this.data.description
+      }, {
+        hid: 'twitter:title',
+        name: 'twitter:title',
+        content: `Balise360 - Randonnée [${this.data.name}]`
+      }, {
+        hid: 'twitter:description',
+        name: 'twitter:description',
+        content: this.data.description
+      }]
+    }
   }
 }
 </script>

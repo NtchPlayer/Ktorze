@@ -72,15 +72,15 @@ export default {
   },
   head () {
     return {
-      title: ' - Login',
+      title: ' - Signup',
       meta: [{
         hid: 'og:title',
         property: 'og:title',
-        content: 'Balise360 - Login'
+        content: 'Balise360 - Signup'
       }, {
         hid: 'twitter:title',
         name: 'twitter:title',
-        content: 'Balise360 - Login'
+        content: 'Balise360 - Signup'
       }]
     }
   },

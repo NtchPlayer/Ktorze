@@ -130,10 +130,24 @@
 <script>
 
 export default {
-  name: 'RGPD',
+  name: 'policy',
   methods: {
     back () {
       this.$router.back()
+    }
+  },
+  head () {
+    return {
+      title: ' - Policy',
+      meta: [{
+        hid: 'og:title',
+        property: 'og:title',
+        content: 'Balise360 - Policy'
+      }, {
+        hid: 'twitter:title',
+        name: 'twitter:title',
+        content: 'Balise360 - Policy'
+      }]
     }
   }
 }

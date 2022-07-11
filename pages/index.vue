@@ -18,11 +18,11 @@
         <p v-show="error">
           identifiant incorrect
         </p>
-        <p class="links-container">
-          <nuxt-link :to="{ name: 'auth-sign-up' }">
-            Mot de passe oublié ?
-          </nuxt-link>
-        </p>
+        <!-- <p class="links-container">-->
+        <!-- <nuxt-link :to="{ name: 'auth-sign-up' }">-->
+        <!-- Mot de passe oublié ?-->
+        <!-- </nuxt-link>-->
+        <!-- </p>-->
       </div>
     </div>
     <figure class="auth-container--img desktop">

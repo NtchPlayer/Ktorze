@@ -44,6 +44,20 @@ export default {
       }
       this.currentQuestion = this.questions[this.currentQuestionId]
     }
+  },
+  head () {
+    return {
+      title: ' - Questionnaire',
+      meta: [{
+        hid: 'og:title',
+        property: 'og:title',
+        content: 'Balise360 - Questionnaire'
+      }, {
+        hid: 'twitter:title',
+        name: 'twitter:title',
+        content: 'Balise360 - Questionnaire'
+      }]
+    }
   }
 }
 </script>
