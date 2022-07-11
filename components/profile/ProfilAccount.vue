@@ -2,8 +2,12 @@
   <div class="profile-user">
     <img class="profile-user--img" alt="Photo de profile" :src="require(`@/assets/default_user.png`)">
     <div class="profile-user-informations">
-      <p class="profile-user--name">{{ $auth.user.firstname }} {{ $auth.user.lastname }}</p>
-      <p class="profile-user--location">{{ $auth.user.email }}</p>
+      <p class="profile-user--name">
+        {{ $auth.user.firstname }} {{ $auth.user.lastname }}
+      </p>
+      <p class="profile-user--location">
+        {{ $auth.user.email }}
+      </p>
     </div>
   </div>
 </template>

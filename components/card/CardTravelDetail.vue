@@ -18,19 +18,21 @@
           <div class="card-travel-content-main-bottom">
             <div class="card-travel-content-main-bottom--left">
               <h2 class="card-travel-content--location" v-text="data.location" />
-              <p v-if="data.checked !== ''" class="card-travel-content--checked">
-                Sentier vérifié le : {{ data.checked }}
+              <p v-if="dateUpdate !== ''" class="card-travel-content--checked">
+                Sentier vérifié le : {{ dateUpdate }}
               </p>
               <p v-else class="card-travel-content--checked">
                 Sentier non vérifié
               </p>
             </div>
           </div>
-          <div class="card-travel-content-main-description" v-html="data.content"></div>
+          <div class="card-travel-content-main-description" v-html="data.content" />
           <figure class="card-travel-content-main-map">
             <div id="my-app" ref="myMap" />
           </figure>
-          <h2 class="card-travel-content-main-title">Caractéristiques</h2>
+          <h2 class="card-travel-content-main-title">
+            Caractéristiques
+          </h2>
           <div class="card-travel-content-main-stats">
             <div class="card-travel-content-main-stats-wrapper">
               <div class="card-travel-content-main-stats-wrapper--infos">
@@ -59,14 +61,18 @@
           </div>
 
           <div class="card-travel-content-main-traffic">
-            <h2 class="card-travel-content-main-title">Fréquentation</h2>
+            <h2 class="card-travel-content-main-title">
+              Fréquentation
+            </h2>
             <p class="card-travel-content-main-traffic--checked">
               Bientôt disponible
             </p>
           </div>
 
           <div class="card-travel-content-main-gears">
-            <h2 class="card-travel-content-main-title">Équipement</h2>
+            <h2 class="card-travel-content-main-title">
+              Équipement
+            </h2>
             <div class="card-travel-content-main-gears-slider">
               <div
                 v-for="(gear, i) of data.gears"
@@ -80,16 +86,14 @@
             </div>
             <p class="card-travel-content-main-gears-description" v-text="data.gearCategoryDescription" />
           </div>
-
         </div>
-
       </div>
       <div class="card-travel-header mobile">
         <CardTravelSlider :data-slider="data.images" :folder="data.name" />
         <p class="card-travel-header--level mobile" v-text="data.difficulty.level" />
       </div>
       <div>
-        <div :data-slider="data.img" v-for="(image, i) of data.images" :key="i" class="card-travel-header slide desktop">
+        <div v-for="(image, i) of data.images" :key="i" :data-slider="data.img" class="card-travel-header slide desktop">
           <figure>
             <img :src="require(`@/assets/trails/${data.name}/${image.file}`)" :alt="image.alt">
           </figure>
@@ -111,9 +115,22 @@ export default {
   props: {
     data: { type: Object, required: true }
   },
+  computed: {
+    dateUpdate () {
+      const today = new Date(this.data.updatedAt)
+      const yyyy = today.getFullYear()
+      let mm = today.getMonth() + 1
+      let dd = today.getDate()
+      if (dd < 10) {
+        dd = '0' + dd
+      }
+      if (mm < 10) {
+        mm = '0' + mm
+      }
+      return dd + '/' + mm + '/' + yyyy
+    }
+  },
   async mounted () {
-    // console.log(this.geoJsonData)
-    // Define var
     this.google = await gmapsInit()
     this.geocoder = new this.google.maps.Geocoder()
     this.kmlLayer = new this.google.maps.KmlLayer()

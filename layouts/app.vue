@@ -3,7 +3,6 @@
     <Header class="desktop" :links="links" />
     <Nuxt class="max-width" />
     <NavBar class="mobile" />
-<!--    <Footer class="desktop" />-->
   </div>
 </template>
 

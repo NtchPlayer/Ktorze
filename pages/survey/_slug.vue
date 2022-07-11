@@ -16,6 +16,7 @@ export default {
     Quiz
   },
   layout: 'app',
+  middleware: 'auth',
   async asyncData ({ $axios }) {
     const { data } = await $axios.get('/quiz/questions', {
       params: {

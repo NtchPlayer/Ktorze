@@ -11,7 +11,7 @@
       :value="value"
       @input="$emit('input', $event.target.value)"
     >
-      <option value="" v-if="defaultValue">
+      <option v-if="defaultValue" value="">
         Sélectionnez votre sexe
       </option>
       <option value="female">

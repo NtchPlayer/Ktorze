@@ -16,10 +16,12 @@
       <InputEmail v-model="email" />
       <InputGender v-model="gender" :default-value="false" />
       <InputBirthday v-model="birthday" />
-      <input class="btn-primary" type="submit" value="Modifier" />
+      <input class="btn-primary" type="submit" value="Modifier">
     </form>
     <transition name="fade">
-      <p class="validation" v-show="isValid">Modification enregistré !</p>
+      <p v-show="isValid" class="validation">
+        Modification enregistré !
+      </p>
     </transition>
   </section>
 </template>

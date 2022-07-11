@@ -26,7 +26,6 @@ import ProfilLink from '@/components/profile/ProfilLink.vue'
 
 export default {
   name: 'Profile',
-  // middleware: 'auth'
   components: {
     ProfilLink
   },

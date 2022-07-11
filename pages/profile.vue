@@ -1,7 +1,7 @@
 <template>
   <main class="container-profile">
     <section class="profile-navbar" :class="{ isSubRoad }">
-      <ProfilAccount :data="account" />
+      <ProfilAccount />
       <nav class="profile-links">
         <ProfilLink
           v-for="(link, i) of links"
@@ -33,7 +33,7 @@ export default {
     ProfilLink
   },
   layout: 'app',
-  // middleware: 'auth'
+  middleware: 'auth',
   data () {
     return {
       links: [{

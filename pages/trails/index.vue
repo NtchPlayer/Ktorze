@@ -36,6 +36,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.max-width{
+  margin-bottom: 120px;
+}
 .container-card-travel{
   margin-top: 45px;
   article {

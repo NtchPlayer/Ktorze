@@ -7,7 +7,7 @@
         </h1>
         <form @submit.prevent="login">
           <InputEmail ref="input-email" v-model="email" />
-          <InputPassword ref="input-password" v-model="password" placeholder="Mot de passe" class="relative-error"/>
+          <InputPassword ref="input-password" v-model="password" placeholder="Mot de passe" class="relative-error" />
           <input class="btn-primary" type="submit" value="Connexion">
         </form>
         <p class="links-container">
@@ -90,7 +90,6 @@ export default {
 </script>
 
 <style lang="scss">
-
 .relative-error{
   position: relative;
   .input-error{

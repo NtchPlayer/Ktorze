@@ -2,7 +2,7 @@
   <div class="auth-container">
     <div class="auth-container--left">
       <button class="btn-back">
-        <img @click.self="back" src="@/assets/icons/arrow-left-orange.svg" alt="">
+        <img src="@/assets/icons/arrow-left-orange.svg" alt="Fleche retour" @click.self="back">
       </button>
       <h1 class="main-title">
         <span>Créez</span> votre compte
@@ -10,7 +10,7 @@
       <p class="text-body t-center">
         Pour un accompagnement sur mesure :<br> des équipements, des sentiers et des services selon vos envies et besoins.
       </p>
-      <form @submit.prevent="signUp" class="signup">
+      <form class="signup" @submit.prevent="signUp">
         <InputEmail ref="input-email" v-model="email" />
         <InputPassword ref="input-password" v-model="password" />
         <div class="form-column">
@@ -36,7 +36,7 @@
     <figure class="auth-container--img desktop">
       <img src="@/assets/section/coversign.png" alt="cover login">
     </figure>
-</div>
+  </div>
 </template>
 
 <script>
@@ -115,10 +115,7 @@ export default {
         .then((e) => {
           this.$auth.setUser(e.data.user)
           this.$auth.setUserToken(e.data.payload.token, e.data.payload.refresh_token)
-          this.$router.push({ name: 'profile-' })
-        })
-        .catch((e) => {
-          console.log(e)
+          this.$router.push({ name: 'profile-coordonnee' })
         })
     }
   }

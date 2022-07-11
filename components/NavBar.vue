@@ -14,7 +14,7 @@
         </nuxt-link>
       </li>
       <li v-else class="app-nav-item">
-        <nuxt-link :to="{ name: 'profile' }" class="app-nav-item-content">
+        <nuxt-link to="/" class="app-nav-item-content">
           <img src="@/assets/icons/account.svg" alt="search">
           Connexion
         </nuxt-link>

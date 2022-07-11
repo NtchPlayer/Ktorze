@@ -140,45 +140,45 @@ export default {
 </script>
 
 <style lang="scss">
-  .rgpd{
-    padding: 200px 0 280px 0;
-    .fotorama-title{
-      margin-bottom: 125px;
+.rgpd{
+  padding: 200px 0 280px 0;
+  .fotorama-title{
+    margin-bottom: 125px;
+  }
+  button{
+    margin-bottom: 35px;
+    color: var(--pale-color);
+    font-size: 1.5rem;
+  }
+  &-content{
+    max-width: 555px;
+    margin: auto;
+    p, li{
+      line-height: 25.6px;
     }
-    button{
+    ul{
+      margin-left: 30px;
+      list-style: outside;
+    }
+    p ~ p, p ~ ul{
+      margin-top: 25px;
+    }
+    li ~ li{
+      margin-top: 0;
+    }
+    p ~ h2{
+      margin-top: 120px;
+    }
+    p ~ h3{
+      margin-top: 75px;
+    }
+    h2{
+      margin-bottom: 75px;
+      text-align: left;
+    }
+    .second-title{
       margin-bottom: 35px;
-      color: var(--pale-color);
-      font-size: 1.5rem;
-    }
-    &-content{
-      max-width: 555px;
-      margin: auto;
-      p, li{
-        line-height: 25.6px;
-      }
-      ul{
-        margin-left: 30px;
-        list-style: outside;
-      }
-      p ~ p, p ~ ul{
-        margin-top: 25px;
-      }
-      li ~ li{
-        margin-top: 0;
-      }
-      p ~ h2{
-        margin-top: 120px;
-      }
-      p ~ h3{
-        margin-top: 75px;
-      }
-      h2{
-        margin-bottom: 75px;
-        text-align: left;
-      }
-      .second-title{
-        margin-bottom: 35px;
-      }
     }
   }
+}
 </style>
