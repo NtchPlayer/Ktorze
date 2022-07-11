@@ -38,7 +38,7 @@
         </li>
         <li v-if="$auth.loggedIn">
           <nuxt-link
-            :to="{name: profile}"
+            :to="{name: 'profile'}"
             v-text="'Profile'"
           />
         </li>

@@ -115,7 +115,7 @@ export default {
         .then((e) => {
           this.$auth.setUser(e.data.user)
           this.$auth.setUserToken(e.data.payload.token, e.data.payload.refresh_token)
-          this.$router.push({ name: 'profile-quiz' })
+          this.$router.push({ name: 'profile-' })
         })
         .catch((e) => {
           console.log(e)
