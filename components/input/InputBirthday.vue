@@ -18,7 +18,7 @@
 export default {
   name: 'InputBirthday',
   props: {
-    value: { type: String, required: true }
+    value: { type: String }
   },
   computed: {
     birthdayIsValid () {

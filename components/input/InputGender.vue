@@ -11,7 +11,7 @@
       :value="value"
       @input="$emit('input', $event.target.value)"
     >
-      <option value="">
+      <option value="" v-if="defaultValue">
         Sélectionnez votre sexe
       </option>
       <option value="female">
@@ -31,7 +31,8 @@
 export default {
   name: 'InputGender',
   props: {
-    value: { type: String, required: true }
+    value: { type: String },
+    defaultValue: { type: Boolean, default: true }
   },
   computed: {
     genderIsValid () {

@@ -11,13 +11,14 @@
       </h1>
     </div>
     <form class="profile-router-view-content" @submit.prevent="__updateUserInfos">
-      <InputFirstname :value="$auth.user.firstname" />
-      <InputLastname :value="$auth.user.lastname" />
-      <InputEmail :value="$auth.user.email" />
-      <InputGender :value="$auth.user.gender" />
-      <InputBirthday :value="$auth.user.birthday" />
+      <InputFirstname v-model="firstname" />
+      <InputLastname v-model="lastname" />
+      <InputEmail v-model="email" />
+      <InputGender v-model="gender" :default-value="false" />
+      <InputBirthday v-model="birthday" />
       <input class="btn-primary" type="submit" value="Modifier" />
     </form>
+    <p v-show="isValid">Modification enregistrer !</p>
   </section>
 </template>
 
@@ -37,9 +38,28 @@ export default {
     InputFirstname
   },
   layout: 'app',
+  data () {
+    return {
+      firstname: this.$auth.user.firstname,
+      lastname: this.$auth.user.lastname,
+      email: this.$auth.user.email,
+      gender: this.$auth.user.gender,
+      birthday: this.$auth.user.birthday,
+      isValid: false
+    }
+  },
   methods: {
-    __updateUserInfos () {
-      console.log('test')
+    async __updateUserInfos () {
+      await this.$axios.post('/users/update', {
+        firstname: this.firstname,
+        lastname: this.lastname,
+        email: this.email,
+        gender: this.gender,
+        birthday: this.birthday
+      }).then(() => {
+        this.isValid = true
+        setTimeout(() => { this.isValid = false }, 3000)
+      })
     }
   }
 }

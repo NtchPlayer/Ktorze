@@ -1,40 +1,38 @@
 <template>
-    <div class="auth-container">
-      <div class="auth-container--left">
-        <button class="btn-back">
-            <figure>
-              <img @click.self="back" src="@/assets/icons/arrow-left-orange.svg" alt="">
-            </figure>
-          </button>
-        <h1 class="main-title">
-          <span>Créez</span> votre compte
-        </h1>
-        <p class="text-body t-center">
-          Pour un accompagnement sur mesure :<br> des équipements, des sentiers et des services selon vos envies et besoins.
-        </p>
-        <form @submit.prevent="signUp">
-          <InputEmail ref="input-email" v-model="email" />
-          <InputPassword ref="input-password" v-model="password" />
-          <InputFirstname ref="input-firstname" v-model="firstname" />
-          <InputLastname ref="input-lastname" v-model="lastname" />
-          <InputBirthday ref="input-birthday" v-model="birthday" />
-          <InputGender ref="input-gender" v-model="gender" />
-          <InputPolicy ref="input-policy" />
-          <input class="input btn-primary" type="submit" value="Terminer">
-        </form>
-        <p class="text-body t-center">
-          Vous avez déjà un compte Balise360 ?
-        </p>
-        <p class="links-container">
-          <nuxt-link to="/">
-            <b>Se connecter</b>
-          </nuxt-link>
-        </p>
-      </div>
-      <figure class="auth-container--img desktop">
-        <img src="@/assets/section/coversign.png" alt="cover login">
-      </figure>
-  </div>
+  <div class="auth-container">
+    <div class="auth-container--left">
+      <button class="btn-back">
+        <img @click.self="back" src="@/assets/icons/arrow-left-orange.svg" alt="">
+      </button>
+      <h1 class="main-title">
+        <span>Créez</span> votre compte
+      </h1>
+      <p class="text-body t-center">
+        Pour un accompagnement sur mesure :<br> des équipements, des sentiers et des services selon vos envies et besoins.
+      </p>
+      <form @submit.prevent="signUp">
+        <InputEmail ref="input-email" v-model="email" />
+        <InputPassword ref="input-password" v-model="password" />
+        <InputFirstname ref="input-firstname" v-model="firstname" />
+        <InputLastname ref="input-lastname" v-model="lastname" />
+        <InputBirthday ref="input-birthday" v-model="birthday" />
+        <InputGender ref="input-gender" v-model="gender" />
+        <InputPolicy ref="input-policy" />
+        <input class="input btn-primary" type="submit" value="Terminer">
+      </form>
+      <p class="text-body t-center">
+        Vous avez déjà un compte Balise360 ?
+      </p>
+      <p class="links-container">
+        <nuxt-link to="/">
+          <b>Se connecter</b>
+        </nuxt-link>
+      </p>
+    </div>
+    <figure class="auth-container--img desktop">
+      <img src="@/assets/section/coversign.png" alt="cover login">
+    </figure>
+</div>
 </template>
 
 <script>

@@ -23,7 +23,7 @@
 export default {
   name: 'InputEmail',
   props: {
-    value: { type: String, required: true }
+    value: { type: String }
   },
   computed: {
     emailIsValid () {

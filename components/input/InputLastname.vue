@@ -20,7 +20,7 @@
 export default {
   name: 'InputLastname',
   props: {
-    value: { type: String, required: true }
+    value: { type: String }
   },
   computed: {
     lastnameIsValid () {

@@ -20,7 +20,7 @@
 export default {
   name: 'InputFirstname',
   props: {
-    value: { type: String, required: true }
+    value: { type: String }
   },
   computed: {
     firstnameIsValid () {

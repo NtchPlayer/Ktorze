@@ -23,7 +23,7 @@
 export default {
   name: 'InputPassword',
   props: {
-    value: { type: String, required: true }
+    value: { type: String }
   },
   computed: {
     passwordIsValid () {
