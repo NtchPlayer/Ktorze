@@ -33,18 +33,6 @@ export default {
       currentQuestion: {}
     }
   },
-  mounted () {
-    this.currentQuestion = this.questions[this.currentQuestionId]
-  },
-  methods: {
-    incrementQuestion () {
-      this.currentQuestionId++
-      if (this.currentQuestionId === this.questions.length) {
-        return this.$router.push('/trails')
-      }
-      this.currentQuestion = this.questions[this.currentQuestionId]
-    }
-  },
   head () {
     return {
       title: ' - Questionnaire',
@@ -57,6 +45,18 @@ export default {
         name: 'twitter:title',
         content: 'Balise360 - Questionnaire'
       }]
+    }
+  },
+  mounted () {
+    this.currentQuestion = this.questions[this.currentQuestionId]
+  },
+  methods: {
+    incrementQuestion () {
+      this.currentQuestionId++
+      if (this.currentQuestionId === this.questions.length) {
+        return this.$router.push('/trails')
+      }
+      this.currentQuestion = this.questions[this.currentQuestionId]
     }
   }
 }

@@ -44,11 +44,6 @@ export default {
       }]
     }
   },
-  computed: {
-    isSubRoad () {
-      return this.$route.name.split('-').length > 1
-    }
-  },
   head () {
     return {
       title: ' - Profile',
@@ -73,6 +68,11 @@ export default {
         name: 'twitter:description',
         content: 'Vous pouvez paramétrez votre compte Balise 360. Vous aurez accès à l\'historique, vos statiqtiques et vos randonnées favorites.'
       }]
+    }
+  },
+  computed: {
+    isSubRoad () {
+      return this.$route.name.split('-').length > 1
     }
   }
 }

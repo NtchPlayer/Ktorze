@@ -27,11 +27,6 @@ export default {
       data
     }
   },
-  methods: {
-    back () {
-      this.$router.back()
-    }
-  },
   head () {
     return {
       title: ` - Randonnée [${this.data.name}]`,
@@ -56,6 +51,11 @@ export default {
         name: 'twitter:description',
         content: this.data.description
       }]
+    }
+  },
+  methods: {
+    back () {
+      this.$router.back()
     }
   }
 }

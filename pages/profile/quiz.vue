@@ -39,30 +39,6 @@ export default {
       quizDatas: []
     }
   },
-  computed: {
-    currentQuestionData () {
-      return this.questions[this.currentQuestion]
-    }
-  },
-  methods: {
-    addQuizData (val) {
-      this.score += parseInt(val.value)
-      this.quizDatas.push(val.id)
-      if (this.currentQuestion + 1 === this.questions.length) {
-        return this.$axios.post('/users/quiz', {
-          score: this.score,
-          quizDatas: this.quizDatas
-        })
-          .then(() => {
-            this.$router.push({ name: 'profile' })
-          })
-          .catch((e) => {
-            throw e
-          })
-      }
-      this.currentQuestion++
-    }
-  },
   head () {
     return {
       title: ' - Profile',
@@ -87,6 +63,30 @@ export default {
         name: 'twitter:description',
         content: 'Balise 360, la solution qui permet à tous les randonneurs passionnés et engagés de préparer ses itinéraires de randonnées, de se repérer avec ses cartes numériques et son GPS intégré.'
       }]
+    }
+  },
+  computed: {
+    currentQuestionData () {
+      return this.questions[this.currentQuestion]
+    }
+  },
+  methods: {
+    addQuizData (val) {
+      this.score += parseInt(val.value)
+      this.quizDatas.push(val.id)
+      if (this.currentQuestion + 1 === this.questions.length) {
+        return this.$axios.post('/users/quiz', {
+          score: this.score,
+          quizDatas: this.quizDatas
+        })
+          .then(() => {
+            this.$router.push({ name: 'profile' })
+          })
+          .catch((e) => {
+            throw e
+          })
+      }
+      this.currentQuestion++
     }
   }
 }

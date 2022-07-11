@@ -130,12 +130,7 @@
 <script>
 
 export default {
-  name: 'policy',
-  methods: {
-    back () {
-      this.$router.back()
-    }
-  },
+  name: 'Policy',
   head () {
     return {
       title: ' - Policy',
@@ -148,6 +143,11 @@ export default {
         name: 'twitter:title',
         content: 'Balise360 - Policy'
       }]
+    }
+  },
+  methods: {
+    back () {
+      this.$router.back()
     }
   }
 }
