@@ -24,7 +24,6 @@ export default {
   form{
     margin: 25px 0;
     .input, .select{
-      min-width: 295px;
       border-radius: 5px;
       color: var(--black-color-80);
       border: 1px solid var(--green-color);

@@ -7,7 +7,7 @@
         </h1>
         <form @submit.prevent="login">
           <InputEmail ref="input-email" v-model="email" />
-          <InputPassword ref="input-password" v-model="password" placeholder="Mot de passe" />
+          <InputPassword ref="input-password" v-model="password" placeholder="Mot de passe" class="relative-error"/>
           <input class="btn-primary" type="submit" value="Connexion">
         </form>
         <p class="links-container">
@@ -88,3 +88,26 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+
+.relative-error{
+  position: relative;
+  .input-error{
+    position: absolute;
+    width: 280px;
+    top: 55px;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    text-align: center;
+  }
+}
+@media screen and (min-width: 1000px) {
+    .relative-error{
+      .input-error{
+        top: 60px;
+        width: max-content;
+      }
+    }
+}
+</style>
