@@ -2,7 +2,7 @@
   <section class="quiz-section">
     <Quiz
       :quiz-datas="currentQuestion"
-      @increment="currentQuestionId++"
+      @increment="incrementQuestion"
     />
   </section>
 </template>
@@ -28,12 +28,20 @@ export default {
   },
   data () {
     return {
-      currentQuestionId: 0
+      currentQuestionId: 0,
+      currentQuestion: {}
     }
   },
-  computed: {
-    currentQuestion () {
-      return this.questions[this.currentQuestionId]
+  mounted () {
+    this.currentQuestion = this.questions[this.currentQuestionId]
+  },
+  methods: {
+    incrementQuestion () {
+      this.currentQuestionId++
+      if (this.currentQuestionId === this.questions.length) {
+        return this.$router.push('/trails')
+      }
+      this.currentQuestion = this.questions[this.currentQuestionId]
     }
   }
 }
