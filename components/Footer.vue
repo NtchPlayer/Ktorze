@@ -114,8 +114,5 @@ footer{
       }
     }
   }
-  .footer-col-policy{
-    display: none;
-  }
 }
 </style>
