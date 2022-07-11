@@ -62,12 +62,12 @@ export default {
   layout: 'auth',
   data () {
     return {
-      email: 'test@exemple.com',
-      password: 'couette1',
-      firstname: 'Test',
-      lastname: 'Exemple',
-      birthday: '2000-01-01',
-      gender: 'male'
+      email: '',
+      password: '',
+      firstname: '',
+      lastname: '',
+      birthday: '',
+      gender: ''
     }
   },
   head () {

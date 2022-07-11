@@ -6,11 +6,10 @@
           <h1 class="card-travel-content--name desktop main-title" v-text="data.name" />
           <p class="card-travel-header--level desktop" v-text="data.difficulty.level" />
         </div>
-        <nuxt-link :to="{name: 'survey-slug', params: { slug: data.id }}" class="card-travel-header--level desktop">
+        <nuxt-link v-if="$auth.loggedIn" :to="{name: 'survey-slug', params: { slug: data.id }}" class="card-travel-header--level desktop">
           Répondre au questionnaire
         </nuxt-link>
       </div>
-
     </div>
     <div class="card-travel">
       <div class="card-travel-content">

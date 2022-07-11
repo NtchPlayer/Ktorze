@@ -11,16 +11,6 @@
           <p class="desktop card-travel-description" v-text="data.description" />
           <p class="card-travel-content--checked" v-text="`Sentier vérifié le ${dateUpdate}`" />
         </div>
-<!--        <svg-->
-<!--          v-if="$auth.loggedIn"-->
-<!--          width="32"-->
-<!--          height="32"-->
-<!--          viewBox="0 0 32 32"-->
-<!--          fill="none"-->
-<!--          xmlns="http://www.w3.org/2000/svg"-->
-<!--        >-->
-<!--          <path d="M9.58333 4C5.94802 4 3 7.14793 3 11.0317C3 14.1668 4.15208 21.6077 15.4925 29.1295C15.6957 29.2628 15.9289 29.3333 16.1667 29.3333C16.4045 29.3333 16.6377 29.2628 16.8408 29.1295C28.1813 21.6077 29.3333 14.1668 29.3333 11.0317C29.3333 7.14793 26.3853 4 22.75 4C19.1147 4 16.1667 8.26164 16.1667 8.26164C16.1667 8.26164 13.2187 4 9.58333 4Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />-->
-<!--        </svg>-->
       </div>
     </router-link>
     <div class="card-travel-header">

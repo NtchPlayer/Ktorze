@@ -2,18 +2,15 @@
   <div class="profile-user">
     <img class="profile-user--img" alt="Photo de profile" :src="require(`@/assets/default_user.png`)">
     <div class="profile-user-informations">
-      <p class="profile-user--name">{{ data.fullname }}</p>
-      <p class="profile-user--location">{{ data.location }}</p>
+      <p class="profile-user--name">{{ $auth.user.firstname }} {{ $auth.user.lastname }}</p>
+      <p class="profile-user--location">{{ $auth.user.email }}</p>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'ProfilAccount',
-  props: {
-    data: { type: Object, required: true }
-  }
+  name: 'ProfilAccount'
 }
 </script>
 

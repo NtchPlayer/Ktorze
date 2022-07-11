@@ -36,6 +36,18 @@
             v-text="link.text"
           />
         </li>
+        <li v-if="$auth.loggedIn">
+          <nuxt-link
+            :to="{name: profile}"
+            v-text="'Profile'"
+          />
+        </li>
+        <li v-else>
+          <nuxt-link
+            to="/"
+            v-text="'Connexion'"
+          />
+        </li>
       </ul>
     </nav>
   </header>
