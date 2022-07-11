@@ -42,8 +42,4 @@ export default {
     margin-bottom: 24px;
   }
 }
-
-@media screen and (min-width: 769px) {
-  display: flex;
-}
 </style>

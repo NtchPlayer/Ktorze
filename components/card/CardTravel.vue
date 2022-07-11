@@ -173,6 +173,12 @@ export default {
     .card-travel-description{
       line-height: 1.2rem;
       margin-bottom: 10px;
+      height: 97px;
+      min-width: 228px;
+      display: -webkit-box;
+      -webkit-line-clamp: 5;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
     }
   }
 }
